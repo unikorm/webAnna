@@ -11,20 +11,22 @@ html {
 
 body {
     font-family: 'Helvetica', Arial, sans-serif;
-    margin: 0;
+    margin: 0 8em;
     padding: 0;
     min-height: 100vh;
   }
   
-  /* Navbar Styles */
 
- header {
-    padding: 2vh;
- }
+
+
+
+  /* Navbar Styles */
 
   a {
     color: unset;
     text-decoration: none;
+    font: 1.1em "Helvetica Light", sans-serif;
+    letter-spacing: .1em;
   }
 
   .navbar {
@@ -34,7 +36,7 @@ body {
 
   .navbar-nav, .navbar-soc {
     list-style-type: none;
-    margin: 0;
+    margin: 4vh 0 0 0;
     padding: 0;
   }
 
@@ -43,12 +45,16 @@ body {
   }
 
   .navbar-nav li {
-    margin-left: 1vh;
+    margin-left: 3vh;
   }
 
   .navbar-soc li:not(:first-child) {
-    margin-left: 1vh;
+    margin-left: 2vh;
   }
+
+
+
+
 
   /* Main Styles */
 
@@ -65,7 +71,7 @@ body {
 
   .blockOfText {
     width: 70vh;
-    margin: 6vh;
+    margin: 6vh 0;
   }
 
   .blockOfText h1 {
@@ -79,4 +85,8 @@ body {
 
   h1 {
     margin: .5em 0em;
+  }
+
+  p {
+    margin: 0;
   }
