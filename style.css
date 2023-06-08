@@ -1,4 +1,6 @@
 /* General Styles */
+
+
 html {
     background: url(/photo/AirBrush_20210428125639.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -11,17 +13,70 @@ body {
     font-family: 'Helvetica', Arial, sans-serif;
     margin: 0;
     padding: 0;
-
-  }
-
-  .contact-form {
-    display: none;
-  }
-  
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
+    min-height: 100vh;
   }
   
   /* Navbar Styles */
+
+ header {
+    padding: 2vh;
+ }
+
+  a {
+    color: unset;
+    text-decoration: none;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar-nav, .navbar-soc {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-nav li, .navbar-soc li {
+    display: inline;
+  }
+
+  .navbar-nav li {
+    margin-left: 1vh;
+  }
+
+  .navbar-soc li:not(:first-child) {
+    margin-left: 1vh;
+  }
+
+  /* Main Styles */
+
+  main {
+    display: flex;
+    min-height: 85vh;
+  }
+
+  .mainText {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .blockOfText {
+    width: 70vh;
+    margin: 6vh;
+  }
+
+  .blockOfText h1 {
+    font: 4em Helvetica, sans-serif;
+  }
+
+  .blockOfText p {
+    font: 1.3em "Helvetica Light", sans-serif;
+    letter-spacing: .5em;
+  }
+
+  h1 {
+    margin: .5em 0em;
+  }
