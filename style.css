@@ -35,7 +35,7 @@
   /* Navbar Styles on main page */
 
   /* Set up links design */
-  a {
+  .navbar ul  a {
     color: unset;
     text-decoration: none;
     font: 1.1em "Helvetica Light", sans-serif;
@@ -169,13 +169,13 @@
 .contact-form textarea {
   width: 94%;
   padding: 0.7em;
-  border: 1px solid #ccc;
+  border: 1px solid #d2c8c8;
   border-radius: 4px;
   font-size: 1em;
 }
 
 /* Set button styles */
-.contact-form button[type="submit"] {
+.contact-form button {
   padding: 0.6em 1.3em;
   background-color: #d17d40;
   color: #fff;
@@ -183,6 +183,19 @@
   border-radius: 4px;
   font-size: 1.1em;
   cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #f4a872;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-form button a:link {
+  text-decoration: none;
 }
 
 /* Style on focus */
@@ -203,7 +216,7 @@
 }
 
 .contact-form a {
-  color: #8b4513;
+  color: #ffffff;
 }
 
 .contact-form a:hover {
@@ -214,6 +227,11 @@
 .contact-form textarea {
   height: 8em;
   resize: vertical;
+  color: #161715;
+}
+
+.contact-form input {
+  color: #161715;
 }
 
 
