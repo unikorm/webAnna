@@ -14,9 +14,11 @@ body {
     margin: 0;
     padding: 0 8em;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
-  li, h1, p {
+  li, h1, h2, button, label, p {
     color: #8FCA4D;
   }
 
@@ -25,7 +27,7 @@ body {
 
 
 
-  /* Navbar Styles */
+  /* Navbar Styles on main page */
 
   a {
     color: unset;
@@ -37,61 +39,68 @@ body {
   .navbar {
     display: flex;
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
 
   .navbar-nav, .navbar-soc {
     list-style-type: none;
-    margin: 4vh 0 0 0;
+    margin: 2em 0 0 0;
     padding: 0;
-  }
-
-  .navbar-nav li, .navbar-soc li {
-    display: inline;
+    display: flex;
   }
 
   .navbar-nav li {
-    margin-left: 3vh;
+    margin-left: 2em;
   }
 
   .navbar-soc li:not(:first-child) {
-    margin-left: 2vh;
+    margin-left: 1.5em;
   }
 
 
 
 
 
-  /* Main Styles */
+  /* Main Styles on main page */
 
   main {
     display: flex;
-    min-height: 85vh;
+    min-height: 43em;
   }
 
   .mainText {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    padding-right: 29em;
   }
 
   .blockOfText {
-    width: 70vh;
-    margin: 6vh 0;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-bottom: 5em;
   }
 
   .blockOfText h1 {
     font: 4em Helvetica, sans-serif;
+    margin: .9em 0em;
   }
 
   .blockOfText p {
     font: 1.3em "Helvetica Light", sans-serif;
     letter-spacing: .5em;
+    margin: 0 0 0 .5em;
   }
 
-  h1 {
-    margin: .5em 0em;
-  }
 
-  p {
-    margin: 0;
-  }
+
+
+
+
+
+
+
+
+
+  /* styles of contact page */
+
