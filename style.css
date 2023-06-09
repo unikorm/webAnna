@@ -1,25 +1,30 @@
 /* General Styles */
 
-
-html {
+  /* Set up background image on whole site */
+  html {
     background: url(/photo/AirBrush_20210428125639.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   }
-
-body {
+  
+  /* Set up location and logic of body element */
+  body {
     font-family: 'Helvetica', Arial, sans-serif;
     margin: 0;
-    padding: 0 8em;
+    padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
+  .mainContainer {
+    margin: 0 6em;
+  }
 
+  /* Set up colour of fonts */
   li, h1, h2, button, label, p {
-    color: #8FCA4D;
+    color: #161715;
   }
 
   
@@ -29,6 +34,7 @@ body {
 
   /* Navbar Styles on main page */
 
+  /* Set up links design */
   a {
     color: unset;
     text-decoration: none;
@@ -36,6 +42,7 @@ body {
     letter-spacing: .1em;
   }
 
+  /* Set up location and logic of navbar */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -50,7 +57,7 @@ body {
   }
 
   .navbar-nav li {
-    margin: .6em 0 0 2em;
+    margin: .6em 0 0 1.6em;
   }
 
   .navbar-soc li:not(:first-child) {
@@ -63,6 +70,7 @@ body {
 
   /* Main Styles on main page */
 
+  /* Set up location, size and logiv of main section */
   main {
     display: flex;
     min-height: 43em;
@@ -103,6 +111,111 @@ body {
 
 
   /* styles of contact page */
+
+/* Reset default form styles */
+#contactForm {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set font and color */
+.container,
+.contact-form h2,
+.contact-form label,
+.contact-form input,
+.contact-form textarea,
+.contact-form button,
+.contact-form p,
+.contact-form a {
+  font-family: Helvetica, sans-serif;
+  color: #b68058;
+}
+
+/* Set container styles */
+.contactContainer {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Set form container styles */
+.contact-form {
+  background-image: linear-gradient(135deg, #dabfa4 0%, #dfae87 100%);
+  padding: 2em;
+  border-radius: 1em;
+  max-width: 30em;
+  width: 100%;
+}
+
+/* Set heading styles */
+.contact-form h2 {
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+/* Set label styles */
+.contact-form label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+/* Set input and textarea styles */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 94%;
+  padding: 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+/* Set button styles */
+.contact-form button[type="submit"] {
+  padding: 0.6em 1.3em;
+  background-color: #d17d40;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+/* Style on focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #666;
+}
+
+/* Set additional contact details styles */
+.contact-form div {
+  margin-top: 1.4em;
+}
+
+.contact-form p {
+  font-size: 1em;
+  margin-bottom: 0.8em;
+}
+
+.contact-form a {
+  color: #8b4513;
+}
+
+.contact-form a:hover {
+  text-decoration: underline;
+}
+
+/* Set textarea styles */
+.contact-form textarea {
+  height: 8em;
+  resize: vertical;
+}
+
 
 
 
