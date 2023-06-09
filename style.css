@@ -50,7 +50,7 @@ body {
   }
 
   .navbar-nav li {
-    margin-left: 2em;
+    margin: .6em 0 0 2em;
   }
 
   .navbar-soc li:not(:first-child) {
@@ -104,3 +104,19 @@ body {
 
   /* styles of contact page */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* styles of the responsive site */
