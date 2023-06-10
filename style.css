@@ -136,7 +136,7 @@
   background-color: rgba(0, 0, 0, 0.7);
   padding: 0;
   height: 100vh;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -149,6 +149,14 @@
   max-width: 30em;
   width: 100%;
 }
+
+/* Set otherContacts styles */
+.otherContacts {
+  display: flex;
+  justify-content: center;
+
+}
+
 
 /* Set heading styles */
 .contact-form h2 {
@@ -211,8 +219,20 @@
 }
 
 .contact-form p {
-  font-size: 1em;
-  margin-bottom: 0.8em;
+  font-size: .8em;
+  margin: .7em 0;
+}
+
+.otherContacts a,
+.otherContacts a:link,
+.otherContacts a:hover,
+.otherContacts a:focus,
+.otherContacts a:active  {
+  text-decoration: none !important;
+}
+
+.otherContacts p:first-of-type {
+  margin-right: 1.4em;
 }
 
 .contact-form a {
