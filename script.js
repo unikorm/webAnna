@@ -63,6 +63,8 @@ document.addEventListener("click", function(event) {
 
 
 
+
+
 // Functions ######@~$&*
 
 // Function to open the contact form
@@ -91,4 +93,19 @@ function closeAboutSection() {
   mainContainer.style.display = "block";
   aboutContainer.style.display = "none";
   bodyElement.style.backdropFilter = null;
+};
+
+var images = [
+  "/photo/DSC_1042.JPG",
+  "/photo/DSC_0187-2.JPG",
+  "/photo/DSC_0095.JPG"
+];
+
+var currentIndex = 0;
+
+function changeBackground() {
+  document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
+  currentIndex = (currentIndex + 1) % images.length;
 }
+
+setInterval(changeBackground, 5000); // Run the function every 10 seconds

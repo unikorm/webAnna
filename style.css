@@ -3,7 +3,7 @@
   /* Set up background image on whole site */
 
   body {
-    background-image: url(/photo/DSC_0187-2.JPG);
+    background-image: url(/photo/DSC_1042.JPG);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -37,7 +37,7 @@
 
   /* Set up colour of fonts */
   li, h1, h2, button, label, p {
-    color: #ffffff;
+    color: #f9ffe7;
   }
 
   
@@ -95,7 +95,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    padding-right: 29em;
+    padding-right: 34em;
   }
 
   .blockOfText {
@@ -111,7 +111,7 @@
 
   .blockOfText p {
     font: 1.3em "Helvetica Light", sans-serif;
-    letter-spacing: .5em;
+    letter-spacing: .4em;
     margin: 0 0 0 .5em;
   }
 
@@ -292,7 +292,6 @@
   width: 13em;
   height: 13em;
   border-radius: 50%;
-  border: .5em solid #dabfa4;
 }
 
 
