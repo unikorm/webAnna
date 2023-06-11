@@ -7,8 +7,7 @@ let backButton = document.getElementsByClassName("buttons")[0].getElementsByTagN
 let aboutLink = document.getElementById("about")
 let aboutContainer = document.querySelector(".aboutContainer");
 let bodyElement = document.querySelector("body");
-console.log(bodyElement);
-
+// console.log();
 
 
 // Event Handlers ######@~$&*

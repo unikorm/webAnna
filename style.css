@@ -3,11 +3,12 @@
   /* Set up background image on whole site */
 
   body {
-    background-image: url(/photo/AirBrush_20210428125639.jpg);
+    background-image: url(/photo/DSC_0187-2.JPG);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-attachment: fixed;
   }
 
   .darkenedBackground {
@@ -87,7 +88,7 @@
   /* Set up location, size and logiv of main section */
   main {
     display: flex;
-    min-height: 43em;
+    min-height: 85vh;
   }
 
   .mainText {
