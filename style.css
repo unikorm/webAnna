@@ -3,7 +3,7 @@
   /* Set up background image on whole site */
 
   body {
-    background-image: url(/photo/DSC_0095.jpg);
+    background-image: url(/photo/AirBrush_20210428125639.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -75,6 +75,8 @@
   .navbar-soc li:not(:first-child) {
     margin-left: 1.5em;
   }
+
+ 
 
 
 
