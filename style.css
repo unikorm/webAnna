@@ -141,6 +141,7 @@
   justify-content: center;
 }
 
+
 /* Set form container styles */
 .contact-form {
   background-image: linear-gradient(135deg, #dabfa4 0%, #dfae87 100%);
@@ -252,6 +253,32 @@
 
 .contact-form input {
   color: #161715;
+}
+
+
+/* Set form "About" section */
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  /* filter: blur(5px) brightness(50%); */
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  padding: 0 6em;
+}
+
+.aboutContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.aboutContent img {
+  width: 13em;
+  height: 13em;
+  border-radius: 50%;
+  border: .5em solid #dabfa4;
 }
 
 

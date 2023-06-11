@@ -58,3 +58,8 @@ function closeContactForm() {
   mainContainer.style.display = "block";
   contactContainer.style.display = "none";
 };
+
+// Functions to open About section
+function openAboutSection() {
+  
+}
