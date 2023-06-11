@@ -1,13 +1,25 @@
 /* General Styles */
 
   /* Set up background image on whole site */
-  html {
-    background: url(/photo/AirBrush_20210428125639.jpg) no-repeat center center fixed;
+
+  body {
+    background-image: url(/photo/DSC_0095.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   }
+
+  .darkenedBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: -1;
+  }
+
   
   /* Set up location and logic of body element */
   body {
@@ -24,7 +36,7 @@
 
   /* Set up colour of fonts */
   li, h1, h2, button, label, p {
-    color: #161715;
+    color: #ffffff;
   }
 
   
@@ -133,7 +145,16 @@
 
 /* Set container styles */
 .contactContainer {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutContainer {
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 0;
   height: 100vh;
   display: none;
@@ -257,16 +278,6 @@
 
 
 /* Set form "About" section */
-.aboutContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  /* filter: blur(5px) brightness(50%); */
-  background-color: rgba(0, 0, 0, 0.3);
-  height: 100vh;
-  padding: 0 6em;
-}
 
 .aboutContent {
   display: flex;
