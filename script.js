@@ -95,17 +95,31 @@ function closeAboutSection() {
   bodyElement.style.backdropFilter = null;
 };
 
-var images = [
-  "/photo/DSC_1042.JPG",
-  "/photo/DSC_0187-2.JPG",
-  "/photo/DSC_0095.JPG"
-];
 
-var currentIndex = 0;
-
-function changeBackground() {
-  document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
-  currentIndex = (currentIndex + 1) % images.length;
-}
-
-setInterval(changeBackground, 5000); // Run the function every 10 seconds
+   // Function to change background image constantly
+   let images = [
+    "/photo/DSC_1042.JPG",
+    "/photo/DSC_0187-2.JPG",
+    "/photo/DSC_0095.JPG",
+    "/photo/DSC_1202.JPG",
+    "/photo/DSC_0069.jpg"
+  ];
+  
+  let currentIndex = 1;
+  
+  function preloadImages() {
+    for ( let i = 2; i < images.length; i++ ) {
+      let img = new Image();
+      img.src = images[i];
+    };
+  };
+  
+  function changeBackground() {
+    document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+  
+  changeBackground(); // change background immediatly on pafe load
+  preloadImages();  // more fluently changes of images with preload
+  
+  setInterval(changeBackground, 3000); // Run the function every 10 seconds
