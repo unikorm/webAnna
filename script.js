@@ -7,6 +7,8 @@ let backButton = document.getElementsByClassName("buttons")[0].getElementsByTagN
 let aboutLink = document.getElementById("about")
 let aboutContainer = document.querySelector(".aboutContainer");
 let bodyElement = document.querySelector("body");
+let menuLink = document.getElementById("menuIcon");
+let menuContainer = document.querySelector(".menuContainer");
 // console.log();
 
 
@@ -61,6 +63,25 @@ document.addEventListener("click", function(event) {
   };
 });
 
+// Open Menu section when Menu Icon svg is clicked
+if (menuLink) {
+  menuLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    openMenuSection();
+  });
+};
+
+// Close Menu section when is click outside of it
+document.addEventListener("click", function(event) {
+  let targetElement = event.target;
+
+  if (menuContainer.style.display = "flex" && menuContainer.contains(targetElement) && !targetElement.closest(".menuContent")) {
+    closeMenuSection();
+  };
+});
+
+
+
 
 
 
@@ -95,31 +116,46 @@ function closeAboutSection() {
   bodyElement.style.backdropFilter = null;
 };
 
+// Function to open Menu section
+function openMenuSection() {
+  menuContainer.style.display = "flex";
+  mainContainer.style.display = "none";
+  bodyElement.style.backdropFilter = "blur(5px)";
+}
 
-   // Function to change background image constantly
-   let images = [
-    "/photo/DSC_1042.JPG",
-    "/photo/DSC_0187-2.JPG",
-    "/photo/DSC_0095.JPG",
-    "/photo/DSC_1202.JPG",
-    "/photo/DSC_0069.jpg"
-  ];
-  
-  let currentIndex = 1;
-  
-  function preloadImages() {
-    for ( let i = 2; i < images.length; i++ ) {
-      let img = new Image();
-      img.src = images[i];
-    };
+// Function to close Menu section
+function closeMenuSection() {
+  mainContainer.style.display = "block";
+  menuContainer.style.display = "none"
+  bodyElement.style.backdropFilter = null;
+}
+
+
+
+ // Function to change background image constantly
+ let images = [
+  "/photo/DSC_1042.JPG",
+  "/photo/DSC_0187-2.JPG",
+  "/photo/DSC_0095.JPG",
+  "/photo/DSC_1202.JPG",
+  "/photo/DSC_0069.jpg"
+];
+
+let currentIndex = 1;
+
+function preloadImages() {
+  for ( let i = 2; i < images.length; i++ ) {
+    let img = new Image();
+    img.src = images[i];
   };
-  
-  function changeBackground() {
-    document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
-    currentIndex = (currentIndex + 1) % images.length;
-  }
-  
-  changeBackground(); // change background immediatly on pafe load
-  preloadImages();  // more fluently changes of images with preload
-  
-  setInterval(changeBackground, 10000); // Run the function every 10 seconds
+};
+
+function changeBackground() {
+  document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
+  currentIndex = (currentIndex + 1) % images.length;
+}
+
+changeBackground(); // change background immediatly on pafe load
+preloadImages();  // more fluently changes of images with preload
+
+setInterval(changeBackground, 10000); // Run the function every 10 seconds
