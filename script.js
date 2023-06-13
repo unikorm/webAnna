@@ -24,7 +24,7 @@ if (contactLink) {
 
 // Close the contact form when Esc key is pressed
 document.addEventListener("keydown", function(event) {
-  if (event.key === 'Escape') {
+  if (event.key === "Escape") {
     closeContactForm();
   };
 });
@@ -33,7 +33,7 @@ document.addEventListener("keydown", function(event) {
 document.addEventListener("click", function(event) {
   let targetElement = event.target;
 
-  if (contactContainer.style.display = "flex" && contactContainer.contains(targetElement) && !targetElement.closest(".contact-form")) {
+  if (contactContainer.style.display === "flex" && contactContainer.contains(targetElement) && !targetElement.closest(".contact-form")) {
     closeContactForm();
   };  
 });
@@ -58,12 +58,19 @@ if (aboutLink) {
 document.addEventListener("click", function(event) {
   let targetElement = event.target;
 
-  if (aboutContainer.style.display = "flex" && aboutContainer.contains(targetElement) && !targetElement.closest(".aboutContent")) {
+  if (aboutContainer.style.display === "flex" && aboutContainer.contains(targetElement) && !targetElement.closest(".aboutContent")) {
     closeAboutSection();
   };
 });
 
-// Open Menu section when Menu Icon svg is clicked
+// Close About section when "Esc" key is clicked
+document.addEventListener("keydown", function(event) {
+  if(event.key === "Escape") {
+    closeAboutSection();
+  };
+});
+
+// Open Menu section when Menu Icon svg is pressed
 if (menuLink) {
   menuLink.addEventListener("click", function(event) {
     event.preventDefault();
@@ -75,7 +82,14 @@ if (menuLink) {
 document.addEventListener("click", function(event) {
   let targetElement = event.target;
 
-  if (menuContainer.style.display = "flex" && menuContainer.contains(targetElement) && !targetElement.closest(".languageSelect")) {
+  if (menuContainer.style.display === "flex" && menuContainer.contains(targetElement) && !targetElement.closest(".languageSelect")) {
+    closeMenuSection();
+  };
+});
+
+// Close Menu section when "Esc" key is pressed
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
     closeMenuSection();
   };
 });
@@ -92,7 +106,7 @@ document.addEventListener("click", function(event) {
 function openContactForm() {
   contactContainer.style.display = "flex";
   mainContainer.style.display = "none";
-  bodyElement.style.backdropFilter = "blur(5px)"
+  bodyElement.style.backdropFilter = "blur(5px)";
 };
 
 // Function to close the contact form
@@ -106,7 +120,7 @@ function closeContactForm() {
 function openAboutSection() {
   aboutContainer.style.display = "flex";
   mainContainer.style.display = "none";
-  bodyElement.style.backdropFilter = "blur(5px)"
+  bodyElement.style.backdropFilter = "blur(5px)";
 };
 
 // Function to close About section
@@ -121,14 +135,14 @@ function openMenuSection() {
   menuContainer.style.display = "flex";
   mainContainer.style.display = "none";
   bodyElement.style.backdropFilter = "blur(5px)";
-}
+};
 
 // Function to close Menu section
 function closeMenuSection() {
   mainContainer.style.display = "block";
   menuContainer.style.display = "none"
   bodyElement.style.backdropFilter = null;
-}
+};
 
 
 
@@ -153,7 +167,7 @@ function preloadImages() {
 function changeBackground() {
   document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
   currentIndex = (currentIndex + 1) % images.length;
-}
+};
 
 changeBackground(); // change background immediatly on pafe load
 preloadImages();  // more fluently changes of images with preload
