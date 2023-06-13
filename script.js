@@ -173,3 +173,6 @@ changeBackground(); // change background immediatly on pafe load
 preloadImages();  // more fluently changes of images with preload
 
 setInterval(changeBackground, 10000); // Run the function every 10 seconds
+
+
+// Code here is for change of languages
