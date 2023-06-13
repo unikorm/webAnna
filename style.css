@@ -298,12 +298,35 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width: 55em;
+  min-width: 40em;
 }
 
 .aboutContent img {
   width: 13em;
   height: 13em;
   border-radius: 50%;
+}
+
+.aboutContent h2 {
+  font: 2em "Helvetica", sans-serif;
+  letter-spacing: .04em;
+  margin: .7em 0;
+}
+
+.aboutContent p {
+  font: 1.1em "Helvetica Light", sans-serif;
+  letter-spacing: .07em;
+  line-height: 1.3em;
+}
+
+.aboutContent p:nth-of-type(2),
+.aboutContent p:nth-of-type(3) {
+  margin: 0 0 1em 0;
+}
+
+.author-info {
+  text-align: center;
 }
 
 
