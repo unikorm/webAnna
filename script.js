@@ -175,4 +175,27 @@ preloadImages();  // more fluently changes of images with preload
 setInterval(changeBackground, 10000); // Run the function every 10 seconds
 
 
+
+
 // Code here is for change of languages
+
+document.getElementById("sk").addEventListener("click", function() {
+  loadLanguage("sk");
+});
+
+document.getElementById("en").addEventListener("click", function() {
+  loadLanguage("en");
+});
+
+document.getElementById("ua").addEventListener("click", function() {
+  loadLanguage("ua");
+});
+
+function loadLanguage(lang) {
+  fetch("translations/" + lang + ".json")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("portfolio").textContent = data.portfolio;
+  })
+  .catch(error => console.error(error));
+}
