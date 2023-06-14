@@ -1,5 +1,14 @@
 /* General Styles */
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
   /* Set up background image on whole site */
 
   body {
@@ -91,7 +100,7 @@
   /* Set up location, size and logiv of main section */
   main {
     display: flex;
-    min-height: 85vh;
+    min-height: 90vh;
   }
 
   .mainText {
@@ -339,6 +348,9 @@
   flex-direction: column;
   width: 10em;
 }
+
+
+
 
 
 

@@ -74,7 +74,11 @@ document.addEventListener("keydown", function(event) {
 if (menuLink) {
   menuLink.addEventListener("click", function(event) {
     event.preventDefault();
-    openMenuSection();
+    if (menuContainer.style.display !== "flex") {
+      openMenuSection();
+    } else {
+      closeMenuSection();
+    };
   });
 };
 
@@ -130,6 +134,7 @@ function closeAboutSection() {
   bodyElement.style.backdropFilter = null;
 };
 
+
 // Function to open Menu section
 function openMenuSection() {
   menuContainer.style.display = "flex";
@@ -139,9 +144,14 @@ function openMenuSection() {
 
 // Function to close Menu section
 function closeMenuSection() {
-  mainContainer.style.display = "block";
-  menuContainer.style.display = "none"
-  bodyElement.style.backdropFilter = null;
+  menuContainer.style.animation = "fadeOut 0.6s cubic-bezier";
+  menuContainer.style.animationFillMode = "forwards";
+
+  setTimeout(() => {
+    mainContainer.style.display = "block";
+    menuContainer.style.display = "none";
+    bodyElement.style.backdropFilter = null;
+  }, 10);
 };
 
 
@@ -210,7 +220,7 @@ function loadLanguage(lang) {
     document.getElementById("sk").textContent = data.sk;
     document.getElementById("ua").textContent = data.ua;
     document.getElementById("en").textContent = data.en;
-    
+
   })
   .catch(error => console.error(error));
 }
