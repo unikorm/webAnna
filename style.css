@@ -138,11 +138,7 @@
 
   /* styles of contact page */
 
-/* Reset default form styles */
-#contactForm {
-  margin: 0;
-  padding: 0;
-}
+
 
 /* Set font and color */
 .contactContainer,
@@ -185,118 +181,80 @@
   justify-content: center;
 }
 
-
-/* Set form container styles */
+/* Styles for contact form */
 .contact-form {
-  background-image: linear-gradient(135deg, #dabfa4 0%, #dfae87 100%);
-  padding: 2em;
-  border-radius: 1em;
-  max-width: 30em;
-  width: 100%;
+  max-width: 25em;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-/* Set otherContacts styles */
-.otherContacts {
-  display: flex;
-  justify-content: center;
-
-}
-
-
-/* Set heading styles */
 .contact-form h2 {
-  font-size: 2em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.25em;
 }
 
-/* Set label styles */
+.contact-form form {
+  background-color: transparent;
+  border-radius: 0.625em;
+  padding: 1.25em;
+  box-sizing: border-box;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.25em;
+}
+
 .contact-form label {
   display: block;
-  font-size: 1.2em;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.3125em;
+  font-weight: bold;
 }
 
-/* Set input and textarea styles */
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-  width: 94%;
-  padding: 0.7em;
-  border: 1px solid #d2c8c8;
-  border-radius: 4px;
-  font-size: 1em;
+  width: 100%;
+  padding: 0.625em;
+  border: 0.0625em solid #ccc;
+  border-radius: 0.3125em;
+  box-sizing: border-box;
 }
 
-/* Set button styles */
+.contact-form textarea {
+  height: 7.5em;
+}
+
+.contact-form .form-group.buttons {
+  text-align: center;
+}
+
 .contact-form button {
-  padding: 0.6em 1.3em;
-  background-color: #d17d40;
-  color: #fff;
+  padding: 0.625em 1.25em;
+  margin: 0 0.3125em;
   border: none;
-  border-radius: 4px;
-  font-size: 1.1em;
+  border-radius: 0.3125em;
+  background-color: #ccc;
+  color: #fff;
   cursor: pointer;
 }
 
-.contact-form button:hover {
-  background-color: #f4a872;
+.contact-form .otherContacts {
+  margin-top: 1.25em;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.contact-form button a:link {
+.contact-form .otherContacts a {
+  display: block;
+  margin-bottom: 0.625em;
+  color: #000;
   text-decoration: none;
 }
 
-/* Style on focus */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #666;
-}
-
-/* Set additional contact details styles */
-.contact-form div {
-  margin-top: 1.4em;
-}
-
-.contact-form p {
-  font-size: .8em;
-  margin: .7em 0;
-}
-
-.otherContacts a,
-.otherContacts a:link,
-.otherContacts a:hover,
-.otherContacts a:focus,
-.otherContacts a:active  {
-  text-decoration: none !important;
-}
-
-.otherContacts a:first-child {
-  margin-right: 3em;
-}
-
-.contact-form a {
-  color: #ffffff;
+.contact-form .otherContacts p {
+  margin: 0;
 }
 
 .contact-form a:hover {
   text-decoration: underline;
-}
-
-/* Set textarea styles */
-.contact-form textarea {
-  height: 8em;
-  resize: vertical;
-  color: #161715;
-}
-
-.contact-form input {
-  color: #161715;
 }
 
 
