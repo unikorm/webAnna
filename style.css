@@ -136,7 +136,6 @@
 
 
 
-
   /* styles of contact page */
 
 /* Reset default form styles */
@@ -146,7 +145,7 @@
 }
 
 /* Set font and color */
-.container,
+.contactContainer,
 .contact-form h2,
 .contact-form label,
 .contact-form input,
@@ -155,7 +154,7 @@
 .contact-form p,
 .contact-form a {
   font-family: Helvetica, sans-serif;
-  color: #b68058;
+  color: #fff5d7;
 }
 
 /* Set container styles */
