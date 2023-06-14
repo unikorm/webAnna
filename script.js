@@ -74,7 +74,7 @@ document.addEventListener("keydown", function(event) {
 if (menuLink) {
   menuLink.addEventListener("click", function(event) {
     event.preventDefault();
-    if (menuContainer.style.display !== "flex") {
+    if (getComputedStyle(menuContainer).display === "none") {
       openMenuSection();
     } else {
       closeMenuSection();
@@ -86,7 +86,7 @@ if (menuLink) {
 document.addEventListener("click", function(event) {
   let targetElement = event.target;
 
-  if (menuContainer.style.display === "flex" && menuContainer.contains(targetElement) && !targetElement.closest(".languageSelect")) {
+  if (getComputedStyle(menuContainer).display === "flex" && menuContainer.contains(targetElement) && !targetElement.closest(".languageSelect")) {
     closeMenuSection();
   };
 });
@@ -144,7 +144,7 @@ function openMenuSection() {
 
 // Function to close Menu section
 function closeMenuSection() {
-  menuContainer.style.animation = "fadeOut 0.6s cubic-bezier";
+  menuContainer.style.animationTimingFunction = "fadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
   menuContainer.style.animationFillMode = "forwards";
 
   setTimeout(() => {
