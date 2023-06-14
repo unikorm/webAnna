@@ -181,14 +181,17 @@ setInterval(changeBackground, 10000); // Run the function every 10 seconds
 
 document.getElementById("sk").addEventListener("click", function() {
   loadLanguage("sk");
+  closeMenuSection();
 });
 
 document.getElementById("en").addEventListener("click", function() {
   loadLanguage("en");
+  closeMenuSection();
 });
 
 document.getElementById("ua").addEventListener("click", function() {
   loadLanguage("ua");
+  closeMenuSection();
 });
 
 function loadLanguage(lang) {
@@ -196,6 +199,18 @@ function loadLanguage(lang) {
   .then(response => response.json())
   .then(data => {
     document.getElementById("portfolio").textContent = data.portfolio;
+    document.getElementById("about").textContent = data.about;
+    document.getElementById("contact").textContent = data.contact;
+    document.getElementById("mainName").textContent = data.mainName;
+    document.getElementById("mainDescription").textContent = data.mainDescription;
+    document.getElementById("aboutName").textContent = data.aboutName;
+    document.getElementById("authorInfo1").textContent = data.authorInfo1;
+    document.getElementById("authorInfo2").textContent = data.authorInfo2;
+    document.getElementById("authorInfo3").textContent = data.authorInfo3;
+    document.getElementById("sk").textContent = data.sk;
+    document.getElementById("ua").textContent = data.ua;
+    document.getElementById("en").textContent = data.en;
+    
   })
   .catch(error => console.error(error));
 }
