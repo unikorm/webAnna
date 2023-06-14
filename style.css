@@ -144,14 +144,23 @@
 .contactContainer,
 .contact-form h2,
 .contact-form label,
-.contact-form input,
-.contact-form textarea,
 .contact-form button,
 .contact-form p,
 .contact-form a {
-  font-family: Helvetica, sans-serif;
+  font: "Helvetica Light", sans-serif;
   color: #fff5d7;
 }
+
+.contact-form h2 {
+  font: 1.7em "Helvetica", sans-serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: "Helvetica Light", sans-serif;
+  color: #242421;
+}
+
 
 /* Set container styles */
 .contactContainer {
@@ -183,19 +192,22 @@
 
 /* Styles for contact form */
 .contact-form {
-  max-width: 25em;
+  width: 35em;
   margin: 0 auto;
   text-align: center;
-  font-family: Helvetica, Arial, sans-serif;
+}
+
+.form-group {
+  text-align: left;
 }
 
 .contact-form h2 {
-  margin-bottom: 1.25em;
+  margin-bottom: 1.7em;
 }
 
 .contact-form form {
   background-color: transparent;
-  border-radius: 0.625em;
+  border-radius: 1em;
   padding: 1.25em;
   box-sizing: border-box;
 }
@@ -214,18 +226,23 @@
 .contact-form input[type="email"],
 .contact-form textarea {
   width: 100%;
-  padding: 0.625em;
-  border: 0.0625em solid #ccc;
-  border-radius: 0.3125em;
+  padding: 0.3em;
+  border: .1 solid #ccc;
+  border-radius: .9em;
   box-sizing: border-box;
 }
 
 .contact-form textarea {
-  height: 7.5em;
+  height: 19em;
+}
+
+input {
+  height: 2.5em;
 }
 
 .contact-form .form-group.buttons {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .contact-form button {
