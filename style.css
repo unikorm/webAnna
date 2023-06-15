@@ -218,8 +218,14 @@
   height: 13em;
 }
 
-input {
+.contact-form input {
   height: 2.5em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: .1em solid #fff5d7;
+  border-color: #fff5d7;
 }
 
 .contact-form .form-group.buttons {
@@ -236,25 +242,24 @@ input {
   cursor: pointer;
 }
 
-.otherContacts {
+.contact-form .otherContacts {
   margin-top: .5em;
   display: flex;
   justify-content: space-around;
 }
 
-.contact-form .otherContacts a {
-  display: block;
-  color: #000;
-  text-decoration: none;
+.otherContacts a,
+.otherContacts a:link,
+.otherContacts a:hover,
+.otherContacts a:focus,
+.otherContacts a:active  {
+  text-decoration: none !important;
 }
 
 .contact-form .otherContacts p {
   margin: 0;
 }
 
-.contact-form a:hover {
-  text-decoration: underline;
-}
 
 
 /* Set form "About" section */
