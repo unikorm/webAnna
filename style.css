@@ -158,7 +158,13 @@
 .contact-form input,
 .contact-form textarea {
   font: "Helvetica Light", sans-serif;
-  color: #242421;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: transparent;
+  border: 1px solid #fff5d7;
 }
 
 
@@ -224,6 +230,7 @@
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
+.contact-form input[type="phone"],
 .contact-form textarea {
   width: 100%;
   padding: 0.3em;
