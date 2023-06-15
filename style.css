@@ -61,6 +61,7 @@
   .navbar ul  li {
     font: 1.1em "Helvetica Light", sans-serif;
     letter-spacing: .1em;
+    font-weight: 400;
   }
 
   /* Set up location and logic of navbar */
@@ -119,12 +120,14 @@
   .blockOfText h1 {
     font: 4em Helvetica, sans-serif;
     margin: .9em 0em;
+    font-weight: 400;
   }
 
   .blockOfText p {
     font: 1.3em "Helvetica Light", sans-serif;
     letter-spacing: .4em;
     margin: 0 0 0 .5em;
+    font-weight: 300;
   }
 
 
@@ -177,6 +180,7 @@
 .contact-form h2 {
   font: 2em "Helvetica", sans-serif;
   margin: .6em 0 .7em 0;
+  font-weight: bold;
 }
 
 .contact-form {
@@ -195,9 +199,7 @@
 }
 
 .contact-form label {
-  display: block;
-  margin-bottom: 0.3125em;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 .contact-form input[type="text"],
@@ -216,10 +218,12 @@
 
 .contact-form textarea {
   height: 13em;
+  margin: .2em 0 0 0;
 }
 
 .contact-form input {
   height: 2.5em;
+  margin: .1em 0 0 0;
 }
 
 .contact-form input:focus,
@@ -282,12 +286,14 @@
   font: 2em "Helvetica", sans-serif;
   letter-spacing: .04em;
   margin: .7em 0;
+  font-weight: 500;
 }
 
 .aboutContent p {
   font: 1.1em "Helvetica Light", sans-serif;
   letter-spacing: .07em;
   line-height: 1.3em;
+  font-weight: 300;
 }
 
 .aboutContent p:nth-of-type(2),
@@ -308,6 +314,11 @@
   justify-content: center;
   flex-direction: column;
   width: 10em;
+}
+
+.languageSelect p {
+  font-weight: 400;
+  font: 1.1em "Helvetica Light", sans-serif
 }
 
 
