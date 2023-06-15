@@ -220,7 +220,13 @@ function loadLanguage(lang) {
     document.getElementById("sk").textContent = data.sk;
     document.getElementById("ua").textContent = data.ua;
     document.getElementById("en").textContent = data.en;
-
+    document.getElementById("contactMeForm").textContent = data.contactMeForm;
+    document.getElementById("nameContactForm").textContent = data.nameContactForm;
+    document.getElementById("emailContactForm").textContent = data.emailContactForm;
+    document.getElementById("phoneContactForm").textContent = data.phoneContactForm;
+    document.getElementById("messageContactForm").textContent = data.messageContactForm;
+    document.getElementById("backButton").textContent = data.backButton;
+    document.getElementById("submitButton").textContent = data.submitButton;
   })
   .catch(error => console.error(error));
 }

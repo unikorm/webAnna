@@ -208,13 +208,13 @@
 }
 
 .contact-form h2 {
-  margin-bottom: 1.7em;
+  margin-bottom: 1em;
+  font-size: 2em;
 }
 
 .contact-form form {
   background-color: transparent;
   border-radius: 1em;
-  padding: 1.25em;
   box-sizing: border-box;
 }
 
@@ -249,7 +249,7 @@ input {
 
 .contact-form .form-group.buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .contact-form button {
@@ -262,8 +262,10 @@ input {
   cursor: pointer;
 }
 
-.contact-form .otherContacts {
-  margin-top: 1.25em;
+.otherContacts {
+  margin-top: .5em;
+  display: flex;
+  justify-content: space-around;
 }
 
 .contact-form .otherContacts a {
