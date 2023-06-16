@@ -211,6 +211,7 @@ function loadLanguage(lang) {
     document.getElementById("portfolio").textContent = data.portfolio;
     document.getElementById("about").textContent = data.about;
     document.getElementById("contact").textContent = data.contact;
+    document.getElementById("pricing").textContent = data.pricing;
     document.getElementById("mainName").textContent = data.mainName;
     document.getElementById("mainDescription").textContent = data.mainDescription;
     document.getElementById("aboutName").textContent = data.aboutName;
