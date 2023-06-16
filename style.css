@@ -315,17 +315,19 @@
 
 /* Set Menu icon section */
 
-.languageSelect {
+.menuSelect {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 10em;
+  list-style-type: none;
 }
 
-.languageSelect p {
+.menuSelect li {
   font-weight: 400;
-  font: 1.1em "Helvetica Light", sans-serif
+  font: 1.1em "Helvetica Light", sans-serif;
+  cursor: pointer;
 }
 
 

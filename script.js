@@ -173,7 +173,7 @@ function closeMenuSection() {
   bodyElement.style.backdropFilter = null;
 };
 
-// Function to close Menu section slowly, idk I use it in final
+// Function to close Menu section slowly, idk I use it in final, probably not
 function closeMenuSectionSlowly() {
   menuContainer.style.animationTimingFunction = "fadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
   menuContainer.style.animationFillMode = "forwards";
@@ -244,20 +244,18 @@ setInterval(changeBackground, 10000); // Run the function every 10 seconds
 
 // Code here is for change of languages
 
-document.getElementById("sk").addEventListener("click", function() {
+document.getElementById("sk").addEventListener("click", function(event) {
   loadLanguage("sk");
-  //closeMenuSectionSlowly();
 });
 
-document.getElementById("en").addEventListener("click", function() {
+document.getElementById("en").addEventListener("click", function(event) {
   loadLanguage("en");
-  //closeMenuSectionSlowly();
 });
 
-document.getElementById("ua").addEventListener("click", function() {
+document.getElementById("ua").addEventListener("click", function(event) {
   loadLanguage("ua");
-  //closeMenuSectionSlowly();
 });
+
 
 function loadLanguage(lang) {
   fetch("translations/" + lang + ".json")
