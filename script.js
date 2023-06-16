@@ -110,6 +110,7 @@ document.addEventListener("keydown", function(event) {
 function openContactForm() {
   contactContainer.style.display = "flex";
   mainContainer.style.display = "none";
+  menuContainer.style.display = "none";
   bodyElement.style.backdropFilter = "blur(5px)";
 };
 
@@ -144,17 +145,28 @@ function openMenuSection() {
 
 // Function to close Menu section
 function closeMenuSection() {
-  menuContainer.style.animationTimingFunction = "fadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-  menuContainer.style.animationFillMode = "forwards";
 
-  setTimeout(() => {
-    mainContainer.style.display = "block";
-    menuContainer.style.display = "none";
-    bodyElement.style.backdropFilter = null;
-  }, 10);
 };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// another dimension
 
  // Function to change background image constantly
  let images = [
