@@ -3,12 +3,13 @@
 let contactContainer = document.querySelector(".contactContainer");
 let mainContainer = document.querySelector(".mainContainer");
 let contactLink = document.getElementById("contact");
-let backButton = document.getElementsByClassName("buttons")[0].getElementsByTagName("button")[1];
+let backButton = document.getElementById("backButton")
 let aboutLink = document.getElementById("about")
 let aboutContainer = document.querySelector(".aboutContainer");
 let bodyElement = document.querySelector("body");
 let menuLink = document.getElementById("menuIcon");
 let menuContainer = document.querySelector(".menuContainer");
+let submitButton = document.getElementById("submitButton");
 // console.log();
 
 
@@ -47,6 +48,7 @@ if (backButton) {
   backButton.addEventListener("click", function(event) {
     event.preventDefault();
     closeContactForm();
+    //event.stopPropagation();
   });
 };
 
@@ -284,3 +286,16 @@ function loadLanguage(lang) {
   })
   .catch(error => console.error(error));
 }
+
+
+
+
+
+
+
+
+// code for http request to server side from contact form, etc.
+submitButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  // here will be code for handling and design to send us a user message
+});
