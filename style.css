@@ -169,8 +169,7 @@
 
 
 /* Set font and color */
-.contact-form label,
-.contact-form button {
+.contact-form label {
   font: "Helvetica Light", sans-serif;
 }
 
@@ -184,7 +183,7 @@
   width: 37em;
   margin: 0 auto;
   text-align: center;
-  padding: 1.5em;
+  padding: 2em;
 }
 
 .form-group {
@@ -192,7 +191,7 @@
 }
 
 .contact-form .form-group {
-  margin-bottom: 1.25em;
+  margin-bottom: 1em;
 }
 
 .contact-form label {
@@ -217,6 +216,7 @@
 .contact-form textarea {
   height: 12em;
   margin: .2em 0 0 0;
+  resize: none;
 }
 
 .contact-form input {
@@ -236,12 +236,20 @@
 }
 
 .contact-form button {
+  font: 1em "Helvetica", sans-serif;
+  font-weight: 400;
   padding: 0.6em 1.2em;
   margin: 0 0.3em;
   border: none;
-  border-radius: 0.3em;
+  border-radius: 0.5em;
   color: #fff5d7;
   cursor: pointer;
+  background-color: #fff5d743;
+}
+
+.buttons button:hover {
+  background-color: #fff5d7;
+  color: #86B049;
 }
 
 .contact-form .otherContacts {
