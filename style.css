@@ -320,14 +320,31 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 10em;
+  width: 14em;
   list-style-type: none;
+  padding: 0;
+}
+
+.languageSelect {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+  width: 10em;
+  padding: 0;
+  margin: 2em 0 0 0;
 }
 
 .menuSelect li {
-  font-weight: 400;
-  font: 1.1em "Helvetica Light", sans-serif;
+  font-weight: 300;
+  font: 1.3em "Helvetica Light", sans-serif;
   cursor: pointer;
+  margin: .5em 0 0 0;
+}
+
+.languageSelect li {
+  font-size: 1em;
+  color: #fff5d787;
 }
 
 
