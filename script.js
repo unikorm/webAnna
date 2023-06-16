@@ -12,7 +12,11 @@ let menuContainer = document.querySelector(".menuContainer");
 // console.log();
 
 
+
+
+
 // Event Handlers ######@~$&*
+
 
 // Open the contact form when "Contact" link is clicked
 if (contactLink) {
@@ -46,6 +50,11 @@ if (backButton) {
   });
 };
 
+
+
+
+
+
 // Open About section, when "About" link is clicked
 if (aboutLink) {
   aboutLink.addEventListener("click", function(event) {
@@ -70,15 +79,16 @@ document.addEventListener("keydown", function(event) {
   };
 });
 
+
+
+
+
+
 // Open Menu section when Menu Icon svg is pressed
 if (menuLink) {
   menuLink.addEventListener("click", function(event) {
     event.preventDefault();
-    if (getComputedStyle(menuContainer).display === "none") {
-      openMenuSection();
-    } else {
-      closeMenuSection();
-    };
+    openMenuSection();
   });
 };
 
@@ -106,6 +116,7 @@ document.addEventListener("keydown", function(event) {
 
 // Functions ######@~$&*
 
+
 // Function to open the contact form
 function openContactForm() {
   contactContainer.style.display = "flex";
@@ -121,10 +132,16 @@ function closeContactForm() {
   bodyElement.style.backdropFilter = null;
 };
 
+
+
+
+
+
 // Function to open About section 
 function openAboutSection() {
   aboutContainer.style.display = "flex";
   mainContainer.style.display = "none";
+  menuContainer.style.display = "none";
   bodyElement.style.backdropFilter = "blur(5px)";
 };
 
@@ -136,6 +153,10 @@ function closeAboutSection() {
 };
 
 
+
+
+
+
 // Function to open Menu section
 function openMenuSection() {
   menuContainer.style.display = "flex";
@@ -145,8 +166,28 @@ function openMenuSection() {
 
 // Function to close Menu section
 function closeMenuSection() {
-
+  mainContainer.style.display = "block";
+  menuContainer.style.display = "none";
+  bodyElement.style.backdropFilter = null;
 };
+
+// Function to close Menu section slowly, idk I use it in final
+function closeMenuSectionSlowly() {
+  menuContainer.style.animationTimingFunction = "fadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+  menuContainer.style.animationFillMode = "forwards";
+
+  setTimeout(() => {
+    mainContainer.style.display = "block";
+    menuContainer.style.display = "none";
+    bodyElement.style.backdropFilter = null;
+  }, 10);
+};
+
+
+
+
+
+
 
 
 
@@ -203,17 +244,17 @@ setInterval(changeBackground, 10000); // Run the function every 10 seconds
 
 document.getElementById("sk").addEventListener("click", function() {
   loadLanguage("sk");
-  closeMenuSection();
+  //closeMenuSectionSlowly();
 });
 
 document.getElementById("en").addEventListener("click", function() {
   loadLanguage("en");
-  closeMenuSection();
+  //closeMenuSectionSlowly();
 });
 
 document.getElementById("ua").addEventListener("click", function() {
   loadLanguage("ua");
-  closeMenuSection();
+  //closeMenuSectionSlowly();
 });
 
 function loadLanguage(lang) {
