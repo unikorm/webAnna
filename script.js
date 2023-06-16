@@ -98,7 +98,7 @@ if (menuLink) {
 document.addEventListener("click", function(event) {
   let targetElement = event.target;
 
-  if (getComputedStyle(menuContainer).display === "flex" && menuContainer.contains(targetElement) && !targetElement.closest(".languageSelect")) {
+  if (getComputedStyle(menuContainer).display === "flex" && menuContainer.contains(targetElement) && !targetElement.closest(".menuSelect")) {
     closeMenuSection();
   };
 });
