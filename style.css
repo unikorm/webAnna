@@ -115,6 +115,7 @@
     font: 4em Helvetica, sans-serif;
     margin: .9em 0em;
     font-weight: 400;
+    cursor: default;
   }
 
   .blockOfText p {
@@ -122,6 +123,7 @@
     letter-spacing: .4em;
     margin: 0 0 0 .5em;
     font-weight: 300;
+    cursor: default;
   }
 
 
@@ -294,6 +296,7 @@
   letter-spacing: .04em;
   margin: .7em 0;
   font-weight: 500;
+  cursor: default;
 }
 
 .aboutContent p {
@@ -301,6 +304,7 @@
   letter-spacing: .07em;
   line-height: 1.3em;
   font-weight: 300;
+  cursor: default;
 }
 
 .aboutContent p:nth-of-type(2),
