@@ -170,11 +170,8 @@
 
 /* Set font and color */
 .contact-form label,
-.contact-form button,
-.contact-form p,
-.contact-form a {
+.contact-form button {
   font: "Helvetica Light", sans-serif;
-  color: #fff5d7;
 }
 
 .contact-form h2 {
@@ -212,12 +209,13 @@
   box-sizing: border-box;
   background-color: transparent;
   border: 1px solid #fff5d7;
-  font: 1em "Helvetica Light", sans-serif;
+  font: 1.1em "Helvetica Light", sans-serif;
   color: #ffffff;
+  font-weight: 300;
 }
 
 .contact-form textarea {
-  height: 13em;
+  height: 12em;
   margin: .2em 0 0 0;
 }
 
@@ -238,11 +236,11 @@
 }
 
 .contact-form button {
-  padding: 0.625em 1.25em;
-  margin: 0 0.3125em;
+  padding: 0.6em 1.2em;
+  margin: 0 0.3em;
   border: none;
-  border-radius: 0.3125em;
-  color: #fff;
+  border-radius: 0.3em;
+  color: #fff5d7;
   cursor: pointer;
 }
 
@@ -251,6 +249,12 @@
   display: flex;
   justify-content: space-around;
 }
+
+.contact-form p {
+  font: .9em "Helvetica Light", sans-serif;
+  color: #fff5d787;
+  font-weight: 200;
+} 
 
 .otherContacts a,
 .otherContacts a:link,

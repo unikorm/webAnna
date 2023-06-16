@@ -10,5 +10,12 @@
     "aboutName": "Anna Bahal",
     "authorInfo1": "Hello! My name is Anna, and I am deeply passionate about photography. Although I graduated from medical university, my true passion lies in the world of photography.",
     "authorInfo2": "In 2021, I began my photographic journey. I studied, took courses, and delved into the study of photography. For six months, I rejoiced in my successes, but then circumstances led me to move to Slovakia. Starting my path in photography in a new country proved to be a challenge, but I am ready to overcome all difficulties. I believe that true art is born out of love and dedication to one's craft. I strive to grow and improve to continue embodying my passion in every frame and make photography my permanent profession.",
-    "authorInfo3": "In every shot, I aim to capture life and energy. I photograph not just people, but their emotions and feelings. My shots come alive through natural light and the spontaneity of the moment. I strive to seize moments so that each photo sparkles with life."
+    "authorInfo3": "In every shot, I aim to capture life and energy. I photograph not just people, but their emotions and feelings. My shots come alive through natural light and the spontaneity of the moment. I strive to seize moments so that each photo sparkles with life.",
+    "contactMeForm": "Contact Me",
+    "nameContactForm": "Name",
+    "emailContactForm": "Email",
+    "phoneContactForm": "Phone No.",
+    "messageContactForm": "Message",
+    "backButton": "Back",
+    "submitButton": "Send"
  }
