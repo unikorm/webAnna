@@ -165,9 +165,6 @@
 
 
 /* Set font and color */
-.contact-form label {
-  font: "Helvetica Light", sans-serif;
-}
 
 .contact-form h2 {
   font: 2em "Helvetica", sans-serif;
@@ -175,6 +172,11 @@
   font-weight: bold;
   cursor: default;
 }
+
+.contact-form label {
+  font: 1.06em "Helvetica Light", sans-serif;
+  font-weight: 300;
+} 
 
 .contact-form {
   width: 37em;
@@ -189,10 +191,6 @@
 
 .contact-form .form-group {
   margin-bottom: 1em;
-}
-
-.contact-form label {
-  font-weight: 300;
 }
 
 .contact-form input[type="text"],
@@ -222,7 +220,11 @@
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form input:hover,
+.contact-form textarea:hover,
+.contact-form input:active,
+.contact-form textarea:active {
   outline: .1em solid #fff5d7;
   border-color: #fff5d7;
 }
@@ -340,15 +342,22 @@
 }
 
 .menuSelect li {
-  font-weight: 300;
-  font: 1.3em "Helvetica Light", sans-serif;
+  font-weight: 200;
+  font: 1.4em "Helvetica Light", sans-serif;
   cursor: pointer;
   margin: .5em 0 0 0;
+}
+
+.menuSelect li:hover,
+.menuSelect li:focus,
+.menuSelect li:active {
+  font-weight: 600;
 }
 
 .languageSelect li {
   font-size: 1em;
   color: #fff5d787;
+  font-weight: 200;
 }
 
 
