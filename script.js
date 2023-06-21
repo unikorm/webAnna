@@ -224,23 +224,44 @@ function closeMenuSectionSlowly() {
   ];
   
   let currentIndex = 1;
+  let preloadedImage = [];  // Array to store preloaded images
   
   function preloadImages() {
-    for ( let i = 2; i < images.length; i++ ) {
+    let promises = [];
+  
+    for (let i = 0; i < images.length; i++) {
       let img = new Image();
+      let promise = new Promise((resolve, reject) => {
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`Failed to load image: ${images[i]}`));
+      });
+  
       img.src = images[i];
+      promises.push(promise);
     };
+  
+    Promise.all(promises)
+      .then((loadedImages) => {
+        preloadedImages = loadedImages;
+        startRotation();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  function startRotation() {
+    changeBackground(); // change background immediatly on page load
+    setInterval(changeBackground, 10000); // Run the function every 10 seconds
   };
   
   function changeBackground() {
     document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
     currentIndex = (currentIndex + 1) % images.length;
   };
-  
-  changeBackground(); // change background immediatly on pafe load
-  preloadImages();  // more fluently changes of images with preload
-  
-  setInterval(changeBackground, 10000); // Run the function every 10 seconds
+
+  preloadImages();  // start preloading images
+
   
   
   
