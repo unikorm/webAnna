@@ -231,10 +231,10 @@ let mobileImages = [
 
 let currentIndex = 1;
 
-function preloadImages() {
-  for ( let i = 2; i < images.length; i++ ) {
+function preloadImagesFromList(imageList) {
+  for ( let i = 2; i < imageList.length; i++ ) {
     let img = new Image();
-    img.src = images[i];
+    img.src = imageList[i];
   };
 };
 
@@ -242,9 +242,9 @@ function changeBackground() {
   let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-  let ratio = (width / 11 * 9) - 40;
+  let ratio = (width / 11 * 9) - 10;
 
-  if (ratio > height) {
+  if (ratio < height) {
     document.body.style.backgroundImage = "url(" + mobileImages[currentIndex] + ")";
   } else {
     document.body.style.backgroundImage = "url(" + standartImages[currentIndex] + ")";
@@ -253,8 +253,16 @@ function changeBackground() {
   currentIndex = (currentIndex + 1) % standartImages.length;
 };
 
+function handleWindowResize() {
+  changeBackground();
+  preloadImagesFromList(standartImages.concat(mobileImages));
+};
+
+// initial setup
 changeBackground(); // change background immediatly on pafe load
-preloadImages();  // more fluently changes of images with preload
+preloadImagesFromList(standartImages.concat(mobileImages));  // more fluently changes of images with preload
+
+window.addEventListener("resize", handleWindowResize);
 
 setInterval(changeBackground, 10000); // Run the function every 10 seconds
 
