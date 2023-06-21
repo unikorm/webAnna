@@ -22,7 +22,7 @@ body {
 body {
   background-size: cover;
   background-attachment: fixed;
-  transition: background-image 0.4s ease;
+  transition: background-image .4s ease;
 }
 
 .darkenedBackground {
@@ -65,12 +65,12 @@ p {
 }
 
 .navbar-nav li {
-  padding: 0.15em 0 0 0;
+  padding: .15em 0 0 0;
   cursor: pointer;
 }
 
 .navbar-nav li:hover {
-  padding-left: 0.05em;
+  padding-left: .05em;
 }
 
 .navbar-soc li:not(:first-child) {
@@ -99,15 +99,15 @@ main {
 
 .blockOfText h1 {
   font: 4em Helvetica, sans-serif;
-  margin: 0.9em 0em;
+  margin: .9em 0em;
   font-weight: 400;
   cursor: default;
 }
 
 .blockOfText p {
   font: 1.3em "Helvetica Light", sans-serif;
-  letter-spacing: 0.4em;
-  margin: 0 0 0 0.5em;
+  letter-spacing: .4em;
+  margin: 0 0 0 .5em;
   font-weight: 300;
   cursor: default;
 }
@@ -117,7 +117,7 @@ main {
 .contactContainer,
 .aboutContainer,
 .menuContainer {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, .3);
   padding: 0;
   height: 100%;
   display: none;
@@ -129,7 +129,7 @@ main {
 
 .contact-form h2 {
   font: 2em "Helvetica", sans-serif;
-  margin: 0.3em 0 0.7em 0;
+  margin: .3em 0 .7em 0;
   font-weight: bold;
   cursor: default;
 }
@@ -159,8 +159,8 @@ main {
 .contact-form input[type="phone"],
 .contact-form textarea {
   width: 100%;
-  padding: 0.4em;
-  border-radius: 0.9em;
+  padding: .4em;
+  border-radius: .9em;
   box-sizing: border-box;
   background-color: transparent;
   border: 1px solid #fff5d7;
@@ -171,13 +171,13 @@ main {
 
 .contact-form textarea {
   height: 12em;
-  margin: 0.2em 0 0 0;
+  margin: .2em 0 0 0;
   resize: none;
 }
 
 .contact-form input {
   height: 2.5em;
-  margin: 0.1em 0 0 0;
+  margin: .1em 0 0 0;
 }
 
 .contact-form input:focus,
@@ -186,8 +186,9 @@ main {
 .contact-form textarea:hover,
 .contact-form input:active,
 .contact-form textarea:active {
-  outline: 0.1em solid #fff5d7;
+  outline: .1em solid #fff5d7;
   border-color: #fff5d7;
+  border-radius: .9em;
 }
 
 .contact-form .form-group.buttons {
@@ -198,10 +199,10 @@ main {
 .contact-form button {
   font: 1em "Helvetica", sans-serif;
   font-weight: 400;
-  padding: 0.6em 1.2em;
-  margin: 0 0.3em;
+  padding: .6em 1.2em;
+  margin: 0 .3em;
   border: none;
-  border-radius: 0.5em;
+  border-radius: .5em;
   color: #fff5d7;
   cursor: pointer;
   background-color: #fff5d743;
@@ -213,13 +214,13 @@ main {
 }
 
 .contact-form .otherContacts {
-  margin-top: 0.5em;
+  margin-top: .5em;
   display: flex;
   justify-content: space-around;
 }
 
 .contact-form p {
-  font: 0.9em "Helvetica Light", sans-serif;
+  font: .9em "Helvetica Light", sans-serif;
   color: #fff5d787;
   font-weight: 200;
 }
@@ -254,15 +255,15 @@ main {
 
 .aboutContent h2 {
   font: 2em "Helvetica", sans-serif;
-  letter-spacing: 0.04em;
-  margin: 0.7em 0;
+  letter-spacing: .04em;
+  margin: .7em 0;
   font-weight: 500;
   cursor: default;
 }
 
 .aboutContent p {
   font: 1.1em "Helvetica Light", sans-serif;
-  letter-spacing: 0.07em;
+  letter-spacing: .07em;
   line-height: 1.3em;
   font-weight: 300;
   cursor: default;
@@ -303,7 +304,7 @@ main {
   font-weight: 100;
   font: 1.4em "Helvetica Light", sans-serif;
   cursor: pointer;
-  margin: 0.5em 0 0 0;
+  margin: .5em 0 0 0;
 }
 
 .menuSelect li:hover,
