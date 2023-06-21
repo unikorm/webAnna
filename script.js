@@ -214,13 +214,19 @@ function closeMenuSectionSlowly() {
 
 // another dimension
 
- // Function to change background image constantly
- let images = [
+ // Function to change background image constantly + responsive
+ let standartImages = [
   "/photo/DSC_1042.JPG",
   "/photo/DSC_0187-2.JPG",
   "/photo/DSC_0095.JPG",
   "/photo/DSC_1202.JPG",
   "/photo/DSC_0069.jpg"
+];
+
+let mobileImages = [
+  "/photo/mobilePhoto1.jpeg",
+  "/photo/mobilePhoto2.jpeg",
+  "/photo/mobilePhoto3.jpeg"
 ];
 
 let currentIndex = 1;
@@ -233,8 +239,18 @@ function preloadImages() {
 };
 
 function changeBackground() {
-  document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
-  currentIndex = (currentIndex + 1) % images.length;
+  let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+  let ratio = (width / 11 * 9) - 40;
+
+  if (ratio > height) {
+    document.body.style.backgroundImage = "url(" + mobileImages[currentIndex] + ")";
+  } else {
+    document.body.style.backgroundImage = "url(" + standartImages[currentIndex] + ")";
+  };
+
+  currentIndex = (currentIndex + 1) % standartImages.length;
 };
 
 changeBackground(); // change background immediatly on pafe load
