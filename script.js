@@ -214,82 +214,36 @@ function closeMenuSectionSlowly() {
 
 // another dimension
 
- // Function to change background image constantly + responsive
- let standartImages = [
-  "/photo/DSC_1042.JPG",
-  "/photo/DSC_0187-2.JPG",
-  "/photo/DSC_0095.JPG",
-  "/photo/DSC_1202.JPG",
-  "/photo/DSC_0069.jpg"
-];
-
-let mobileImages = [
-  "/photo/mobilePhoto1.jpeg",
-  "/photo/mobilePhoto2.jpeg",
-  "/photo/mobilePhoto3.jpeg"
-];
-
-let currentIndex = 1;
-let currentImageTimeout;
-
-function preloadImagesFromList(imageList) {
-  for ( let i = 2; i < imageList.length; i++ ) {
-    let img = new Image();
-    img.src = imageList[i];
+  // Function to change background image constantly
+  let images = [
+    "/photo/DSC_1042.JPG",
+    "/photo/DSC_0187-2.JPG",
+    "/photo/DSC_0095.JPG",
+    "/photo/DSC_1202.JPG",
+    "/photo/DSC_0069.jpg"
+  ];
+  
+  let currentIndex = 1;
+  
+  function preloadImages() {
+    for ( let i = 2; i < images.length; i++ ) {
+      let img = new Image();
+      img.src = images[i];
+    };
   };
-};
-
-function changeBackground() {
-  let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-  let ratio = (width / 11 * 9) - 10;
-  let shouldChangeImage = false;
-
-  if (ratio < height && currentIndex < mobileImages.length) {
-    shouldChangeImage = true;
-  } else if (currentIndex < standartImages.length) {
-    shouldChangeImage = true;
-  }
-
-  if (shouldChangeImage) {
-    let currentImage;
-    if (ratio < height) {
-      currentImage = mobileImages[currentIndex];
-    } else {
-      currentImage = standartImages[currentIndex];
-    }
-
-    if (currentImage) {
-      document.body.style.backgroundImage = "url(" + currentImage + ")";
-    }
-
-    currentIndex = (currentIndex + 1) % Math.max(standartImages.length, mobileImages.length);
+  
+  function changeBackground() {
+    document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
+    currentIndex = (currentIndex + 1) % images.length;
   };
-};
-
-function startImagesChange() {
-  changeBackground();
-  currentImageTimeout = setInterval(startImagesChange, 10000);
-};
-
-function stopImagesChange() {
-  clearInterval(currentImageTimeout);
-};
-
-// initial setup
-preloadImagesFromList(standartImages.concat(mobileImages));  // more fluently changes of images with preload
-
-// Change background immediately on page load
-changeBackground();
-
-// Start periodic image change
-startImagesChange();
-
-// Event listeners for window resize
-window.addEventListener("beforeunload", stopImagesChange);
-window.addEventListener("resize", preloadImagesFromList.bind(null, standartImages.concat(mobileImages)));
-
+  
+  changeBackground(); // change background immediatly on pafe load
+  preloadImages();  // more fluently changes of images with preload
+  
+  setInterval(changeBackground, 10000); // Run the function every 10 seconds
+  
+  
+  
 
 
 

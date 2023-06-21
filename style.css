@@ -9,165 +9,127 @@
   }
 }
 
-  /* Set up background image on whole site */
+html,
+body {
+  height: 100%;
+  font-family: "Helvetica", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-  body {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-attachment: fixed;
-    transition: background-image 0.4s ease;
-  }
+body {
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background-image 0.4s ease;
+}
 
-  .darkenedBackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
-    z-index: -1;
-  }
+.darkenedBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
 
-  
-  /* Set up location and logic of body element */
-  body {
-    font-family: "Helvetica", sans-serif;
-    margin: 0;
-    padding: 0;
-    max-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .mainContainer {
-    margin: 0 6em;
-  }
+.mainContainer {
+  margin: 0 6em;
+}
 
-  /* Set up colour of fonts */
-  li, h1, h2, button, label, p {
-    color: #fff5d7;
-  }
+li,
+h1,
+h2,
+button,
+label,
+p {
+  color: #fff5d7;
+}
 
-  
+/* Navbar Styles on main page */
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
 
+.navbar-nav,
+.navbar-soc {
+  list-style-type: none;
+  margin: 2em 0 0 0;
+  padding: 0;
+  display: flex;
+}
 
+.navbar-nav li {
+  padding: 0.15em 0 0 0;
+  cursor: pointer;
+}
 
-  /* Navbar Styles on main page */
+.navbar-nav li:hover {
+  padding-left: 0.05em;
+}
 
-  /* Set up location and logic of navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
+.navbar-soc li:not(:first-child) {
+  margin-left: 1.5em;
+}
 
-  .navbar-nav, .navbar-soc {
-    list-style-type: none;
-    margin: 2em 0 0 0;
-    padding: 0;
-    display: flex;
-  }
+/* Main Styles on main page */
 
-  .navbar-nav li {
-    padding: .15em 0 0 0;
-    cursor: pointer;
-  }
+main {
+  display: flex;
+  min-height: 90vh;
+}
 
-  .navbar-nav li:hover {
-    padding-left: .05em;
-  }
+.mainText {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-right: 34em;
+}
 
-  .navbar-soc li:not(:first-child) {
-    margin-left: 1.5em;
-  }
+.blockOfText {
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-bottom: 5em;
+}
 
- 
+.blockOfText h1 {
+  font: 4em Helvetica, sans-serif;
+  margin: 0.9em 0em;
+  font-weight: 400;
+  cursor: default;
+}
 
-
-
-
-
-  /* Main Styles on main page */
-
-  /* Set up location, size and logiv of main section */
-  main {
-    display: flex;
-    min-height: 90vh;
-  }
-
-  .mainText {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding-right: 34em;
-  }
-
-  .blockOfText {
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding-bottom: 5em;
-  }
-
-  .blockOfText h1 {
-    font: 4em Helvetica, sans-serif;
-    margin: .9em 0em;
-    font-weight: 400;
-    cursor: default;
-  }
-
-  .blockOfText p {
-    font: 1.3em "Helvetica Light", sans-serif;
-    letter-spacing: .4em;
-    margin: 0 0 0 .5em;
-    font-weight: 300;
-    cursor: default;
-  }
-
-
-
-
-
-
-
+.blockOfText p {
+  font: 1.3em "Helvetica Light", sans-serif;
+  letter-spacing: 0.4em;
+  margin: 0 0 0 0.5em;
+  font-weight: 300;
+  cursor: default;
+}
 
 /* Set container styles */
-.contactContainer {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 0;
-  height: 100vh;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
 
-.aboutContainer {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 0;
-  height: 100vh;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
+.contactContainer,
+.aboutContainer,
 .menuContainer {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 0;
-  height: 100vh;
+  height: 100%;
   display: none;
   align-items: center;
   justify-content: center;
 }
 
- /* styles of contact page */
-
-
-/* Set font and color */
+/* Contact page styles */
 
 .contact-form h2 {
   font: 2em "Helvetica", sans-serif;
-  margin: .6em 0 .7em 0;
+  margin: 0.6em 0 0.7em 0;
   font-weight: bold;
   cursor: default;
 }
@@ -175,7 +137,7 @@
 .contact-form label {
   font: 1.06em "Helvetica Light", sans-serif;
   font-weight: 300;
-} 
+}
 
 .contact-form {
   width: 37em;
@@ -198,7 +160,7 @@
 .contact-form textarea {
   width: 100%;
   padding: 0.4em;
-  border-radius: .9em;
+  border-radius: 0.9em;
   box-sizing: border-box;
   background-color: transparent;
   border: 1px solid #fff5d7;
@@ -209,13 +171,13 @@
 
 .contact-form textarea {
   height: 12em;
-  margin: .2em 0 0 0;
+  margin: 0.2em 0 0 0;
   resize: none;
 }
 
 .contact-form input {
   height: 2.5em;
-  margin: .1em 0 0 0;
+  margin: 0.1em 0 0 0;
 }
 
 .contact-form input:focus,
@@ -224,7 +186,7 @@
 .contact-form textarea:hover,
 .contact-form input:active,
 .contact-form textarea:active {
-  outline: .1em solid #fff5d7;
+  outline: 0.1em solid #fff5d7;
   border-color: #fff5d7;
 }
 
@@ -251,22 +213,22 @@
 }
 
 .contact-form .otherContacts {
-  margin-top: .5em;
+  margin-top: 0.5em;
   display: flex;
   justify-content: space-around;
 }
 
 .contact-form p {
-  font: .9em "Helvetica Light", sans-serif;
+  font: 0.9em "Helvetica Light", sans-serif;
   color: #fff5d787;
   font-weight: 200;
-} 
+}
 
 .otherContacts a,
 .otherContacts a:link,
 .otherContacts a:hover,
 .otherContacts a:focus,
-.otherContacts a:active  {
+.otherContacts a:active {
   text-decoration: none !important;
 }
 
@@ -274,9 +236,7 @@
   margin: 0;
 }
 
-
-
-/* Set form "About" section */
+/* About section styles */
 
 .aboutContent {
   display: flex;
@@ -294,15 +254,15 @@
 
 .aboutContent h2 {
   font: 2em "Helvetica", sans-serif;
-  letter-spacing: .04em;
-  margin: .7em 0;
+  letter-spacing: 0.04em;
+  margin: 0.7em 0;
   font-weight: 500;
   cursor: default;
 }
 
 .aboutContent p {
   font: 1.1em "Helvetica Light", sans-serif;
-  letter-spacing: .07em;
+  letter-spacing: 0.07em;
   line-height: 1.3em;
   font-weight: 300;
   cursor: default;
@@ -317,8 +277,7 @@
   text-align: center;
 }
 
-
-/* Set Menu icon section */
+/* Menu icon section styles */
 
 .menuSelect {
   display: flex;
@@ -344,7 +303,7 @@
   font-weight: 100;
   font: 1.4em "Helvetica Light", sans-serif;
   cursor: pointer;
-  margin: .5em 0 0 0;
+  margin: 0.5em 0 0 0;
 }
 
 .menuSelect li:hover,
@@ -359,42 +318,21 @@
   font-weight: 100;
 }
 
+/* Responsive styles */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* styles of the responsive site */
-  /* under 900 px background/wallpaper fucked up */
-
-
-
-  @media screen and (min-width:1020px) and (max-width:1200px) {
-    .mainText {
-      padding-right: 20em;
-    }
+@media screen and (min-width: 1020px) and (max-width: 1200px) {
+  .mainText {
+    padding-right: 20em;
   }
+}
 
-  @media screen and (min-width:750px) and (max-width:1019px) {
+@media screen and (min-width: 750px) and (max-width: 1019px) {
+  /* Add styles for this range if needed */
+}
 
-  }
-
-  /* Styles for mobile devices (320px - 480px) */
+/* Styles for mobile devices (320px - 480px) */
 @media screen and (min-width: 320px) and (max-width: 480px) {
   body {
     background-image: url(/photo/mobilePhoto1.jpeg);
-
   }
 }
