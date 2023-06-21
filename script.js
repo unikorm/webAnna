@@ -230,6 +230,7 @@ let mobileImages = [
 ];
 
 let currentIndex = 1;
+let currentImageTimeout;
 
 function preloadImagesFromList(imageList) {
   for ( let i = 2; i < imageList.length; i++ ) {
@@ -243,28 +244,56 @@ function changeBackground() {
   let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
   let ratio = (width / 11 * 9) - 10;
+  let shouldChangeImage = false;
 
-  if (ratio < height) {
-    document.body.style.backgroundImage = "url(" + mobileImages[currentIndex] + ")";
-  } else {
-    document.body.style.backgroundImage = "url(" + standartImages[currentIndex] + ")";
+  if (ratio < height && currentIndex < mobileImages.length) {
+    shouldChangeImage = true;
+  } else if (currentIndex < standartImages.length) {
+    shouldChangeImage = true;
+  }
+
+  if (shouldChangeImage) {
+    let currentImage;
+    if (ratio < height) {
+      currentImage = mobileImages[currentIndex];
+    } else {
+      currentImage = standartImages[currentIndex];
+    }
+
+    if (currentImage) {
+      document.body.style.backgroundImage = "url(" + currentImage + ")";
+    }
+
+    currentIndex = (currentIndex + 1) % Math.max(standartImages.length, mobileImages.length);
   };
-
-  currentIndex = (currentIndex + 1) % standartImages.length;
 };
 
-function handleWindowResize() {
+function startImagesChange() {
   changeBackground();
-  preloadImagesFromList(standartImages.concat(mobileImages));
+  currentImageTimeout = setInterval(startImagesChange, 10000);
+};
+
+function stopImagesChange() {
+  clearInterval(currentImageTimeout);
 };
 
 // initial setup
-changeBackground(); // change background immediatly on pafe load
 preloadImagesFromList(standartImages.concat(mobileImages));  // more fluently changes of images with preload
 
-window.addEventListener("resize", handleWindowResize);
+// Change background immediately on page load
+changeBackground();
 
-setInterval(changeBackground, 10000); // Run the function every 10 seconds
+// Start periodic image change
+startImagesChange();
+
+// Event listeners for window resize
+window.addEventListener("beforeunload", stopImagesChange);
+window.addEventListener("resize", preloadImagesFromList.bind(null, standartImages.concat(mobileImages)));
+
+
+
+
+
 
 
 
