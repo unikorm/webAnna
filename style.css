@@ -116,11 +116,19 @@ main {
 
 .contactContainer,
 .aboutContainer,
-.menuContainer {
+.menuContainer,
+.portfolioContainer {
   background-color: rgba(0, 0, 0, .3);
   padding: 0;
   height: 100%;
   display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContainer {
+  padding: 0;
+  height: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -188,6 +196,7 @@ main {
 .contact-form textarea:active {
   outline: .1em solid #fff5d7;
   border-color: #fff5d7;
+  -webkit-border-radius: .9em;
   border-radius: .9em;
 }
 

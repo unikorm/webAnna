@@ -3,13 +3,15 @@
 let contactContainer = document.querySelector(".contactContainer");
 let mainContainer = document.querySelector(".mainContainer");
 let contactLink = document.getElementById("contact");
-let backButton = document.getElementById("backButton")
-let aboutLink = document.getElementById("about")
+let backButton = document.getElementById("backButton");
+let aboutLink = document.getElementById("about");
 let aboutContainer = document.querySelector(".aboutContainer");
 let bodyElement = document.querySelector("body");
 let menuLink = document.getElementById("menuIcon");
 let menuContainer = document.querySelector(".menuContainer");
 let submitButton = document.getElementById("submitButton");
+let portfolioContainer= document.querySelector(".portfolioContainer");
+let portfolioLink = document.getElementById("portfolio");
 // console.log();
 
 
@@ -67,7 +69,7 @@ if (aboutLink) {
 
 // Close About section when is click outside of it
 document.addEventListener("click", function(event) {
-  let targetElement = event.target;
+  const targetElement = event.target;
 
   if (aboutContainer.style.display === "flex" && aboutContainer.contains(targetElement) && !targetElement.closest(".aboutContent")) {
     closeAboutSection();
@@ -96,7 +98,7 @@ if (menuLink) {
 
 // Close Menu section when is click outside of it
 document.addEventListener("click", function(event) {
-  let targetElement = event.target;
+  const targetElement = event.target;
 
   if (getComputedStyle(menuContainer).display === "flex" && menuContainer.contains(targetElement) && !targetElement.closest(".menuSelect")) {
     closeMenuSection();
@@ -110,6 +112,27 @@ document.addEventListener("keydown", function(event) {
   };
 });
 
+
+
+
+
+
+// Open Portfolio section when "Portfolio" link is clicked
+if (portfolioLink) {
+  portfolioLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    openPortfolioSection();
+  });
+};
+
+// Close Portfolio section when is click outside of it
+document.addEventListener("click", function(event) {
+  const targetElement = event.target;
+
+  if (getComputedStyle(portfolioContainer).display === "flex" && portfolioContainer.contains(targetElement) && !targetElement.closest(".portfolioContent")) {
+    closePortfolioSection();
+  };
+});
 
 
 
@@ -187,6 +210,27 @@ function closeMenuSectionSlowly() {
     bodyElement.style.backdropFilter = null;
   }, 10);
 };
+
+
+
+
+
+
+// Function to open Portfolio section
+function openPortfolioSection() {
+  portfolioContainer.style.display = "flex";
+  mainContainer.style.display = "none";
+  menuContainer.style.display = "none";
+  bodyElement.style.backdropFilter = "blur(5px)";
+};
+
+// Function to close Portfolio section
+function closePortfolioSection() {
+  mainContainer.style.display = "block";
+  portfolioContainer.style.display = "none";
+  bodyElement.style.backdropFilter = null;
+};
+
 
 
 
