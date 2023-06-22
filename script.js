@@ -12,6 +12,8 @@ let menuContainer = document.querySelector(".menuContainer");
 let submitButton = document.getElementById("submitButton");
 let portfolioContainer= document.querySelector(".portfolioContainer");
 let portfolioLink = document.getElementById("portfolio");
+let pricingContainer = document.querySelector(".pricingContainer");
+let pricingLink = document.getElementById("pricing");
 // console.log();
 
 
@@ -71,7 +73,7 @@ if (aboutLink) {
 document.addEventListener("click", function(event) {
   const targetElement = event.target;
 
-  if (aboutContainer.style.display === "flex" && aboutContainer.contains(targetElement) && !targetElement.closest(".aboutContent")) {
+  if (getComputedStyle(aboutContainer).display === "flex" && aboutContainer.contains(targetElement) && !targetElement.closest(".aboutContent")) {
     closeAboutSection();
   };
 });
@@ -131,6 +133,42 @@ document.addEventListener("click", function(event) {
 
   if (getComputedStyle(portfolioContainer).display === "flex" && portfolioContainer.contains(targetElement) && !targetElement.closest(".portfolioContent")) {
     closePortfolioSection();
+  };
+});
+
+//Close Portfolio section when "Esc" is clicked
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closePortfolioSection();
+  };
+});
+
+
+
+
+
+
+// Open Pricing section when "Pricing" link is clicked
+if (pricingLink) {
+  pricingLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    openPricingSection();
+  });
+};
+
+// Close Pricing section when is click outside of it
+document.addEventListener("click", function(event) {
+  const targetElement = event.target;
+
+  if (getComputedStyle(pricingContainer).display === "flex" && pricingContainer.contains(targetElement) && !targetElement.closest(".pricingContent")) {
+    closePricingSection();
+  };
+});
+
+//Close Pricing section when "Esc" is clicked
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closePricingSection();
   };
 });
 
@@ -228,6 +266,26 @@ function openPortfolioSection() {
 function closePortfolioSection() {
   mainContainer.style.display = "block";
   portfolioContainer.style.display = "none";
+  bodyElement.style.backdropFilter = null;
+};
+
+
+
+
+
+
+// Function to open Pricing section
+function openPricingSection() {
+  pricingContainer.style.display = "flex";
+  mainContainer.style.display = "none";
+  menuContainer.style.display = "none";
+  bodyElement.style.backdropFilter = "blur(5px)";
+};
+
+// Function to close Pricing section
+function closePricingSection() {
+  mainContainer.style.display = "block";
+  pricingContainer.style.display = "none";
   bodyElement.style.backdropFilter = null;
 };
 
