@@ -329,6 +329,26 @@ main {
   font-weight: 100;
 }
 
+/* Portfolio style */
+
+.portfolioContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.portfolioItem {
+  flex: 0 0 300px;
+  text-align: center;
+  margin: 20px;
+}
+
+.portfolioItem img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
 /* Responsive styles */
 
 @media screen and (max-width: 1300px) {
