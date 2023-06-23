@@ -25,12 +25,9 @@ body {
   transition: background-image .4s ease;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
+  overflow: hidden;
 }
 
-
-.mainContainer {
-  margin: 0 6em;
-}
 
 li,
 h1,
@@ -122,6 +119,7 @@ main {
 .mainContainer {
   position: relative;
   padding: 0;
+  margin: 0 6em;
   height: 100%;
 }
 
@@ -132,6 +130,7 @@ main {
   height: 100%;
   display: none;
   justify-content: center;
+  overflow: auto;
 }
 
 /* Contact page styles */
@@ -151,6 +150,7 @@ main {
 .contact-form {
   width: 37em;
   margin: 0 auto;
+  margin-top: 1.3em;
   text-align: center;
   padding: 2em;
 }
@@ -353,12 +353,15 @@ main {
 /* Responsive styles */
 
 @media screen and (max-width: 1300px) {
+
   .mainText {
     padding-right: 13em;
   }
 }
 
 @media screen and (max-width: 1050px) {
+
+
   .mainText {
     padding-right: 6em;
   }
