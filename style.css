@@ -26,7 +26,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
   -webkit-background-blend-mode: multiply;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 
@@ -250,6 +250,10 @@ main {
 
 /* About section styles */
 
+.aboutContainer {
+  overflow: auto;
+}
+
 .aboutContent {
   display: flex;
   align-items: center;
@@ -356,6 +360,10 @@ main {
 
 @media (max-width: 767px) {
 
+  body {
+    background-image: url(/photo/mobilePhoto1.jpeg);
+  }
+
   .mainContainer {
     margin: 0 2em;
   }
@@ -393,8 +401,12 @@ main {
     cursor: default;
   }
 
+  .aboutContainer {
+    align-items: start;
+  }
+
   .aboutContent {
-  
+    margin: 1.1em;
   }
 }
 
