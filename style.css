@@ -26,7 +26,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
   -webkit-background-blend-mode: multiply;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 
@@ -255,7 +255,7 @@ main {
   align-items: center;
   flex-direction: column;
   max-width: 55em;
-  min-width: 40em;
+  /* min-width: 40em; */
 }
 
 .aboutContent img {
@@ -330,6 +330,7 @@ main {
   font-weight: 100;
 }
 
+
 /* Portfolio style */
 
 .portfolioContent {
@@ -353,19 +354,48 @@ main {
 
 /* Responsive styles */
 
-@media screen and (max-width: 1300px) {
+@media (max-width: 767px) {
+
+  .mainContainer {
+    margin: 0 2em;
+  }
+
+  .navbar-soc {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
 
   .mainText {
-    padding-right: 13em;
+    padding-right: 0;
+  }
+
+  .blockOfText {
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-bottom: 2em;
+  }
+  
+  .blockOfText h1 {
+    font: 3em Helvetica, sans-serif;
+    margin: .9em 0em;
+    font-weight: 400;
+    cursor: default;
+  }
+  
+  .blockOfText p {
+    font: 1em "Helvetica Light", sans-serif;
+    letter-spacing: .3em;
+    margin: 0 0 0 .5em;
+    font-weight: 300;
+    cursor: default;
+  }
+
+  .aboutContent {
+  
   }
 }
 
-@media screen and (max-width: 1050px) {
 
-
-  .mainText {
-    padding-right: 6em;
-  }
-
-
-}
