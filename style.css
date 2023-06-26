@@ -1,20 +1,4 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 /* General Styles */
-
-@-webkit-keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 
 @keyframes fadeOut {
   from {
@@ -31,23 +15,17 @@ body {
   font-family: "Helvetica", sans-serif;
   margin: 0;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 body {
   background-size: cover;
   background-attachment: fixed;
-  -webkit-transition: background-image .4s ease;
-  -o-transition: background-image .4s ease;
   transition: background-image .4s ease;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
+  -webkit-background-blend-mode: multiply;
   overflow: hidden;
 }
 
@@ -63,22 +41,10 @@ p {
 
 /* Navbar Styles on main page */
 
-header {
-  width: 100%;
-}
-
 .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .navbar-nav,
@@ -86,17 +52,7 @@ header {
   list-style-type: none;
   margin: 2em 0 0 0;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-}
-
-.navbar-nav {
-  margin-right: auto;
-}
-
-.navbar-soc {
-  margin-left: auto;
 }
 
 .navbar-nav li {
@@ -115,32 +71,20 @@ header {
 /* Main Styles on main page */
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  min-height: 90%;
+  min-height: 90vh;
 }
 
 .mainText {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: flex-start;
+  align-items: flex-end;
   padding-right: 34em;
 }
 
 .blockOfText {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: flex-start;
+  align-items: flex-end;
   padding-bottom: 5em;
 }
 
@@ -169,15 +113,12 @@ main {
   padding: 0;
   height: 100%;
   display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .mainContainer {
+  position: relative;
   padding: 0;
   margin: 0 6em;
   height: 100%;
@@ -189,12 +130,7 @@ main {
   padding: 0;
   height: 100%;
   display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: center;
   overflow: auto;
 }
 
@@ -235,8 +171,7 @@ main {
   width: 100%;
   padding: .4em;
   border-radius: .9em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: transparent;
   border: 1px solid #fff5d7;
   font: 1.1em "Helvetica Light", sans-serif;
@@ -263,16 +198,13 @@ main {
 .contact-form textarea:active {
   outline: .1em solid #fff5d7;
   border-color: #fff5d7;
+  -webkit-border-radius: .9em;
   border-radius: .9em;
 }
 
 .contact-form .form-group.buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .contact-form button {
@@ -294,11 +226,8 @@ main {
 
 .contact-form .otherContacts {
   margin-top: .5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .contact-form p {
@@ -322,16 +251,9 @@ main {
 /* About section styles */
 
 .aboutContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  flex-direction: column;
   max-width: 55em;
   min-width: 40em;
 }
@@ -370,33 +292,19 @@ main {
 /* Menu icon section styles */
 
 .menuSelect {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 14em;
   list-style-type: none;
   padding: 0;
 }
 
 .languageSelect {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  align-items: center;
+  justify-content: space-around;
   list-style-type: none;
   width: 10em;
   padding: 0;
@@ -425,20 +333,14 @@ main {
 /* Portfolio style */
 
 .portfolioContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin: 1.6em;
 }
 
 .portfolioItem {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 14em;
-          flex: 0 0 14em;
+  flex: 0 0 14em;
   text-align: center;
   margin: .4em;
 }
