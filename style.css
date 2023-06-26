@@ -72,7 +72,7 @@ p {
 
 main {
   display: flex;
-  min-height: 90vh;
+  height: 90vh;
 }
 
 .mainText {
@@ -407,6 +407,10 @@ main {
 
   .aboutContent {
     margin: 1.1em;
+  }
+
+  main {
+    height: 80vh;
   }
 }
 
