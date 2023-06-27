@@ -1,0 +1,23 @@
+{
+  "name": "bahalph_website",
+  "version": "1.0.0",
+  "description": "website for my wife to extend new customers, she is photographer and this is modern, minimalistic website for looking out for pricing, her previous work, contact formular, etc",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unikorm/webAnna.git"
+  },
+  "keywords": [
+    "photographer",
+    "website"
+  ],
+  "author": "Adam Lednicky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unikorm/webAnna/issues"
+  },
+  "homepage": "https://github.com/unikorm/webAnna#readme"
+}
