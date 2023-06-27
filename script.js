@@ -362,25 +362,7 @@ function closePricingSection() {
     currentIndex = (currentIndex + 1) % images.length;
   };
 
-  function deactivateRotation() {
-    document.body.style.backgroundImage = "url(/photo/mobilePhoto1.jpeg)"
-  };
-
-  function checkScreenWidth() {
-    if (window.innerWidth <= 767) {
-      deactivateRotation();
-    } else {
-      preloadImages();  // start preloading images
-    };
-  };
-
-  checkScreenWidth();
-
-  // window.addEventListener("load", checkScreenWidth);
-  // window.addEventListener("resize", checkScreenWidth);
-
-  // preloadImages();  // start preloading images
-
+  preloadImages();  // start preloading images
   
   
   
