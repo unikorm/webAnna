@@ -342,7 +342,7 @@ function closePricingSection() {
     currentIndex = (currentIndex + 1) % images.length;
   };
 
-  preloadImages();  // start preloading images
+  // preloadImages();  // start preloading images
   
   
   

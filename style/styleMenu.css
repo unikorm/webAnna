@@ -1,0 +1,29 @@
+/* positioning */
+.menuContainer {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.menuSelect,
+.languageSelect {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menuSelect {
+    align-items: center;
+    flex-direction: column;
+    width: 28vh;
+}
+
+.languageSelect {
+    width: 22vh;
+    justify-content: space-around;
+}
+
+
+/* styling */
