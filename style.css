@@ -23,6 +23,13 @@ body {
   height: 100vh;
 }
 
+
+
+
+
+
+
+/* positioning */
 .mainContainer {
   height: 100vh;
   display: flex;
@@ -31,7 +38,7 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .navbar-nav,
@@ -51,4 +58,39 @@ main {
 
 .mainText {
   display: flex;
+}
+
+
+/* styling */
+.navbar-soc {
+  display: none;
+}
+
+.navbar-nav li {
+  margin-top: 1.2em;
+  cursor: pointer;
+}
+
+.mainText {
+  margin: 0 1.2em 6.2em 1.2em;
+}
+
+.mainText h1 {
+  font-size: 3.1em;
+  font-weight: 400;
+  cursor: default;
+  margin: 0;
+  margin-bottom: .3em;
+}
+
+.blockOfText p {
+  font-size: 1.5em;
+  font-weight: 200;
+  letter-spacing: .07em;
+  cursor: default;
+  margin: 0;
+}
+
+@media screen {
+  
 }
