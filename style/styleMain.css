@@ -91,6 +91,50 @@ main {
   margin: 0;
 }
 
-@media screen {
+/* responsivness */
+@media (min-width: 650px) {
+  .blockOfText {
+    width: 75%;
+  }
+}
+
+@media (min-width: 767px) {
+  .navbar {
+    justify-content: space-between;
+    margin: 1.2em 1.2em 0 1.2em;
+  }
+
+  .navbar-soc {
+    display: flex;
+  }
+
+  .navbar-soc li {
+    margin-top: 1em;
+  }
+
+  .navbar-soc li:not(:first-child) {
+    margin-left: 1em;
+  }
+
+  .blockOfText {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mainText h1 {
+    font-size: 3.1em;
+    font-weight: 400;
+    cursor: default;
+    margin: 0;
+    margin-bottom: .3em;
+  }
   
+  .blockOfText p {
+    font-size: 1.5em;
+    font-weight: 200;
+    letter-spacing: .07em;
+    cursor: default;
+    margin: 0;
+  }
 }
