@@ -84,7 +84,7 @@ main {
 }
 
 .blockOfText p {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 200;
   letter-spacing: .07em;
   cursor: default;
@@ -116,25 +116,28 @@ main {
     margin-left: 1em;
   }
 
-  .blockOfText {
-    width: 75%;
+  .mainText h1 {
+    font-size: 3.5em;
   }
+  
+  .blockOfText p {
+    font-size: 1.4em;
+  }
+
+
 }
 
 @media (min-width: 1024px) {
+  .blockOfText {
+    width: 65%;
+  }
+
   .mainText h1 {
-    font-size: 3.1em;
-    font-weight: 400;
-    cursor: default;
-    margin: 0;
-    margin-bottom: .3em;
+    font-size: 4em;
   }
   
   .blockOfText p {
     font-size: 1.5em;
-    font-weight: 200;
-    letter-spacing: .07em;
-    cursor: default;
-    margin: 0;
   }
+
 }
