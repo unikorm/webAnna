@@ -1,24 +1,4 @@
-// variables ######@~$&*
-
-let contactContainer = document.querySelector(".contactContainer");
-let mainContainer = document.querySelector(".mainContainer");
-let contactLink = document.getElementById("contact");
-let backButton = document.getElementById("backButton");
-let aboutLink = document.getElementById("about");
-let aboutContainer = document.querySelector(".aboutContainer");
-let bodyElement = document.querySelector("body");
-let menuLink = document.getElementById("menuIcon");
-let menuContainer = document.querySelector(".menuContainer");
-let submitButton = document.getElementById("submitButton");
-let portfolioContainer= document.querySelector(".portfolioContainer");
-let portfolioLink = document.getElementById("portfolio");
-let pricingContainer = document.querySelector(".pricingContainer");
-let pricingLink = document.getElementById("pricing");
-// console.log();
-
-
-
-
+import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, portfolioContainer, portfolioLink, pricingContainer, pricingLink} from "/src/JS/variables.js";
 
 // Event Handlers ######@~$&*
 
@@ -326,7 +306,7 @@ function closePricingSection() {
   ];
   
   let currentIndex = 1;
-  let preloadedImage = [];  // Array to store preloaded images
+  let preloadedImages = [];  // Array to store preloaded images
   
   function preloadImages() {
     let promises = [];
