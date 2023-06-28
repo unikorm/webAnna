@@ -1,0 +1,11 @@
+/* positioning */
+.aboutContainer {
+    height: 100vh;
+    display: flex;
+}
+
+.aboutContent img {
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+}
