@@ -27,3 +27,20 @@
 
 
 /* styling */
+.languageSelect {
+    margin-top: .9em;
+}
+
+.menuSelect li {
+    font-size: 1.8em;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: .3em;
+}
+
+.languageSelect li {
+    font-size: 1.2em;
+    font-weight: 100;
+    color: #fff5d787;
+    cursor: pointer;
+}
