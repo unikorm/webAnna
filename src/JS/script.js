@@ -173,7 +173,7 @@ function openContactForm() {
 
 // Function to close the contact form
 function closeContactForm() {
-  mainContainer.style.display = "block";
+  mainContainer.style.display = "flex";
   contactContainer.style.display = "none";
   bodyElement.style.backdropFilter = null;
 };
@@ -193,7 +193,7 @@ function openAboutSection() {
 
 // Function to close About section
 function closeAboutSection() {
-  mainContainer.style.display = "block";
+  mainContainer.style.display = "flex";
   aboutContainer.style.display = "none";
   bodyElement.style.backdropFilter = null;
 };
@@ -212,7 +212,7 @@ function openMenuSection() {
 
 // Function to close Menu section
 function closeMenuSection() {
-  mainContainer.style.display = "block";
+  mainContainer.style.display = "flex";
   menuContainer.style.display = "none";
   bodyElement.style.backdropFilter = null;
 };
@@ -223,7 +223,7 @@ function closeMenuSectionSlowly() {
   menuContainer.style.animationFillMode = "forwards";
 
   setTimeout(() => {
-    mainContainer.style.display = "block";
+    mainContainer.style.display = "flex";
     menuContainer.style.display = "none";
     bodyElement.style.backdropFilter = null;
   }, 10);
@@ -244,7 +244,7 @@ function openPortfolioSection() {
 
 // Function to close Portfolio section
 function closePortfolioSection() {
-  mainContainer.style.display = "block";
+  mainContainer.style.display = "flex";
   portfolioContainer.style.display = "none";
   bodyElement.style.backdropFilter = null;
 };
@@ -264,7 +264,7 @@ function openPricingSection() {
 
 // Function to close Pricing section
 function closePricingSection() {
-  mainContainer.style.display = "block";
+  mainContainer.style.display = "flex";
   pricingContainer.style.display = "none";
   bodyElement.style.backdropFilter = null;
 };
@@ -370,7 +370,7 @@ document.getElementById("ua").addEventListener("click", function(event) {
 
 
 function loadLanguage(lang) {
-  fetch("translations/" + lang + ".json")
+  fetch("src/translations/" + lang + ".json")
   .then(response => response.json())
   .then(data => {
     document.getElementById("portfolio").textContent = data.portfolio;

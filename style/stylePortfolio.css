@@ -1,0 +1,6 @@
+/* positioning */
+.portfolioContainer {
+    height: max-content;
+    display: none;
+    justify-content: center;
+}
