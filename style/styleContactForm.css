@@ -107,3 +107,23 @@
 .otherContacts p {
     margin: .6em 0;
 }
+
+/* responsivness */
+@media (min-width: 767px) {
+    .contact-form {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-form {
+        width: 55%;
+    }
+}
+
+@media (min-width: 1150px) {
+    .contact-form {
+        width: 50%;
+        max-width: 35em;
+    }
+}
