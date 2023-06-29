@@ -1,9 +1,8 @@
 /* positioning */
 .aboutContainer {
-    height: 100vh;
+    height: max-content;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .aboutContent {
@@ -24,7 +23,7 @@
 
 /* styling */
 .aboutContent {
-    margin: 0 1.2em;
+    margin: 1.2em;
 }
 
 .aboutContent img {
@@ -32,4 +31,43 @@
     height: 13em;
     border-radius: 50%;
     margin: 0;
+}
+
+.aboutContent h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin: 1em 0 .5em 0;
+}
+
+.aboutContent p {
+    font-size: 1.6em;
+    font-weight: 300;
+    margin: .4em 0;
+}
+
+/* responsivness */
+@media (min-width: 767px) {
+    .aboutContainer {
+        height: 100vh;
+        align-items: center;
+    }
+
+    .aboutContent p {
+        font-size: 1.4em;
+    }
+}
+
+@media (min-width: 850px) {
+    .aboutContent {
+        margin: 1.2em 3em 1.2em 3em;
+    }
+
+
+}
+
+@media (min-width: 1080px) {
+    .aboutContent {
+        width: 80%;
+        margin: 0;
+    }
 }
