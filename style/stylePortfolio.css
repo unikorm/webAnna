@@ -7,6 +7,7 @@
 
 .portfolioContent {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     /* flex-wrap: wrap; */
 }
@@ -34,4 +35,29 @@
 .previewContainer img {
     width: 75%;
     height: auto;
+}
+
+/* responsivness */
+@media (min-width: 767px) {
+    .portfolioContent {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .portfolioContent a {
+        display: flex;
+        align-items: center;
+        width: 20%;
+        margin: 2.2em .8em 0 .8em;
+    }
+    
+}
+
+@media (min-width: 1024px) {
+    .previewContainer img {
+        height: auto;
+        max-height: 90vh;
+        width: auto;
+        max-width: 100vh;
+    }
 }
