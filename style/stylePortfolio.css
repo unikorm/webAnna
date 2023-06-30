@@ -11,15 +11,27 @@
     /* flex-wrap: wrap; */
 }
 
+.previewContainer {
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 /* styling */
 .portfolioContent {
-    margin: 2.2em;
+    margin: 3.2em;
 }
 
 .portfolioContent a:not(:first-child) {
-    margin-top: 1em;
+    margin-top: 2.2em;
 }
 
 .portfolioContent img {
     width: 100%;
+}
+
+.previewContainer img {
+    width: 75%;
+    height: auto;
 }

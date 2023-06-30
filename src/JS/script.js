@@ -1,6 +1,6 @@
 
 // imported variables
-import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, portfolioContainer, portfolioLink, pricingContainer, pricingLink} from "/src/JS/variables.js";
+import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer} from "/src/JS/variables.js";
 
 
 
@@ -119,7 +119,7 @@ if (portfolioLink) {
 
 // Closing it 
 document.addEventListener("click", function (event) {
-  handleSectionClick(event, portfolioContainer, ".portfolioContent");
+  handleSectionClick(event, portfolioContainer, ".portfolioItem");
 });
 
 document.addEventListener("keydown", function (event) {
@@ -304,6 +304,40 @@ function loadLanguage(lang) {
   })
   .catch(error => console.error(error));
 }
+
+
+
+
+
+
+
+
+
+
+// Code for preview of portfolio items
+portfolioItems.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    event.preventDefault();
+    const imgUrl = item.getAttribute("href");
+    showPreview(imgUrl);
+  });
+});
+
+function showPreview(imgUrl) {
+  const previewImage = document.createElement("img");
+  previewImage.src = imgUrl;
+
+  previewContainer.innerHTML = "";
+  previewContainer.appendChild(previewImage);
+  portfolioContainer.style.display = "none";
+  previewContainer.style.display = "flex";
+
+}
+
+previewContainer.addEventListener("click", () => {
+  previewContainer.style.display = "none";
+  portfolioContainer.style.display = "flex";
+});
 
 
 

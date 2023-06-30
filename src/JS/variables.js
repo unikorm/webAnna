@@ -14,4 +14,6 @@ export let portfolioContainer= document.querySelector(".portfolioContainer");
 export let portfolioLink = document.getElementById("portfolio");
 export let pricingContainer = document.querySelector(".pricingContainer");
 export let pricingLink = document.getElementById("pricing");
+export let portfolioItems = document.querySelectorAll(".portfolioItem");
+export let previewContainer = document.querySelector(".previewContainer");
 // console.log();
