@@ -4,3 +4,22 @@
     display: none;
     justify-content: center;
 }
+
+.portfolioContent {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+
+/* styling */
+.portfolioContent {
+    margin: 2.2em;
+}
+
+.portfolioContent a:not(:first-child) {
+    margin-top: 1em;
+}
+
+.portfolioContent img {
+    width: 100%;
+}
