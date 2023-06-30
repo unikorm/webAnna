@@ -1,7 +1,7 @@
 /* positioning */
 .menuContainer {
    height: 100vh;
-   display: flex;
+   display: none;
    justify-content: center;
    align-items: center;
 }

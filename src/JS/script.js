@@ -1,70 +1,37 @@
 import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, portfolioContainer, portfolioLink, pricingContainer, pricingLink} from "/src/JS/variables.js";
 
-// Event Handlers ######@~$&*
+function openSection(sectionContainer) {
+  sectionContainer.style.display = "flex";
+  mainContainer.style.display = "none";
+  if (sectionContainer !== menuContainer) {
+    menuContainer.style.display = "none";
+  }
+  bodyElement.style.backdropFilter = "blur(5px)";
+}
 
+function closeSection(sectionContainer) {
+  mainContainer.style.display = "flex";
+  sectionContainer.style.display = "none";
+  bodyElement.style.backdropFilter = null;
+}
 
-// Open the contact form when "Contact" link is clicked
-if (contactLink) {
-  contactLink.addEventListener("click", function(event) {
-    event.preventDefault();
-    openContactForm();
-  });
-};
-
-// Close the contact form when Esc key is pressed
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closeContactForm();
-  };
-});
-
-// Close the contact form when clicked outside of it
-document.addEventListener("click", function(event) {
-  let targetElement = event.target;
-
-  if (contactContainer.style.display === "flex" && contactContainer.contains(targetElement) && !targetElement.closest(".contact-form")) {
-    closeContactForm();
-  };  
-});
-
-// Close the contact form when "Back" button is clicked
-if (backButton) {
-  backButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    closeContactForm();
-    //event.stopPropagation();
-  });
-};
-
-
-
-
-
-
-// Open About section, when "About" link is clicked
-if (aboutLink) {
-  aboutLink.addEventListener("click", function(event) {
-    event.preventDefault();
-    openAboutSection();
-  });
-};
-
-// Close About section when is click outside of it
-document.addEventListener("click", function(event) {
+function handleSectionClick(event, sectionContainer, contentClass, closeSectionFn) {
   const targetElement = event.target;
 
-  if (getComputedStyle(aboutContainer).display === "flex" && aboutContainer.contains(targetElement) && !targetElement.closest(".aboutContent")) {
-    closeAboutSection();
-  };
-});
+  if (
+    getComputedStyle(sectionContainer).display === "flex" &&
+    sectionContainer.contains(targetElement) &&
+    targetElement.closest(contentClass)
+  ) {
+    closeSectionFn();
+  }
+}
 
-// Close About section when "Esc" key is clicked
-document.addEventListener("keydown", function(event) {
-  if(event.key === "Escape") {
-    closeAboutSection();
-  };
-});
-
+function handleSectionEscKey(event, closeSectionFn) {
+  if (event.key === "Escape") {
+    closeSectionFn();
+  }
+}
 
 
 
@@ -72,85 +39,60 @@ document.addEventListener("keydown", function(event) {
 
 // Open Menu section when Menu Icon svg is pressed
 if (menuLink) {
-  menuLink.addEventListener("click", function(event) {
+  menuLink.addEventListener("click", function (event) {
     event.preventDefault();
-    openMenuSection();
+    openSection(menuContainer);
   });
-};
+}
 
-// Close Menu section when is click outside of it
-document.addEventListener("click", function(event) {
-  const targetElement = event.target;
-
-  if (getComputedStyle(menuContainer).display === "flex" && menuContainer.contains(targetElement) && !targetElement.closest(".menuSelect")) {
-    closeMenuSection();
-  };
+document.addEventListener("click", function (event) {
+  handleSectionClick(event, menuContainer, ".menuSelect", closeMenuSection);
 });
 
-// Close Menu section when "Esc" key is pressed
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closeMenuSection();
-  };
+document.addEventListener("keydown", function (event) {
+  handleSectionEscKey(event, closeSection(menuContainer));
 });
 
 
 
+
+// Open the contact form when "Contact" link is clicked
+if (contactLink) {
+  contactLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    openSection(contactContainer);
+  });
+}
+
+
+
+// Open About section, when "About" link is clicked
+if (aboutLink) {
+  aboutLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    openSection(aboutContainer);
+  });
+}
 
 
 
 // Open Portfolio section when "Portfolio" link is clicked
 if (portfolioLink) {
-  portfolioLink.addEventListener("click", function(event) {
+  portfolioLink.addEventListener("click", function (event) {
     event.preventDefault();
-    openPortfolioSection();
+    openSection(portfolioContainer);
   });
-};
-
-// Close Portfolio section when is click outside of it
-document.addEventListener("click", function(event) {
-  const targetElement = event.target;
-
-  if (getComputedStyle(portfolioContainer).display === "flex" && portfolioContainer.contains(targetElement) && !targetElement.closest(".portfolioContent")) {
-    closePortfolioSection();
-  };
-});
-
-//Close Portfolio section when "Esc" is clicked
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closePortfolioSection();
-  };
-});
-
-
-
+}
 
 
 
 // Open Pricing section when "Pricing" link is clicked
 if (pricingLink) {
-  pricingLink.addEventListener("click", function(event) {
+  portfolioLink.addEventListener("click", function (event) {
     event.preventDefault();
-    openPricingSection();
+    openSection(pricingContainer);
   });
-};
-
-// Close Pricing section when is click outside of it
-document.addEventListener("click", function(event) {
-  const targetElement = event.target;
-
-  if (getComputedStyle(pricingContainer).display === "flex" && pricingContainer.contains(targetElement) && !targetElement.closest(".pricingContent")) {
-    closePricingSection();
-  };
-});
-
-//Close Pricing section when "Esc" is clicked
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closePricingSection();
-  };
-});
+}
 
 
 
@@ -160,114 +102,29 @@ document.addEventListener("keydown", function(event) {
 
 
 
-// Functions ######@~$&*
-
-
-// Function to open the contact form
-function openContactForm() {
-  contactContainer.style.display = "flex";
-  mainContainer.style.display = "none";
-  menuContainer.style.display = "none";
-  bodyElement.style.backdropFilter = "blur(5px)";
-};
-
-// Function to close the contact form
-function closeContactForm() {
-  mainContainer.style.display = "flex";
-  contactContainer.style.display = "none";
-  bodyElement.style.backdropFilter = null;
-};
 
 
 
 
 
 
-// Function to open About section 
-function openAboutSection() {
-  aboutContainer.style.display = "flex";
-  mainContainer.style.display = "none";
-  menuContainer.style.display = "none";
-  bodyElement.style.backdropFilter = "blur(5px)";
-};
-
-// Function to close About section
-function closeAboutSection() {
-  mainContainer.style.display = "flex";
-  aboutContainer.style.display = "none";
-  bodyElement.style.backdropFilter = null;
-};
 
 
 
 
 
 
-// Function to open Menu section
-function openMenuSection() {
-  menuContainer.style.display = "flex";
-  mainContainer.style.display = "none";
-  bodyElement.style.backdropFilter = "blur(5px)";
-};
-
-// Function to close Menu section
-function closeMenuSection() {
-  mainContainer.style.display = "flex";
-  menuContainer.style.display = "none";
-  bodyElement.style.backdropFilter = null;
-};
-
-// Function to close Menu section slowly, idk I use it in final, probably not
-function closeMenuSectionSlowly() {
-  menuContainer.style.animationTimingFunction = "fadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-  menuContainer.style.animationFillMode = "forwards";
-
-  setTimeout(() => {
-    mainContainer.style.display = "flex";
-    menuContainer.style.display = "none";
-    bodyElement.style.backdropFilter = null;
-  }, 10);
-};
 
 
 
 
 
 
-// Function to open Portfolio section
-function openPortfolioSection() {
-  portfolioContainer.style.display = "flex";
-  mainContainer.style.display = "none";
-  menuContainer.style.display = "none";
-  bodyElement.style.backdropFilter = "blur(5px)";
-};
-
-// Function to close Portfolio section
-function closePortfolioSection() {
-  mainContainer.style.display = "flex";
-  portfolioContainer.style.display = "none";
-  bodyElement.style.backdropFilter = null;
-};
 
 
 
 
 
-
-// Function to open Pricing section
-function openPricingSection() {
-  pricingContainer.style.display = "flex";
-  mainContainer.style.display = "none";
-  menuContainer.style.display = "none";
-  bodyElement.style.backdropFilter = "blur(5px)";
-};
-
-// Function to close Pricing section
-function closePricingSection() {
-  mainContainer.style.display = "flex";
-  pricingContainer.style.display = "none";
-  bodyElement.style.backdropFilter = null;
-};
 
 
 
