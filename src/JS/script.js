@@ -15,21 +15,21 @@ function closeSection(sectionContainer) {
   bodyElement.style.backdropFilter = null;
 }
 
-function handleSectionClick(event, sectionContainer, contentClass, closeSectionFn) {
+function handleSectionClick(event, sectionContainer, contentClass) {
   const targetElement = event.target;
 
   if (
     getComputedStyle(sectionContainer).display === "flex" &&
     sectionContainer.contains(targetElement) &&
-    targetElement.closest(contentClass)
+    !targetElement.closest(contentClass)
   ) {
-    closeSectionFn();
+    closeSection();
   }
 }
 
-function handleSectionEscKey(event, closeSectionFn) {
+function handleSectionEscKey(event, closeSection) {
   if (event.key === "Escape") {
-    closeSectionFn();
+    closeSection();
   }
 }
 
@@ -45,8 +45,9 @@ if (menuLink) {
   });
 }
 
+// Closing it
 document.addEventListener("click", function (event) {
-  handleSectionClick(event, menuContainer, ".menuSelect", closeMenuSection);
+  handleSectionClick(event, menuContainer, ".menuSelect");
 });
 
 document.addEventListener("keydown", function (event) {
@@ -64,6 +65,24 @@ if (contactLink) {
   });
 }
 
+// Closing it 
+document.addEventListener("click", function (event) {
+  handleSectionClick(event, contactContainer, ".contact-form");
+});
+
+document.addEventListener("keydown", function (event) {
+  handleSectionEscKey(event, closeSection(contactContainer));
+});
+
+if (backButton) {
+  backButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    closeSection();
+  });
+}
+
+
+
 
 
 // Open About section, when "About" link is clicked
@@ -73,6 +92,15 @@ if (aboutLink) {
     openSection(aboutContainer);
   });
 }
+
+// Closing it 
+document.addEventListener("click", function (event) {
+  handleSectionClick(event, aboutContainer, ".aboutContent");
+});
+
+document.addEventListener("keydown", function (event) {
+  handleSectionEscKey(event, closeSection(aboutContainer));
+});
 
 
 
@@ -84,6 +112,15 @@ if (portfolioLink) {
   });
 }
 
+// Closing it 
+document.addEventListener("click", function (event) {
+  handleSectionClick(event, portfolioContainer, ".portfolioContent");
+});
+
+document.addEventListener("keydown", function (event) {
+  handleSectionEscKey(event, closeSection(portfolioContainer));
+});
+
 
 
 // Open Pricing section when "Pricing" link is clicked
@@ -93,6 +130,15 @@ if (pricingLink) {
     openSection(pricingContainer);
   });
 }
+
+// Closing it 
+document.addEventListener("click", function (event) {
+  handleSectionClick(event, pricingContainer, ".pricingContent");
+});
+
+document.addEventListener("keydown", function (event) {
+  handleSectionEscKey(event, closeSection(pricingContainer));
+});
 
 
 
