@@ -1,5 +1,10 @@
+
+// imported variables
 import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, portfolioContainer, portfolioLink, pricingContainer, pricingLink} from "/src/JS/variables.js";
 
+
+
+// general reuseble functions
 function openSection(sectionContainer) {
   sectionContainer.style.display = "flex";
   mainContainer.style.display = "none";
@@ -23,13 +28,13 @@ function handleSectionClick(event, sectionContainer, contentClass) {
     sectionContainer.contains(targetElement) &&
     !targetElement.closest(contentClass)
   ) {
-    closeSection();
+    closeSection(sectionContainer);
   }
 }
 
-function handleSectionEscKey(event, closeSection) {
+function handleSectionEscKey(event, closeSection, sectionContainer) {
   if (event.key === "Escape") {
-    closeSection();
+    closeSection(sectionContainer);
   }
 }
 
@@ -51,7 +56,7 @@ document.addEventListener("click", function (event) {
 });
 
 document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection(menuContainer));
+  handleSectionEscKey(event, closeSection, menuContainer);
 });
 
 
@@ -71,13 +76,13 @@ document.addEventListener("click", function (event) {
 });
 
 document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection(contactContainer));
+  handleSectionEscKey(event, closeSection, contactContainer);
 });
 
 if (backButton) {
   backButton.addEventListener("click", function (event) {
     event.preventDefault();
-    closeSection();
+    closeSection(contactContainer);
   });
 }
 
@@ -99,7 +104,7 @@ document.addEventListener("click", function (event) {
 });
 
 document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection(aboutContainer));
+  handleSectionEscKey(event, closeSection, aboutContainer);
 });
 
 
@@ -118,14 +123,14 @@ document.addEventListener("click", function (event) {
 });
 
 document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection(portfolioContainer));
+  handleSectionEscKey(event, closeSection, portfolioContainer);
 });
 
 
 
 // Open Pricing section when "Pricing" link is clicked
 if (pricingLink) {
-  portfolioLink.addEventListener("click", function (event) {
+  pricingLink.addEventListener("click", function (event) {
     event.preventDefault();
     openSection(pricingContainer);
   });
@@ -137,7 +142,7 @@ document.addEventListener("click", function (event) {
 });
 
 document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection(pricingContainer));
+  handleSectionEscKey(event, closeSection, pricingContainer);
 });
 
 
@@ -259,17 +264,18 @@ document.addEventListener("keydown", function (event) {
 
 // Code here is for change of languages
 
-document.getElementById("sk").addEventListener("click", function(event) {
-  loadLanguage("sk");
-});
 
-document.getElementById("en").addEventListener("click", function(event) {
-  loadLanguage("en");
-});
+  document.getElementById("sk").addEventListener("click", function(event) {
+    loadLanguage("sk");
+  });
 
-document.getElementById("ua").addEventListener("click", function(event) {
-  loadLanguage("ua");
-});
+  document.getElementById("en").addEventListener("click", function(event) {
+    loadLanguage("en");
+  });
+
+  document.getElementById("ua").addEventListener("click", function(event) {
+    loadLanguage("ua");
+  });
 
 
 function loadLanguage(lang) {
@@ -292,7 +298,6 @@ function loadLanguage(lang) {
     document.getElementById("contactMeForm").textContent = data.contactMeForm;
     document.getElementById("nameContactForm").textContent = data.nameContactForm;
     document.getElementById("emailContactForm").textContent = data.emailContactForm;
-    document.getElementById("phoneContactForm").textContent = data.phoneContactForm;
     document.getElementById("messageContactForm").textContent = data.messageContactForm;
     document.getElementById("backButton").textContent = data.backButton;
     document.getElementById("submitButton").textContent = data.submitButton;
