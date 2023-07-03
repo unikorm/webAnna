@@ -100,7 +100,7 @@ if (aboutLink) {
 
 // Closing it 
 document.addEventListener("click", function (event) {
-  handleSectionClick(event, aboutContainer, ".aboutContent");
+  handleSectionClick(event, aboutContainer, ".authorInfo");
 });
 
 document.addEventListener("keydown", function (event) {

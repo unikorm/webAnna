@@ -17,7 +17,7 @@
 .menuSelect {
     align-items: center;
     flex-direction: column;
-    width: 28vh;
+    width: fit-content;
 }
 
 .languageSelect {
