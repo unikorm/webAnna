@@ -211,14 +211,14 @@ document.addEventListener("keydown", function (event) {
 
   // Function to change background image constantly
   let images = [
-    "/photo/DSC_1042.JPG",
-    "/photo/DSC_0187-2.JPG",
     "/photo/DSC_0095.JPG",
     "/photo/DSC_1202.JPG",
+    "/photo/DSC_0187-2.JPG",
+    "/photo/DSC_1042.JPG",
     "/photo/DSC_0069.jpg"
   ];
   
-  let currentIndex = 1;
+  let currentIndex = 0;
   let preloadedImages = [];  // Array to store preloaded images
   
   function preloadImages() {
