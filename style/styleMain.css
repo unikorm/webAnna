@@ -21,6 +21,14 @@ body {
   background: #000;
   margin: 0;
   height: 100vh;
+
+  transition: background-image .4s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  -webkit-background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 

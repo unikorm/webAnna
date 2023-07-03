@@ -4,6 +4,11 @@ import { contactContainer, mainContainer, contactLink, backButton, aboutLink, ab
 
 
 
+
+
+
+
+
 // general reuseble functions
 function openSection(sectionContainer) {
   sectionContainer.style.display = "flex";
@@ -11,13 +16,13 @@ function openSection(sectionContainer) {
   if (sectionContainer !== menuContainer) {
     menuContainer.style.display = "none";
   }
-  bodyElement.style.backdropFilter = "blur(5px)";
+  sectionContainer.style.backdropFilter = "blur(5px)";
 }
 
 function closeSection(sectionContainer) {
   mainContainer.style.display = "flex";
   sectionContainer.style.display = "none";
-  bodyElement.style.backdropFilter = null;
+  sectionContainer.style.backdropFilter = null;
 }
 
 function handleSectionClick(event, sectionContainer, contentClass) {
@@ -242,7 +247,7 @@ document.addEventListener("keydown", function (event) {
 
   function startRotation() {
     changeBackground(); // change background immediatly on page load
-    setInterval(changeBackground, 10000); // Run the function every 10 seconds
+    setInterval(changeBackground, 4000); // Run the function every 10 seconds
   };
   
   function changeBackground() {
@@ -250,7 +255,7 @@ document.addEventListener("keydown", function (event) {
     currentIndex = (currentIndex + 1) % images.length;
   };
 
-  // preloadImages();  // start preloading images
+  preloadImages();  // start preloading images
   
   
   
