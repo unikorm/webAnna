@@ -54,10 +54,14 @@
 }
 
 @media (min-width: 1024px) {
-    .previewContainer img {
+    .portfolioContent {
+        max-width: max-content;
+    }
+
+    /* .previewContainer img {
         height: auto;
         max-height: 90vh;
         width: auto;
         max-width: 100vh;
-    }
+    } */
 }

@@ -315,29 +315,29 @@ function loadLanguage(lang) {
 
 
 // Code for preview of portfolio items
-portfolioItems.forEach((item) => {
-  item.addEventListener("click", (event) => {
-    event.preventDefault();
-    const imgUrl = item.getAttribute("href");
-    showPreview(imgUrl);
-  });
-});
+// portfolioItems.forEach((item) => {
+//   item.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     const imgUrl = item.getAttribute("href");
+//     showPreview(imgUrl);
+//   });
+// });
 
-function showPreview(imgUrl) {
-  const previewImage = document.createElement("img");
-  previewImage.src = imgUrl;
+// function showPreview(imgUrl) {
+//   const previewImage = document.createElement("img");
+//   previewImage.src = imgUrl;
 
-  previewContainer.innerHTML = "";
-  previewContainer.appendChild(previewImage);
-  portfolioContainer.style.display = "none";
-  previewContainer.style.display = "flex";
+//   previewContainer.innerHTML = "";
+//   previewContainer.appendChild(previewImage);
+//   portfolioContainer.style.display = "none";
+//   previewContainer.style.display = "flex";
 
-}
+// }
 
-previewContainer.addEventListener("click", () => {
-  previewContainer.style.display = "none";
-  portfolioContainer.style.display = "flex";
-});
+// previewContainer.addEventListener("click", () => {
+//   previewContainer.style.display = "none";
+//   portfolioContainer.style.display = "flex";
+// });
 
 
 
