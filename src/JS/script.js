@@ -219,52 +219,58 @@ document.addEventListener("keydown", function (event) {
   ];
   
   let currentIndex = 0;
-  let preloadedImages = [];  // Array to store preloaded images
+  let preloadedImages = [];
+  
+  function preloadImage(index) {
+    return new Promise((resolve, reject) => {
+      let img = new Image();
+      img.onload = () => {
+        preloadedImages[index] = img;
+        resolve();
+      };
+      img.onerror = () => reject(new Error(`Failed to load image: ${images[index]}`));
+      img.src = images[index];
+    });
+  }
   
   function preloadImages() {
     let promises = [];
   
-    for (let i = 0; i < images.length; i++) {
-      let img = new Image();
-      let promise = new Promise((resolve, reject) => {
-        img.onload = () => resolve(img);
-        img.onerror = () => reject(new Error(`Failed to load image: ${images[i]}`));
-      });
-  
-      img.src = images[i];
+    for (let i = 1; i < images.length; i++) {
+      let promise = preloadImage(i);
       promises.push(promise);
-    };
+    }
   
     Promise.all(promises)
-    .then((loadedImages) => {
-      loadedImages.forEach((loadedImage, index) => {
-        displayImage(loadedImage);
-        if (index === 0) {
-          startRotation();
-        }
+      .then(() => {
+        startRotation();
+      })
+      .catch((error) => {
+        console.error(error);
       });
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-
-  };
-
-  function displayImage(loadedImage) {
-    document.body.style.backgroundImage = loadedImage;
-  };
-
-  function startRotation() {
-    changeBackground(); // change background immediatly on page load
-    setInterval(changeBackground, 10000); // Run the function every 10 seconds
-  };
+  }
   
-  function changeBackground() {
-    document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
-    currentIndex = (currentIndex + 1) % images.length;
+  function displayImage(index) {
+    document.body.style.backgroundImage = `url(${images[index]})`;
+  }
+  
+  function startRotation() {
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      displayImage(currentIndex);
+    }, 10000);
+  }
+  
+  let firstImage = new Image();
+  firstImage.onload = () => {
+    displayImage(0);
+    preloadImages();
   };
-
-  preloadImages();
+  firstImage.onerror = () => {
+    console.log("Failed to load image: " + images[0]);
+  };
+  firstImage.src = images[0];
+  
 
 
 
