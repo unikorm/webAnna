@@ -276,8 +276,6 @@ document.addEventListener("keydown", function (event) {
 
 
 
-
-
 // Code here is for change of languages
 
 
