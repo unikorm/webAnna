@@ -252,13 +252,11 @@ document.addEventListener("keydown", function (event) {
 
   function displayImage(loadedImage) {
     document.body.style.backgroundImage = loadedImage;
-    console.log('Displaying image:', loadedImage);
   };
 
   function startRotation() {
     changeBackground(); // change background immediatly on page load
     setInterval(changeBackground, 10000); // Run the function every 10 seconds
-    console.log('All images loaded. Starting rotation.');
   };
   
   function changeBackground() {
@@ -327,31 +325,6 @@ function loadLanguage(lang) {
 
 
 
-
-// Code for preview of portfolio items
-// portfolioItems.forEach((item) => {
-//   item.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     const imgUrl = item.getAttribute("href");
-//     showPreview(imgUrl);
-//   });
-// });
-
-// function showPreview(imgUrl) {
-//   const previewImage = document.createElement("img");
-//   previewImage.src = imgUrl;
-
-//   previewContainer.innerHTML = "";
-//   previewContainer.appendChild(previewImage);
-//   portfolioContainer.style.display = "none";
-//   previewContainer.style.display = "flex";
-
-// }
-
-// previewContainer.addEventListener("click", () => {
-//   previewContainer.style.display = "none";
-//   portfolioContainer.style.display = "flex";
-// });
 
 
 
