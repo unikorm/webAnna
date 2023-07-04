@@ -211,11 +211,11 @@ document.addEventListener("keydown", function (event) {
 
   // Function to change background image constantly
   let images = [
-    "/photo/DSC_0069.JPG",
+    "/photo/DSC_0069.jpg",
     "/photo/DSC_1202.JPG",
     "/photo/DSC_0187-2.JPG",
     "/photo/DSC_1042.JPG",
-    "/photo/DSC_0095.jpg"
+    "/photo/DSC_0095.JPG"
   ];
   
   let currentIndex = 0;
@@ -235,24 +235,19 @@ document.addEventListener("keydown", function (event) {
       promises.push(promise);
     };
   
-    Promise.race(promises)
-    .then((loadedImage) => {
-      preloadedImages.push(loadedImage);
-      displayImage(loadedImage);
+    Promise.all(promises)
+    .then((loadedImages) => {
+      loadedImages.forEach((loadedImage, index) => {
+        displayImage(loadedImage);
+        if (index === 0) {
+          startRotation();
+        }
+      });
     })
     .catch((error) => {
       console.error(error);
     });
 
-  Promise.all(promises)
-    .then((loadedImages) => {
-      preloadedImages = preloadedImages.concat(loadedImages);
-      startRotation();
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-    
   };
 
   function displayImage(loadedImage) {
@@ -269,15 +264,9 @@ document.addEventListener("keydown", function (event) {
     currentIndex = (currentIndex + 1) % images.length;
   };
 
-  let firstImage = new Image();
-  firstImage.onload = () => {
-    displayImage(firstImage);
-    preloadImages();
-  };
-  firstImage.onerror = () => {
-    console.log("failed to load ${images[0]}")
-  };
-  firstImage.src = images[0];
+  preloadImages();
+
+
 
   
   
