@@ -211,11 +211,11 @@ document.addEventListener("keydown", function (event) {
 
   // Function to change background image constantly
   let images = [
-    "/photo/DSC_0095.JPG",
+    "/photo/DSC_0069.JPG",
     "/photo/DSC_1202.JPG",
     "/photo/DSC_0187-2.JPG",
     "/photo/DSC_1042.JPG",
-    "/photo/DSC_0069.jpg"
+    "/photo/DSC_0095.jpg"
   ];
   
   let currentIndex = 0;
@@ -235,12 +235,16 @@ document.addEventListener("keydown", function (event) {
       promises.push(promise);
     };
   
-    promises[0]
+    Promise.race(promises)
     .then((loadedImage) => {
       preloadedImages.push(loadedImage);
       displayImage(loadedImage);
-      return Promise.all(promises.slice(1)); // Load the rest of the images
     })
+    .catch((error) => {
+      console.error(error);
+    });
+
+  Promise.all(promises)
     .then((loadedImages) => {
       preloadedImages = preloadedImages.concat(loadedImages);
       startRotation();
@@ -248,6 +252,7 @@ document.addEventListener("keydown", function (event) {
     .catch((error) => {
       console.error(error);
     });
+    
   };
 
   function displayImage(loadedImage) {
@@ -274,7 +279,6 @@ document.addEventListener("keydown", function (event) {
   };
   firstImage.src = images[0];
 
-  // preloadImages();  // start preloading images
   
   
   
@@ -307,7 +311,7 @@ function loadLanguage(lang) {
     document.getElementById("portfolio").textContent = data.portfolio;
     document.getElementById("about").textContent = data.about;
     document.getElementById("contact").textContent = data.contact;
-    document.getElementById("pricing").textContent = data.pricing;
+    // document.getElementById("pricing").textContent = data.pricing;
     document.getElementById("mainName").textContent = data.mainName;
     document.getElementById("mainDescription").textContent = data.mainDescription;
     document.getElementById("aboutName").textContent = data.aboutName;
