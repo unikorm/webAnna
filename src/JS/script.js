@@ -264,7 +264,17 @@ document.addEventListener("keydown", function (event) {
     currentIndex = (currentIndex + 1) % images.length;
   };
 
-  preloadImages();  // start preloading images
+  let firstImage = new Image();
+  firstImage.onload = () => {
+    displayImage(firstImage);
+    preloadImages();
+  };
+  firstImage.onerror = () => {
+    console.log("failed to load ${images[0]}")
+  };
+  firstImage.src = images[0];
+
+  // preloadImages();  // start preloading images
   
   
   
