@@ -235,19 +235,30 @@ document.addEventListener("keydown", function (event) {
       promises.push(promise);
     };
   
-    Promise.all(promises)
-      .then((loadedImages) => {
-        preloadedImages = loadedImages;
-        startRotation();
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    promises[0]
+    .then((loadedImage) => {
+      preloadedImages.push(loadedImage);
+      displayImage(loadedImage);
+      return Promise.all(promises.slice(1)); // Load the rest of the images
+    })
+    .then((loadedImages) => {
+      preloadedImages = preloadedImages.concat(loadedImages);
+      startRotation();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  };
+
+  function displayImage(loadedImage) {
+    document.body.style.backgroundImage = loadedImage;
+    console.log('Displaying image:', loadedImage);
   };
 
   function startRotation() {
     changeBackground(); // change background immediatly on page load
-    setInterval(changeBackground, 4000); // Run the function every 10 seconds
+    setInterval(changeBackground, 10000); // Run the function every 10 seconds
+    console.log('All images loaded. Starting rotation.');
   };
   
   function changeBackground() {
