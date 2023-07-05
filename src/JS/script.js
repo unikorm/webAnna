@@ -17,12 +17,14 @@ function openSection(sectionContainer) {
     menuContainer.style.display = "none";
   }
   sectionContainer.style.backdropFilter = "blur(5px)";
+  sectionContainer.style.webkitBackdropFilter = "blur(5px)";
 }
 
 function closeSection(sectionContainer) {
   mainContainer.style.display = "flex";
   sectionContainer.style.display = "none";
   sectionContainer.style.backdropFilter = null;
+  sectionContainer.style.webkitBackdropfFilter = null;
 }
 
 function handleSectionClick(event, sectionContainer, contentClass) {
