@@ -253,13 +253,7 @@ document.addEventListener("keydown", function (event) {
   }
   
   function displayImage(index) {
-    document.body.style.opacity = 0; // Start with opacity 0
-
-    setTimeout(() => {
-      document.body.style.backgroundImage = `url(${images[index]})`;
-      document.body.style.opacity = 1; // Fade in the new image
-    }, 500); // Adjust this value to control the transition duration
-    // not working properly, it opacity whole page, not only image
+    document.body.style.backgroundImage = `url(${images[index]})`;
   }
   
   function startRotation() {
