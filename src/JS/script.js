@@ -48,6 +48,7 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
 
 
 
+// event handlers
 
 // Open Menu section when Menu Icon svg is pressed
 if (menuLink) {
@@ -225,8 +226,6 @@ window.addEventListener('load', function() {
 
     tempImage.src = imageUrl;
   });
-
-  console.log('Website fully loaded!');
 });
  
 
@@ -236,6 +235,20 @@ window.addEventListener('load', function() {
 
 
 
+
+
+
+
+  // event handler to constantly now actual width of website
+  let websiteWidth;
+
+  function updateWebsiteWidth() {
+    websiteWidth = window.innerWidth;
+  };
+
+  updateWebsiteWidth();
+
+  window.addEventListener("resize", updateWebsiteWidth);
 
 
 
@@ -357,7 +370,7 @@ function loadLanguage(lang) {
     document.getElementById("submitButton").textContent = data.submitButton;
   })
   .catch(error => console.error(error));
-}
+};
 
 
 
