@@ -211,6 +211,35 @@ document.addEventListener("keydown", function (event) {
 
 // another dimension
 
+// Function to load portfolio images after DOMContent is fully loaded
+window.addEventListener('load', function() {
+  const lazyImages = document.querySelectorAll('.lazy');
+
+  lazyImages.forEach(image => {
+    const imageUrl = image.dataset.src;
+    const tempImage = new Image();
+
+    tempImage.addEventListener('load', function() {
+      image.setAttribute('src', imageUrl);
+    });
+
+    tempImage.src = imageUrl;
+  });
+
+  console.log('Website fully loaded!');
+});
+ 
+
+
+
+
+
+
+
+
+
+
+
   // Function to change background image constantly
   let images = [
     "/photo/DSC_0069.jpg",
