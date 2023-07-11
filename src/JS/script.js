@@ -233,7 +233,7 @@ document.addEventListener("keydown", function (event) {
       img.onerror = () => reject(new Error(`Failed to load image: ${images[index]}`));
       img.src = images[index];
     });
-  }
+  };
   
   function preloadImages() {
     let promises = [];
@@ -241,7 +241,7 @@ document.addEventListener("keydown", function (event) {
     for (let i = 1; i < images.length; i++) {
       let promise = preloadImage(i);
       promises.push(promise);
-    }
+    };
   
     Promise.all(promises)
       .then(() => {
@@ -250,28 +250,30 @@ document.addEventListener("keydown", function (event) {
       .catch((error) => {
         console.error(error);
       });
-  }
+  };
   
   function displayImage(index) {
     document.body.style.backgroundImage = `url(${images[index]})`;
-  }
+  };
   
   function startRotation() {
     setInterval(() => {
       currentIndex = (currentIndex + 1) % images.length;
       displayImage(currentIndex);
     }, 10000);
-  }
+  };
   
   let firstImage = new Image();
+  firstImage.src = images[0];
+
   firstImage.onload = () => {
     displayImage(0);
     preloadImages();
   };
+
   firstImage.onerror = () => {
     console.log("Failed to load image: " + images[0]);
   };
-  firstImage.src = images[0];
   
 
 
