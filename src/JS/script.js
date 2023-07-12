@@ -252,16 +252,32 @@ window.addEventListener('load', function() {
 
 
 
-
-  // Function to change background image constantly
-  let images = [
-    "/photo/DSC_0069.jpg",
-    "/photo/DSC_1202.JPG",
-    "/photo/DSC_0187-2.JPG",
-    "/photo/DSC_1042.JPG",
-    "/photo/DSC_0095.JPG"
-  ];
+  let imageArrays = {
+    large: [
+      "/photo/DSC_0069.jpg",
+      "/photo/DSC_1202.JPG",
+      "/photo/DSC_0187-2.JPG",
+      "/photo/DSC_1042.JPG",
+      "/photo/DSC_0095.JPG"
+    ],
+    small: [
+      "/photo/mobilePhoto1.jpeg",
+      "/photo/mobilePhoto2.jpeg",
+      "/photo/mobilePhoto3.jpeg"
+    ]
+  };
   
+  // Function to choose which array of images choose base on width of window
+  function chooseImageArray(width) {
+    if (width > 925) {
+      return imageArrays.large;
+    } else {
+      return imageArrays.small;
+    };
+  };
+  
+   // Function to change background image constantly
+  let images = chooseImageArray(websiteWidth);
   let currentIndex = 0;
   let preloadedImages = [];
   
