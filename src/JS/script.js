@@ -78,10 +78,12 @@ if (contactLink) {
   });
 }
 
-// Closing it  // s tymto sa este pohram, dam var ktora bude mat v sebe aktualny width stranky a z nej vivodim ci treba zapnut tuto funkciu a napojim na tu var mozno aj funkciu na prehodenie bckground image na mobilnu variantu obrazkov
-// document.addEventListener("click", function (event) {
-//   handleSectionClick(event, contactContainer, ".contact-form");
-// });
+//Closing it  // s tymto sa este pohram, dam var ktora bude mat v sebe aktualny width stranky a z nej vivodim ci treba zapnut tuto funkciu a napojim na tu var mozno aj funkciu na prehodenie bckground image na mobilnu variantu obrazkov
+// if (websiteWidth > 700) {
+//   document.addEventListener("click", function (event) {
+//     handleSectionClick(event, contactContainer, ".contact-form");
+//   });
+// };
 
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, contactContainer);
@@ -347,6 +349,14 @@ window.addEventListener('load', function() {
   firstImage.onerror = () => {
     console.log("Failed to load image: " + images[0]);
   };
+
+  if (websiteWidth > 700) {
+    document.addEventListener("click", function (event) {
+      handleSectionClick(event, contactContainer, ".contact-form");
+    });
+  } else if (websiteWidth < 701) {
+    
+  }
 
 
 
