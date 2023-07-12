@@ -239,18 +239,6 @@ window.addEventListener('load', function() {
 
 
 
-  // event handler to constantly now actual width of website
-  let websiteWidth;
-
-  function updateWebsiteWidth() {
-    websiteWidth = window.innerWidth;
-  };
-
-  updateWebsiteWidth();
-
-  window.addEventListener("resize", updateWebsiteWidth);
-
-
 
   let imageArrays = {
     large: [
@@ -275,12 +263,34 @@ window.addEventListener('load', function() {
       return imageArrays.small;
     };
   };
+
+    // event handler to constantly now actual width of website
+    let websiteWidth;
+    let currentImageArray;
+    let currentIndex = 0;
+    let preloadedImages = [];
+    let images;
+  
+    function updateWebsiteWidth() {
+      const previousImageArray = currentImageArray;
+      websiteWidth = window.innerWidth;
+      currentImageArray = chooseImageArray(websiteWidth);
+  
+      if (currentImageArray !== previousImageArray) {
+       images = currentImageArray;
+       currentIndex = 0;
+       preloadedImages = [];
+       preloadImages();
+     };
+    };
+  
+    updateWebsiteWidth();
+  
+    window.addEventListener("resize", updateWebsiteWidth);
   
    // Function to change background image constantly
-  let images = chooseImageArray(websiteWidth);
-  let currentIndex = 0;
-  let preloadedImages = [];
-  
+  // let images = chooseImageArray(websiteWidth);
+
   function preloadImage(index) {
     return new Promise((resolve, reject) => {
       let img = new Image();
@@ -332,7 +342,8 @@ window.addEventListener('load', function() {
   firstImage.onerror = () => {
     console.log("Failed to load image: " + images[0]);
   };
-  
+
+
 
 
 
