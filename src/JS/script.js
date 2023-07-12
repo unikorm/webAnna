@@ -239,7 +239,7 @@ window.addEventListener('load', function() {
 
 
 
-
+  // Function to change and rotate background images on web site
   let imageArrays = {
     large: [
       "/photo/DSC_0069.jpg",
@@ -265,11 +265,13 @@ window.addEventListener('load', function() {
   };
 
     // event handler to constantly now actual width of website
+
     let websiteWidth;
     let currentImageArray;
     let currentIndex = 0;
     let preloadedImages = [];
     let images;
+    let rotationInterval;
   
     function updateWebsiteWidth() {
       const previousImageArray = currentImageArray;
@@ -289,7 +291,6 @@ window.addEventListener('load', function() {
     window.addEventListener("resize", updateWebsiteWidth);
   
    // Function to change background image constantly
-  // let images = chooseImageArray(websiteWidth);
 
   function preloadImage(index) {
     return new Promise((resolve, reject) => {
@@ -325,11 +326,15 @@ window.addEventListener('load', function() {
   };
   
   function startRotation() {
-    setInterval(() => {
+    if (rotationInterval) {
+      clearInterval(rotationInterval); // Clear the previous interval
+    }
+  
+    rotationInterval = setInterval(() => {
       currentIndex = (currentIndex + 1) % images.length;
       displayImage(currentIndex);
     }, 10000);
-  };
+  }
   
   let firstImage = new Image();
   firstImage.src = images[0];
