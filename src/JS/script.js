@@ -79,14 +79,6 @@ if (contactLink) {
 }
 
 //Closing it  
-
-// s tymto sa este pohram, dam var ktora bude mat v sebe aktualny width stranky a z nej vivodim ci treba zapnut tuto funkciu a napojim na tu var mozno aj funkciu na prehodenie bckground image na mobilnu variantu obrazkov
-// if (websiteWidth > 700) {
-//   document.addEventListener("click", function (event) {
-//     handleSectionClick(event, contactContainer, ".contact-form");
-//   });
-// };
-
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, contactContainer);
 });
@@ -313,13 +305,14 @@ window.addEventListener('load', function() {
   function preloadImages() {
     let promises = [];
   
-    for (let i = 1; i < images.length; i++) {
+    for (let i = 0; i < images.length; i++) {
       let promise = preloadImage(i);
       promises.push(promise);
     };
   
     Promise.all(promises)
       .then(() => {
+        console.log(preloadedImages);
         startRotation();
       })
       .catch((error) => {
@@ -329,6 +322,7 @@ window.addEventListener('load', function() {
   
   function displayImage(index) {
     document.body.style.backgroundImage = `url(${images[index]})`;
+    console.log(`url(${images[index]})`);
   };
   
   function startRotation() {
@@ -347,7 +341,6 @@ window.addEventListener('load', function() {
 
   firstImage.onload = () => {
     displayImage(0);
-    preloadImages();
   };
 
   firstImage.onerror = () => {
