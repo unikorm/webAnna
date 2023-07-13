@@ -312,7 +312,6 @@ window.addEventListener('load', function() {
   
     Promise.all(promises)
       .then(() => {
-        console.log(preloadedImages);
         startRotation();
       })
       .catch((error) => {
@@ -322,7 +321,6 @@ window.addEventListener('load', function() {
   
   function displayImage(index) {
     document.body.style.backgroundImage = `url(${images[index]})`;
-    console.log(`url(${images[index]})`);
   };
   
   function startRotation() {
