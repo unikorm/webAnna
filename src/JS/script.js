@@ -355,16 +355,23 @@ window.addEventListener('load', function() {
   };
 
 
+
+
+
+
+
+
   // Function to control behaviour of closing Contact form clicking outside of it 
+  function handleContactFormClick(event) {
+    handleSectionClick(event, contactContainer, ".contact-form");
+  };
+
   function closingContactForm() {
     if (websiteWidth > 700) {
-      document.addEventListener("click", function (event) {
-       handleSectionClick(event, contactContainer, ".contact-form");
-      });
-      console.log("desktop");
+      document.addEventListener("click", handleContactFormClick);
     } else if (websiteWidth < 701) {
-      console.log("mobil")
-    }
+      document.removeEventListener("click", handleContactFormClick);
+    };
   };
 
 
