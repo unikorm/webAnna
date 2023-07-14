@@ -1,7 +1,7 @@
-<!-- this is from Github -->
+<!-- this is from Github  -->
 
 <?php
-require '../vendor/autoload.php';
+/* require '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -26,10 +26,12 @@ try {
     echo 'Email sent successfully';
 } catch (Exception $e) {
     echo 'Email could not be sent. Error: ' . $mail->ErrorInfo;
-};
+}; */
 
 
 // a toto su moje skusky co poskladam z internetu
+
+use PHPMailer\PHPMailer\PHPMailer;
 
 require 'vendor/autoload.php';
 
