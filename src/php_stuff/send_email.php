@@ -1,7 +1,8 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-require '../../../vendor/autoload.php';
+require 'vendor/autoload.php';
 
 $mail = new PHPMailer();
 
@@ -18,12 +19,16 @@ $mail->addAddress('recipient@example.com', 'Recipient Name');
 $mail->Subject = 'Subject of your email';
 $mail->Body = 'Content of your email';
 
+try { 
 if ($mail->send()) {
     echo 'Email sent successfully!';
 } else {
     echo 'Email could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
 };
+}
+catch (Exception $e) {
+    echo 'An error occurred while sending the email: ' . $e->getMessage();
+}
 
 
     echo "Hello, World!";
