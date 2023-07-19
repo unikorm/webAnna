@@ -1,6 +1,6 @@
 <!-- this is from Github  -->
 
-<?php
+
 /* require '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -30,12 +30,12 @@ try {
 
 
 // a toto su moje skusky co poskladam z internetu
-
+<?php
 use PHPMailer\PHPMailer\PHPMailer;
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
-$mail = new PHPMailer/PHPMailer/PHPMailer();
+$mail = new PHPMailer();
 
 $mail->isSMTP();  // Set mailer to use SMTP
 $mail->Host = 'smtp.example.com';  // Specify main and backup SMTP servers
@@ -56,5 +56,10 @@ if ($mail->send()) {
     echo 'Email could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 };
+
+
+    echo "Hello, World!";
+?>
+
 
 

@@ -1,3 +1,4 @@
+"use strict";
 
 // imported variables
 import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer} from "/src/JS/variables.js";
