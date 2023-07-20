@@ -78,15 +78,15 @@
       <form id="contactForm" action="src/php_stuff/send_email.php" method="POST">
         <div class="form-group">
           <label id="nameContactForm" for="name">Meno</label>
-          <input type="text" id="name">
+          <input type="text" id="name" name="name">
         </div>
         <div class="form-group">
           <label id="emailContactForm" for="email">Email</label>
-          <input type="email" id="email">
+          <input type="email" id="email" name="email">
         </div>
         <div class="form-group">
           <label id="messageContactForm" for="message">Správa</label>
-          <textarea id="message"></textarea>
+          <textarea id="message" name="message"></textarea>
         </div>
         <div class="form-group buttons">
           <button id="backButton" type="button">Späť</button>
