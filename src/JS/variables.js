@@ -10,6 +10,7 @@ export let bodyElement = document.querySelector("body");
 export let menuLink = document.getElementById("menuIcon");
 export let menuContainer = document.querySelector(".menuContainer");
 export let submitButton = document.getElementById("submitButton");
+export let contactForm = document.getElementById("contactForm");
 export let portfolioContainer= document.querySelector(".portfolioContainer");
 export let portfolioLink = document.getElementById("portfolio");
 export let pricingContainer = document.querySelector(".pricingContainer");

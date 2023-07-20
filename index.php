@@ -75,7 +75,7 @@
 
     <div class="contact-form">
       <h2 id="contactMeForm">Kontaktujte Ma</h2>
-      <form id="contactForm">
+      <form id="contactForm" action="src/php_stuff/send_email.php" method="POST">
         <div class="form-group">
           <label id="nameContactForm" for="name">Meno</label>
           <input type="text" id="name">

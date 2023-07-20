@@ -1,7 +1,7 @@
 "use strict";
 
 // imported variables
-import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer} from "/src/JS/variables.js";
+import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, contactForm, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer} from "/src/JS/variables.js";
 
 
 
@@ -435,24 +435,27 @@ function loadLanguage(lang) {
 // Code here is for calling PHP script to send email from contact form
 
 submitButton.addEventListener("click", function() {
-  sendEmail();
+  const formData = new FormData(contactForm)
+  sendEmail(formData);
 });
 
-function sendEmail() {
+function sendEmail(formData) {
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "src/php_stuff/send_email.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   xhr.onreadystatechange = function() {
-    if (xhr.readyState = XMLHttpRequest.DONE) {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
         console.log(xhr.responseText)
       } else {
         console.error("Error sending email: " + xhr.status);
-      }
-    }
-  }
-}
+      };
+    };
+  };
+  const encodedData = new URLSearchParams(formData).toString();
+  xhr.send(encodedData);
+};
 
 
 
