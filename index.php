@@ -90,7 +90,7 @@
         </div>
         <div class="form-group buttons">
           <button id="backButton" type="button">Späť</button>
-          <button id="submitButton" type="button">Poslať</button>
+          <button id="submitButton" type="submit">Poslať</button>
         </div>
       </form>
       <div class="otherContacts">

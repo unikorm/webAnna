@@ -4,12 +4,16 @@ use PHPMailer\PHPMailer\Exception;
 
 require '/Users/adamaanna/Documents/www/webAnna/vendor/autoload.php';
 
+var_dump($_SERVER["REQUEST_METHOD"]);
+
 // Check if the form data has been sent using POST method
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get the form data
     $name = $_POST["name"];
     $email = $_POST["email"];
     $message = $_POST["message"];
+
+    var_dump($name, $email, $message);
 
     // Create a new PHPMailer instance
     $mail = new PHPMailer();
@@ -32,14 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         // Attempt to send the email
         if ($mail->send()) {
-            // echo 'Email sent successfully!';
+            echo 'Email sent successfully!';
         } else {
-            // echo 'Email could not be sent.';
+            echo 'Email could not be sent.';
         }
     } catch (Exception $e) {
-        // echo 'An error occurred while sending the email: ' . $e->getMessage();
+        echo 'An error occurred while sending the email: ' . $e->getMessage();
     }
 } else {
-    // echo "Invalid request method.";
+    echo "Invalid request method.";
 }
 ?>

@@ -435,8 +435,10 @@ function loadLanguage(lang) {
 // Code here is for calling PHP script to send email from contact form
 
 submitButton.addEventListener("click", function() {
-  const formData = new FormData(contactForm)
+  const formData = new FormData(contactForm);
   sendEmail(formData);
+  console.log(formData);
+  console.log("button is click, sendEmail function is fired")
 });
 
 function sendEmail(formData) {
@@ -447,7 +449,7 @@ function sendEmail(formData) {
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        console.log(xhr.responseText)
+        console.log("status is 200+")
       } else {
         console.error("Error sending email: " + xhr.status);
       };
@@ -455,6 +457,7 @@ function sendEmail(formData) {
   };
   const encodedData = new URLSearchParams(formData).toString();
   xhr.send(encodedData);
+  console.log(encodedData);
 };
 
 
