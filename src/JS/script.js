@@ -432,14 +432,29 @@ function loadLanguage(lang) {
 
 
 
+// Code here is for calling PHP script to send email from contact form
 
-
-
-
-
-
-// code for http request to server side from contact form, etc.
-submitButton.addEventListener("click", function(event) {
-  event.preventDefault();
-  // here will be code for handling and design to send us a user message
+submitButton.addEventListener("click", function() {
+  sendEmail();
 });
+
+function sendEmail() {
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "src/php_stuff/send_email.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState = XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        console.log(xhr.responseText)
+      } else {
+        console.error("Error sending email: " + xhr.status);
+      }
+    }
+  }
+}
+
+
+
+
+

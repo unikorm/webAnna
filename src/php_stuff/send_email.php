@@ -29,9 +29,6 @@ if ($mail->send()) {
 catch (Exception $e) {
     echo 'An error occurred while sending the email: ' . $e->getMessage();
 }
-
-
-    echo "Hello, World!";
 ?>
 
 

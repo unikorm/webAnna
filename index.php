@@ -89,8 +89,8 @@
           <textarea id="message"></textarea>
         </div>
         <div class="form-group buttons">
-          <button id="backButton">Späť</button>
-          <button id="submitButton" type="submit">Poslať</button>
+          <button id="backButton" type="button">Späť</button>
+          <button id="submitButton" type="button">Poslať</button>
         </div>
       </form>
       <div class="otherContacts">
