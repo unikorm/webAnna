@@ -13,7 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $message = $_POST["message"];
 
-    var_dump($name, $email, $message);
+    var_dump($name);
+    var_dump($email);
+    var_dump($message);
 
     // Create a new PHPMailer instance
     $mail = new PHPMailer();
