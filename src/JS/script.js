@@ -437,7 +437,6 @@ function loadLanguage(lang) {
 submitButton.addEventListener("click", function() {
   const formData = new FormData(contactForm);
   sendEmail(formData);
-  console.log(formData);
   console.log("button is click, sendEmail function is fired")
 });
 
