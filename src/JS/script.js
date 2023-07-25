@@ -434,7 +434,8 @@ function loadLanguage(lang) {
 
 // Code here is for calling PHP script to send email from contact form
 
-submitButton.addEventListener("click", function() {
+submitButton.addEventListener("click", function(event) {
+  event.preventDefault();
   const formData = new FormData(contactForm);
   sendEmail(formData);
   console.log("button is click, sendEmail function is fired")
