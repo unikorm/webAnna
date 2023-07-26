@@ -1,10 +1,11 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require '/Users/adamaanna/Documents/www/webAnna/vendor/autoload.php';
 
-// var_dump($_SERVER["REQUEST_METHOD"]);
+$response;
 
 // Check if the form data has been sent using POST method
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -13,13 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $message = $_POST["message"];
 
-    var_dump($name);
-    var_dump($email);
-    var_dump($message);
-
     // Create a new PHPMailer instance
     $mail = new PHPMailer();
-
     $mail->isSMTP();  // Set mailer to use SMTP
     $mail->Host = 'smtp.example.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;  // Enable SMTP authentication
@@ -38,12 +34,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         // Attempt to send the email
         if ($mail->send()) {
-            echo 'Email sent successfully!';
+            $response = array("success" => true, "message" => "Email sent successfully!");
         } else {
-            echo 'Email could not be sent.';
+            $response = array('success' => false, 'message' => 'Email could not be sent.');
         }
     } catch (Exception $e) {
-        echo 'An error occurred while sending the email: ' . $e->getMessage();
-    };
+        $response = array('success' => false, 'message' => 'An error occurred while sending the email: ' . $e->getMessage());
+    }
 };
+
+
+header("Content-Type: application/json");
+// echo json_encode($response);
 ?>
