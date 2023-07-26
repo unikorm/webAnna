@@ -449,12 +449,13 @@ function sendEmail(formData) {
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        const response = JSON.parse(xhr.responseText);
         console.log("status is 200+");
+        const response = JSON.parse(xhr.responseText);
+        console.log(response);
         if (response.success) {
-          console.log("PHP is working" + response.message);
+          console.log("PHP is working, " + response.message);
         } else {
-          console.error("PHP not working" + response.message);
+          console.error("PHP not working, " + response.message);
         }
       } else {
         console.error("Error sending email: " + xhr.status);

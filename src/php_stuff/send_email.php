@@ -1,11 +1,9 @@
-<?php
+ <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require '/Users/adamaanna/Documents/www/webAnna/vendor/autoload.php';
-
-$response;
 
 // Check if the form data has been sent using POST method
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -34,16 +32,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         // Attempt to send the email
         if ($mail->send()) {
-            $response = array("success" => true, "message" => "Email sent successfully!");
+            $response = array("success" => true, "message" => "PHP work, yop");
         } else {
-            $response = array('success' => false, 'message' => 'Email could not be sent.');
+            $response = array('success' => false, 'message' => 'PHP do not work');
         }
     } catch (Exception $e) {
-        $response = array('success' => false, 'message' => 'An error occurred while sending the email: ' . $e->getMessage());
-    }
+        $response = array('success' => false, 'message' => 'Something bad is happend' . $e->getMessage());
+    };
+
+    echo json_encode($response);
 };
 
-
-header("Content-Type: application/json");
-// echo json_encode($response);
 ?>
