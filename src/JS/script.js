@@ -436,7 +436,7 @@ function loadLanguage(lang) {
 
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
-  if (validateForm()) {
+  if (validateForm() && !containsBadWord()) {
   const formData = new FormData(contactForm);
   sendEmail(formData);
   console.log("button is click, sendEmail function is fired");
@@ -488,10 +488,21 @@ function isValidEmail(email) {
 
 const BADWORDS = [ "fuck", "bitch", "motherfucker", "kkt", "pica", "jebem", "kotleba"]
 
-function containsBadWord(input) {
+function containsBadWord() {
+  const name = nameInput.value;
+  const email = emailInput.value;
+  const message = messageInput.value;
+
   for (const word of BADWORDS) {
     const pattern = new RegExp("\\b" + word + "\\b", "i");
-    if (pattern.test(input)) {
+    if (pattern.test(name)) {
+      nameError.textContent = "Nenadávaj tu!"
+      return true;
+    } else if (pattern.test(email)) {
+      emailError.textContent = "Nenadávaj tu!"
+      return true;
+    } else if (pattern.test(message)) {
+      messageError.textContent = "Nenadávaj tu!"
       return true;
     }
   };
