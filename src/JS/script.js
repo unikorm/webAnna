@@ -509,6 +509,9 @@ function containsBadWord() {
   return false;
 };
 
+
+
+
 function sendEmail(formData) {
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "src/php_stuff/send_email.php", true);
