@@ -443,6 +443,8 @@ submitButton.addEventListener("click", function(event) {
   }
 });
 
+
+
 function validateForm() {
 let isValid = true;
 
@@ -458,7 +460,7 @@ if (nameInput.value.trim() === "") {
 if (emailInput.value.trim() === "") {
   emailError.textContent = "Prosím, napíš tam skutočnú emailovú adresu.";
   isValid = false;
-} else if (isValidEmail(emailInput.value.trim())) {
+} else if (!isValidEmail(emailInput.value.trim())) {
   emailError.textContent = "Nevymýšlaj a daj tam to čo tam patrí.";
   isValid = false;
 };
@@ -467,14 +469,33 @@ if (messageInput.value.trim() === "") {
   messageError.textContent = "Napíš tu aspoň niečo, hocičo...";
   isValid = false;
 };
+
+nameInput.value = nameInput.value.trim();
+emailInput.value = emailInput.value.trim();
+messageInput.value = messageInput.value.trim();
+
 console.log(isValid);
 return isValid;
 
 };
 
 function isValidEmail(email) {
-  const EMAILPATTERN = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
-  return EMAILPATTERN.test(email);
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+};
+
+
+
+const BADWORDS = [ "fuck", "bitch", "motherfucker", "kkt", "pica", "jebem", "kotleba"]
+
+function containsBadWord(input) {
+  for (const word of BADWORDS) {
+    const pattern = new RegExp("\\b" + word + "\\b", "i");
+    if (pattern.test(input)) {
+      return true;
+    }
+  };
+  return false;
 };
 
 function sendEmail(formData) {

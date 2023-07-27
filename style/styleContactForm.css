@@ -108,6 +108,12 @@
     margin: .6em 0;
 }
 
+.error {
+    color: #f50606;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
 /* responsivness */
 @media (min-width: 767px) {
     .contact-form {
