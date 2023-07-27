@@ -1,7 +1,7 @@
 "use strict";
 
 // imported variables
-import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, contactForm, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer} from "/src/JS/variables.js";
+import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, contactForm, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer, nameInput, emailInput, messageInput, nameError, emailError, messageError} from "/src/JS/variables.js";
 
 
 
@@ -436,10 +436,46 @@ function loadLanguage(lang) {
 
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
+  if (validateForm()) {
   const formData = new FormData(contactForm);
   sendEmail(formData);
-  console.log("button is click, sendEmail function is fired")
+  console.log("button is click, sendEmail function is fired");
+  }
 });
+
+function validateForm() {
+let isValid = true;
+
+nameError.textContent = "";
+emailError.textContent = "";
+messageError.textContent = "";
+
+if (nameInput.value.trim() === "") {
+  nameError.textContent = "Meno je povinné pole. Hneď ho tam napíš.";
+  isValid = false;
+};
+
+if (emailInput.value.trim() === "") {
+  emailError.textContent = "Prosím, napíš tam skutočnú emailovú adresu.";
+  isValid = false;
+} else if (isValidEmail(emailInput.value.trim())) {
+  emailError.textContent = "Nevymýšlaj a daj tam to čo tam patrí.";
+  isValid = false;
+};
+
+if (messageInput.value.trim() === "") {
+  messageError.textContent = "Napíš tu aspoň niečo, hocičo...";
+  isValid = false;
+};
+console.log(isValid);
+return isValid;
+
+};
+
+function isValidEmail(email) {
+  const EMAILPATTERN = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+  return EMAILPATTERN.test(email);
+};
 
 function sendEmail(formData) {
   const xhr = new XMLHttpRequest();
