@@ -56,16 +56,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Create a new PHPMailer instance
     $mail = new PHPMailer();
     $mail->isSMTP();  // Set mailer to use SMTP
-    $mail->Host = 'smtp.example.com';  // Specify main and backup SMTP servers
+    $mail->Host = 'mysmtp.address.toProvider';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;  // Enable SMTP authentication
-    $mail->Username = 'your_email@example.com';  // SMTP username
+    $mail->Username = 'email.smtp.server';  // SMTP username
     $mail->Password = 'your_password';  // SMTP password
-    $mail->SMTPSecure = 'tls';  // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;  // TCP port to connect to
+    $mail->SMTPSecure = 'ssl';  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465;  // TCP port to connect to
+    $mail->CharSet = PHPMailer::CHARSET_UTF8;
 
-    $mail->setFrom('your_email@example.com', 'Your Name');
-    $mail->addAddress('recipient@example.com', 'Recipient Name');
-    $mail->Subject = 'Subject of your email';
+    $mail->setFrom('serverWhereSiteIs@email.web', "server name");
+    $mail->addAddress("mojaadresa@bla.bla", "jano Stano");
+    $mail->addReplyTo("zena@ebla.bla", "moja zena");
+    $mail->Subject = "Request from website";
 
     // Compose the email body using the form data
     $mail->Body = "Name: " . $name . "\nEmail: " . $email . "\nMessage: " . $message;
