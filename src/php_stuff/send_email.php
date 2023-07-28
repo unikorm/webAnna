@@ -75,10 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($mail->send()) {
             $response = array("success" => true, "message" => "PHP work, yop");
         } else {
-            $response = array('success' => false, 'message' => 'PHP do not work');
+            $response = array("success" => false, "message" => "PHP do not work");
         }
     } catch (Exception $e) {
-        $response = array('success' => false, 'message' => 'Something bad is happend' . $e->getMessage());
+        $response = array("success" => false, "message" => "Something bad is happend" . $e->getMessage());
     };
 
     echo json_encode($response);
