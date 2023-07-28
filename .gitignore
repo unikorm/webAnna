@@ -117,3 +117,7 @@ Thumbs.db
 !.gitignore
 !.nvmrc
 !.phpcs.xml.dist
+
+
+# my additions
+config.php

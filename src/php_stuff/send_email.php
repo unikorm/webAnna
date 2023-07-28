@@ -3,7 +3,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '/Users/adamaanna/Documents/www/webAnna/vendor/autoload.php';
+require "/Users/adamaanna/Documents/www/webAnna/vendor/autoload.php";
+require "/Users/adamaanna/Documents/www/webAnna/src/php_stuff/config.php";
 
 // Check if the form data has been sent using POST method
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -56,17 +57,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Create a new PHPMailer instance
     $mail = new PHPMailer();
     $mail->isSMTP();  // Set mailer to use SMTP
-    $mail->Host = 'mysmtp.address.toProvider';  // Specify main and backup SMTP servers
+    $mail->Host = $smtpHost;  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;  // Enable SMTP authentication
-    $mail->Username = 'email.smtp.server';  // SMTP username
-    $mail->Password = 'your_password';  // SMTP password
+    $mail->Username = $smtpUsername;  // SMTP username
+    $mail->Password = $smtpPassword;  // SMTP password
     $mail->SMTPSecure = 'ssl';  // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;  // TCP port to connect to
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
 
-    $mail->setFrom('serverWhereSiteIs@email.web', "server name");
-    $mail->addAddress("mojaadresa@bla.bla", "jano Stano");
-    $mail->addReplyTo("zena@ebla.bla", "moja zena");
+    $mail->setFrom($smtpUsername, $smtpJustName);
+    $mail->addAddress($smtpMyEmail);
+    $mail->addReplyTo($smtpMyWifeEmail);
     $mail->Subject = "Request from website";
 
     // Compose the email body using the form data
