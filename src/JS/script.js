@@ -1,7 +1,7 @@
 "use strict";
 
 // imported variables
-import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, contactForm, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer, nameInput, emailInput, messageInput, nameError, emailError, messageError} from "/src/JS/variables.js";
+import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, contactForm, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer, nameInput, emailInput, messageInput, nameError, emailError, messageError, errorMessage} from "/src/JS/variables.js";
 
 
 
@@ -106,10 +106,12 @@ if (aboutLink) {
 // Closing it 
 document.addEventListener("click", function (event) {
   handleSectionClick(event, aboutContainer, ".authorInfo");
+  errorMessage.style.display = "none";
 });
 
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, aboutContainer);
+  errorMessage.style.display = "none";
 });
 
 
@@ -524,14 +526,15 @@ function sendEmail(formData) {
         const response = JSON.parse(xhr.responseText);
         if (response.success) {
           console.log("PHP is working, " + response.message);
+          errorMessage.style.display = "none";
         } else {
-          const errorMessage = document.getElementById("errorMessage");
           errorMessage.textContent = response.message;
           errorMessage.style.display = "flex";
           console.error("PHP not working, " + response.message);
         }
       } else {
         console.error("Error sending email: " + xhr.status);
+        errorMessage.style.display = "none";
       }
     };
   };

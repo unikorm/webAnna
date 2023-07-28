@@ -4,6 +4,7 @@
     display: none;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .contact-form {
@@ -114,9 +115,12 @@
     font-weight: 600;
 }
 
-.errorMessage {
+#errorMessage {
     display: none;
     color: #f50606;
+    font-size: 1.3em;
+    font-weight: 600;
+    align-items: center;
 }
 
 /* responsivness */
