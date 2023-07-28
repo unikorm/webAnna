@@ -114,6 +114,11 @@
     font-weight: 600;
 }
 
+.errorMessage {
+    display: none;
+    color: #f50606;
+}
+
 /* responsivness */
 @media (min-width: 767px) {
     .contact-form {

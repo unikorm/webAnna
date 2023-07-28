@@ -436,6 +436,7 @@ function loadLanguage(lang) {
 
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
+
   if (validateForm() && !containsBadWord()) {
   const formData = new FormData(contactForm);
   sendEmail(formData);
@@ -520,19 +521,21 @@ function sendEmail(formData) {
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        console.log("status is 200+");
         const response = JSON.parse(xhr.responseText);
-        console.log(response);
         if (response.success) {
           console.log("PHP is working, " + response.message);
         } else {
+          const errorMessage = document.getElementById("errorMessage");
+          errorMessage.textContent = response.message;
+          errorMessage.style.display = "flex";
           console.error("PHP not working, " + response.message);
         }
       } else {
         console.error("Error sending email: " + xhr.status);
-      };
+      }
     };
   };
+
   const encodedData = new URLSearchParams(formData).toString();
   xhr.send(encodedData);
   console.log(encodedData);

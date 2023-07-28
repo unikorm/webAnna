@@ -101,6 +101,7 @@
         <a href="mailto:abagal496@gmail.com"><p>abagal496@gmail.com</p></a>
       </div>
     </div>
+    <div id="errorMessage"></div>
 
   </section> 
 
