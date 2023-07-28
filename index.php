@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/src/php_stuff/config.php'; ?>
 <!DOCTYPE html>
 <html lang="SK-sk">
 <head>
@@ -23,7 +24,7 @@
 
 
 <body>
-  <?php include 'src/php_stuff/send_email.php'; ?>
+
   <!-- this html code here is for main page -->
   <section class="mainContainer">
 
