@@ -3,8 +3,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require "/Users/adamaanna/Documents/www/webAnna/vendor/autoload.php";
-require "/Users/adamaanna/Documents/www/webAnna/src/php_stuff/config.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/webAnna/vendor/autoload.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/webAnna/src/php_stuff/config.php";
+
 
 // Check if the form data has been sent using POST method
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
