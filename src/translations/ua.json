@@ -1,13 +1,20 @@
 {
-    "portfolio": "",
-    "about": "",
-    "contact": "",
-    "mainName": "",
-    "mainDescription": "",
+    "portfolio": "Портфоліо",
+    "about": "Про мене",
+    "contact": "Напишіть мені",
+    "mainName": "Анна Багаль",
+    "mainDescription": "Фотограф з України.",
     "sk": "SK",
     "ua": "UA",
     "en": "EN",
+    "aboutName": "Анна Багаль",
     "authorInfo1": "",
     "authorInfo2": "",
-    "authorInfo3": ""
+    "authorInfo3": "",
+    "contactMeForm": "Напишіть мені",
+    "nameContactForm": "Ім’я",
+    "emailContactForm": "Email",
+    "messageContactForm": "Повідомлення",
+    "backButton": "До головного меню",
+    "submitButton": "Відправити"
  }
