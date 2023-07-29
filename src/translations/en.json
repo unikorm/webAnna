@@ -16,5 +16,7 @@
     "emailContactForm": "Email",
     "messageContactForm": "Message",
     "backButton": "Back",
-    "submitButton": "Send"
+    "submitButton": "Send",
+    "errorMessage": "Error on the server, please try again later.",
+    "successMessage": "I have received your message, I will reply as soon as I can."
  }

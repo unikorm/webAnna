@@ -16,5 +16,7 @@
     "emailContactForm": "Email",
     "messageContactForm": "Повідомлення",
     "backButton": "До головного меню",
-    "submitButton": "Відправити"
+    "submitButton": "Відправити",
+    "errorMessage": "",
+    "successMessage": ""
  }

@@ -102,8 +102,8 @@
         <a href="mailto:abagal496@gmail.com"><p>abagal496@gmail.com</p></a>
       </div>
     </div>
-    <div id="errorMessage"></div>
-    <div id="successMessage"></div>
+    <div id="errorMessage">Chyba na serveri, skús to prosím neskôr.</div>
+    <div id="successMessage">Tvoju správu som dostala, ozvem sa ti čo najskôr.</div>
 
   </section> 
 

@@ -423,6 +423,8 @@ function loadLanguage(lang) {
     document.getElementById("messageContactForm").textContent = data.messageContactForm;
     document.getElementById("backButton").textContent = data.backButton;
     document.getElementById("submitButton").textContent = data.submitButton;
+    document.getElementById("errorMessage").textContent = data.errorMessage;
+    document.getElementById("successMessage").textContent = data.successMessage;
   })
   .catch(error => console.error(error));
 };
@@ -529,7 +531,6 @@ function sendEmail(formData) {
         const response = JSON.parse(xhr.responseText);
         if (response.success) {
           console.log("PHP is working, " + response.message);
-          successMessage.textContent = "Tvoju správu som dostala, ozvem sa ti čo najskôr."
           successMessage.style.display = "flex";
           errorMessage.style.display = "none";
         } else {

@@ -16,5 +16,7 @@
    "emailContactForm": "Email",
    "messageContactForm": "Správa",
    "backButton": "Späť",
-   "submitButton": "Poslať"
+   "submitButton": "Poslať",
+   "errorMessage": "Chyba na serveri, skús to prosím neskôr.",
+   "successMessage": "Tvoju správu som dostala, ozvem sa ti čo najskôr."
 }
