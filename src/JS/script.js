@@ -1,7 +1,7 @@
 "use strict";
 
 // imported variables
-import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, contactForm, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer, nameInput, emailInput, messageInput, nameError, emailError, messageError, errorMessage} from "/src/JS/variables.js";
+import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, contactForm, portfolioContainer, portfolioLink, pricingContainer, pricingLink, portfolioItems, previewContainer, nameInput, emailInput, messageInput, nameError, emailError, messageError, errorMessage, successMessage} from "/src/JS/variables.js";
 
 
 
@@ -107,6 +107,9 @@ if (aboutLink) {
 document.addEventListener("click", function (event) {
   handleSectionClick(event, aboutContainer, ".authorInfo");
   errorMessage.style.display = "none";
+  errorMessage.textContent = ""
+  successMessage.style.display = "none";
+  successMessage.textContent = "";
 });
 
 document.addEventListener("keydown", function (event) {
@@ -526,6 +529,8 @@ function sendEmail(formData) {
         const response = JSON.parse(xhr.responseText);
         if (response.success) {
           console.log("PHP is working, " + response.message);
+          successMessage.textContent = "Tvoju správu som dostala, ozvem sa ti čo najskôr."
+          successMessage.style.display = "flex";
           errorMessage.style.display = "none";
         } else {
           errorMessage.textContent = response.message;

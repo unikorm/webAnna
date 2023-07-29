@@ -103,6 +103,7 @@
       </div>
     </div>
     <div id="errorMessage"></div>
+    <div id="successMessage"></div>
 
   </section> 
 

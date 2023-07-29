@@ -24,4 +24,5 @@ export let nameError = document.getElementById("nameError");
 export let emailError = document.getElementById("emailError");
 export let messageError = document.getElementById("messageError");
 export let errorMessage = document.getElementById("errorMessage");
+export let successMessage = document.getElementById("successMessage");
 // console.log();

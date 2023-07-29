@@ -123,6 +123,14 @@
     align-items: center;
 }
 
+#successMessage {
+    display: none;
+    color: #86B049;
+    font-size: 1.3em;
+    font-weight: 600;
+    align-items: center;
+}
+
 /* responsivness */
 @media (min-width: 767px) {
     .contact-form {
