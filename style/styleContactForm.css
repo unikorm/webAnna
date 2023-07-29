@@ -110,6 +110,7 @@
 }
 
 .error {
+    display: none;
     color: #f50606;
     font-size: 1.1em;
     font-weight: 600;

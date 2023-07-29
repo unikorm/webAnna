@@ -80,17 +80,17 @@
         <div class="form-group">
           <label id="nameContactForm" for="name">Meno</label>
           <input type="text" id="name" name="name">
-          <span class="error" id="nameError"></span>
+          <span class="error" id="nameError">Meno je povinné pole. Hneď ho tam napíš.</span>
         </div>
         <div class="form-group">
           <label id="emailContactForm" for="email">Email</label>
           <input type="email" id="email" name="email">
-          <span class="error" id="emailError"></span>
+          <span class="error" id="emailError">Prosím, napíš tam skutočnú emailovú adresu.</span>
         </div>
         <div class="form-group">
           <label id="messageContactForm" for="message">Správa</label>
           <textarea id="message" name="message"></textarea>
-          <span class="error" id="messageError"></span>
+          <span class="error" id="messageError">Napíš tu aspoň niečo, hocičo...</span>
         </div>
         <div class="form-group buttons">
           <button id="backButton" type="button">Späť</button>

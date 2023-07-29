@@ -461,20 +461,17 @@ emailError.textContent = "";
 messageError.textContent = "";
 
 if (nameInput.value.trim() === "") {
-  nameError.textContent = "Meno je povinné pole. Hneď ho tam napíš.";
+  nameError.style.display = "flex";
   isValid = false;
 };
 
-if (emailInput.value.trim() === "") {
-  emailError.textContent = "Prosím, napíš tam skutočnú emailovú adresu.";
-  isValid = false;
-} else if (!isValidEmail(emailInput.value.trim())) {
-  emailError.textContent = "Nevymýšlaj a daj tam to čo tam patrí.";
+if (emailInput.value.trim() === "" || !isValidEmail(emailInput.value.trim())) {
+  emailError.style.display = "flex";
   isValid = false;
 };
 
 if (messageInput.value.trim() === "") {
-  messageError.textContent = "Napíš tu aspoň niečo, hocičo...";
+  messageError.style.display = "flex";
   isValid = false;
 };
 
@@ -532,15 +529,14 @@ function sendEmail(formData) {
         if (response.success) {
           console.log("PHP is working, " + response.message);
           successMessage.style.display = "flex";
-          errorMessage.style.display = "none";
+          // errorMessage.style.display = "none";
         } else {
-          errorMessage.textContent = response.message;
           errorMessage.style.display = "flex";
           console.error("PHP not working, " + response.message);
         }
       } else {
         console.error("Error sending email: " + xhr.status);
-        errorMessage.style.display = "none";
+        errorMessage.style.display = "flex";
       }
     };
   };
