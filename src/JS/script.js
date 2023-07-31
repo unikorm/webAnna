@@ -57,6 +57,7 @@ menuLink.addEventListener("click", function (event) {
   openSection(menuContainer);
 });
 
+
 // Closing it
 document.addEventListener("click", function (event) {
   handleSectionClick(event, menuContainer, ".menuSelect");
@@ -85,6 +86,19 @@ backButton.addEventListener("click", function (event) {
   closeSection(contactContainer);
 });
 
+ // Function to control behaviour of closing Contact form clicking outside of it 
+ function handleContactFormClick(event) {
+  handleSectionClick(event, contactContainer, ".contact-form");
+};
+
+function closingContactForm() {
+  if (websiteWidth > 700) {
+    document.addEventListener("click", handleContactFormClick);
+  } else if (websiteWidth < 701) {
+    document.removeEventListener("click", handleContactFormClick);
+  };
+};
+
 
 
 
@@ -98,10 +112,6 @@ aboutLink.addEventListener("click", function (event) {
 // Closing it 
 document.addEventListener("click", function (event) {
   handleSectionClick(event, aboutContainer, ".authorInfo");
-  errorMessage.style.display = "none";
-  errorMessage.textContent = ""
-  successMessage.style.display = "none";
-  successMessage.textContent = "";
 });
 
 document.addEventListener("keydown", function (event) {
@@ -345,24 +355,6 @@ window.addEventListener('load', function() {
 
 
 
-
-  // Function to control behaviour of closing Contact form clicking outside of it 
-  function handleContactFormClick(event) {
-    handleSectionClick(event, contactContainer, ".contact-form");
-  };
-
-  function closingContactForm() {
-    if (websiteWidth > 700) {
-      document.addEventListener("click", handleContactFormClick);
-    } else if (websiteWidth < 701) {
-      document.removeEventListener("click", handleContactFormClick);
-    };
-  };
-
-
-
-
-
   
   
   
@@ -395,7 +387,7 @@ function loadLanguage(lang) {
     document.getElementById("portfolio").textContent = data.portfolio;
     document.getElementById("about").textContent = data.about;
     document.getElementById("contact").textContent = data.contact;
-    // document.getElementById("pricing").textContent = data.pricing;
+    document.getElementById("pricing").textContent = data.pricing;
     document.getElementById("mainName").textContent = data.mainName;
     document.getElementById("mainDescription").textContent = data.mainDescription;
     document.getElementById("aboutName").textContent = data.aboutName;

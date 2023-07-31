@@ -60,7 +60,7 @@
         <li id="portfolio">Portfólio</li>
         <li id="about">O Mne</li>
         <li id="contact">Kontaktujte Ma</li>
-        <!-- <li id="pricing">Pricing</li> -->
+        <li id="pricing">Cenník</li>
          <ul class="languageSelect">      
            <li id="sk">SK</li>
            <li id="ua">UA</li>
