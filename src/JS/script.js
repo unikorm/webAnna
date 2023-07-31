@@ -457,22 +457,26 @@ function validateForm() {
 let isValid = true;
 
 if (nameInput.value.trim() === "") {
-  if (nameError.style.display = "flex" && !nameInput.value.trim() === "") {
-    nameError.style.display = "none";
-  } else {
   nameError.style.display = "flex";
   isValid = false;
-  };
+} else if (nameError.style.display === "flex" && nameInput.value.trim() !== "") {
+  nameError.style.display = "none";
+  isValid = true;
 };
 
 if (emailInput.value.trim() === "" || !isValidEmail(emailInput.value.trim())) {
   emailError.style.display = "flex";
   isValid = false;
+} else if (emailError.style.display === "flex" && emailInput.value.trim() !== "" || isValidEmail(emailInput.value.trim())) {
+  emailError.style.display = "none";
 };
 
 if (messageInput.value.trim() === "") {
   messageError.style.display = "flex";
   isValid = false;
+} else if (messageError.style.display === "flex" && messageInput.value.trim() !== "") {
+  messageError.style.display = "none";
+  isValid = true;
 };
 
 nameInput.value = nameInput.value.trim();
