@@ -127,7 +127,7 @@
 }
 
 #successMessage {
-    display: none;
+    display: flex;
     color: #86B049;
     font-size: 1.3em;
     font-weight: 600;

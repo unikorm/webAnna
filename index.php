@@ -80,17 +80,17 @@
         <div class="form-group">
           <label id="nameContactForm" for="name">Meno</label>
           <input type="text" id="name" name="name">
-          <span class="error" id="nameError">Meno je povinné pole. Hneď ho tam napíš.</span>
+          <span id="nameError">Meno je povinné pole. Hneď ho tam napíš.</span>
         </div>
         <div class="form-group">
           <label id="emailContactForm" for="email">Email</label>
           <input type="email" id="email" name="email">
-          <span class="error" id="emailError">Prosím, napíš tam skutočnú emailovú adresu.</span>
+          <span id="emailError">Prosím, napíš tam skutočnú emailovú adresu.</span>
         </div>
         <div class="form-group">
           <label id="messageContactForm" for="message">Správa</label>
           <textarea id="message" name="message"></textarea>
-          <span class="error" id="messageError">Napíš tu aspoň niečo, hocičo...</span>
+          <span id="messageError">Napíš tu aspoň niečo, hocičo...</span>
         </div>
         <div class="form-group buttons">
           <button id="backButton" type="button">Späť</button>
@@ -102,8 +102,8 @@
         <a href="mailto:abagal496@gmail.com"><p>abagal496@gmail.com</p></a>
       </div>
     </div>
-    <div id="errorMessage">Chyba na serveri, skús to prosím neskôr.</div>
-    <div id="successMessage">Tvoju správu som dostala, ozvem sa ti čo najskôr.</div>
+    <span id="errorMessage">Chyba na serveri, skús to prosím neskôr.</span>
+    <span id="successMessage">Tvoju správu som dostala, ozvem sa ti čo najskôr.</span>
 
   </section> 
 

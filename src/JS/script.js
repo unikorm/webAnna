@@ -52,12 +52,10 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
 // event handlers
 
 // Open Menu section when Menu Icon svg is pressed
-if (menuLink) {
-  menuLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    openSection(menuContainer);
-  });
-}
+menuLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  openSection(menuContainer);
+});
 
 // Closing it
 document.addEventListener("click", function (event) {
@@ -72,36 +70,30 @@ document.addEventListener("keydown", function (event) {
 
 
 // Open the contact form when "Contact" link is clicked
-if (contactLink) {
-  contactLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    openSection(contactContainer);
-  });
-}
+contactLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  openSection(contactContainer);
+});
 
 //Closing it  
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, contactContainer);
 });
 
-if (backButton) {
-  backButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    closeSection(contactContainer);
-  });
-}
+backButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  closeSection(contactContainer);
+});
 
 
 
 
 
 // Open About section, when "About" link is clicked
-if (aboutLink) {
-  aboutLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    openSection(aboutContainer);
-  });
-}
+aboutLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  openSection(aboutContainer);
+});
 
 // Closing it 
 document.addEventListener("click", function (event) {
@@ -120,12 +112,10 @@ document.addEventListener("keydown", function (event) {
 
 
 // Open Portfolio section when "Portfolio" link is clicked
-if (portfolioLink) {
-  portfolioLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    openSection(portfolioContainer);
-  });
-}
+portfolioLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  openSection(portfolioContainer);
+});
 
 // Closing it 
 document.addEventListener("click", function (event) {
@@ -139,12 +129,10 @@ document.addEventListener("keydown", function (event) {
 
 
 // Open Pricing section when "Pricing" link is clicked
-if (pricingLink) {
-  pricingLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    openSection(pricingContainer);
-  });
-}
+pricingLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  openSection(pricingContainer);
+});
 
 // Closing it 
 document.addEventListener("click", function (event) {
