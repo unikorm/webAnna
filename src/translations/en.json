@@ -18,5 +18,8 @@
     "backButton": "Back",
     "submitButton": "Send",
     "errorMessage": "Error on the server, please try again later.",
-    "successMessage": "I have received your message, I will reply as soon as I can."
- }
+    "successMessage": "I have received your message, I will reply as soon as I can.",
+    "nameError": "Name is a mandatory field. Write it there right away.",
+    "emailError": "Please, write a real email address there.",
+    "messageError": "Write at least something here, anything..."
+}

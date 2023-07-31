@@ -425,6 +425,9 @@ function loadLanguage(lang) {
     document.getElementById("submitButton").textContent = data.submitButton;
     document.getElementById("errorMessage").textContent = data.errorMessage;
     document.getElementById("successMessage").textContent = data.successMessage;
+    document.getElementById("nameError").textContent = data.nameError;
+    document.getElementById("emailError").textContent = data.emailError;
+    document.getElementById("messageError").textContent = data.messageError;
   })
   .catch(error => console.error(error));
 };

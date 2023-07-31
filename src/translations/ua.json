@@ -18,5 +18,8 @@
     "backButton": "До головного меню",
     "submitButton": "Відправити",
     "errorMessage": "",
-    "successMessage": ""
- }
+    "successMessage": "",
+    "nameError": "",
+    "emailError": "",
+    "messageError": ""
+}
