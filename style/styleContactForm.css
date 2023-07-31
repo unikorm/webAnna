@@ -109,7 +109,9 @@
     margin: .6em 0;
 }
 
-.error {
+#nameError,
+#emailError,
+#messageError {
     display: none;
     color: #f50606;
     font-size: 1.1em;

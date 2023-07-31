@@ -456,13 +456,13 @@ submitButton.addEventListener("click", function(event) {
 function validateForm() {
 let isValid = true;
 
-nameError.textContent = "";
-emailError.textContent = "";
-messageError.textContent = "";
-
 if (nameInput.value.trim() === "") {
+  if (nameError.style.display = "flex" && !nameInput.value.trim() === "") {
+    nameError.style.display = "none";
+  } else {
   nameError.style.display = "flex";
   isValid = false;
+  };
 };
 
 if (emailInput.value.trim() === "" || !isValidEmail(emailInput.value.trim())) {
