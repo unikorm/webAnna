@@ -448,7 +448,7 @@ function loadLanguage(lang) {
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
 
-  if (validateForm() && !containsBadWord()) {
+  if (validateForm()) {
     const formData = new FormData(contactForm);
     sendEmail(formData);
     console.log("button is click, sendEmail function is fired");
@@ -459,69 +459,41 @@ submitButton.addEventListener("click", function(event) {
 function validateForm() {
   let isValid = true;
 
-  isValid = validateField(nameInput, nameError, "Please enter your name.") && isValid;
-  isValid = validateField(emailInput, emailError, "Please enter a valid email address.", isValidEmail) && isValid;
-  isValid = validateField(messageInput, messageError, "Please enter a message.") && isValid;
+  isValid = validateField(nameInput, nameError) && isValid;
+  isValid = validateField(emailInput, emailError, isValidEmail) && isValid;
+  isValid = validateField(messageInput, messageError) && isValid;
 
+  console.log(isValid);
   return isValid;
-}
+};
 
 // Function to validate individual fields
-function validateField(inputElement, errorElement, errorMessage, validationFunction = null) {
+function validateField(inputElement, errorElement, validationFunction = null) {
   const value = inputElement.value.trim();
   const isFieldValid = validationFunction ? validationFunction(value) : value !== "";
 
-  if (!isFieldValid) {
-    setError(errorElement, errorMessage);
-  } else {
-    setError(errorElement, "");
-  }
+  setError(errorElement, !isFieldValid);
 
   return isFieldValid;
-}
+};
 
 // Function to set error messages
-function setError(element, message) {
-  element.style.display = message ? "flex" : "none";
-  element.textContent = message;
-}
+function setError(element, hasError) {
+  element.style.display = hasError ? "flex" : "none";
+};
 
 // Function to check if the email is valid
 function isValidEmail(email) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
-}
-
-// List of bad words
-const BADWORDS = ["fuck", "bitch", "motherfucker", "kkt", "pica", "jebem", "kotleba"];
-
-// Function to check if the form contains any bad word
-function containsBadWord() {
-  const name = nameInput.value;
-  const email = emailInput.value;
-  const message = messageInput.value;
-
-  for (const word of BADWORDS) {
-    const pattern = new RegExp("\\b" + word + "\\b", "i");
-    if (pattern.test(name) || pattern.test(email) || pattern.test(message)) {
-      setError(nameError, "Nenadávaj tu!");
-      setError(emailError, "Nenadávaj tu!");
-      setError(messageError, "Nenadávaj tu!");
-      return true;
-    }
-  }
-
-  setError(nameError, "");
-  setError(emailError, "");
-  setError(messageError, "");
-  return false;
-}
-
+};
 
 function sendEmail(formData) {
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "src/php_stuff/send_email.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+  console.log(successMessage.textContent);
 
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -530,7 +502,6 @@ function sendEmail(formData) {
         if (response.success) {
           console.log("PHP is working, " + response.message);
           successMessage.style.display = "flex";
-          // errorMessage.style.display = "none";
         } else {
           errorMessage.style.display = "flex";
           console.error("PHP not working, " + response.message);
