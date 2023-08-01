@@ -496,7 +496,7 @@ function sendEmail(formData) {
       } else {
         console.error("Error sending email: " + xhr.status);
         errorMessage.style.display = "flex";
-      }
+      };
     };
   };
 
