@@ -16,17 +16,26 @@ function openSection(sectionContainer) {
   mainContainer.style.display = "none";
   if (sectionContainer !== menuContainer) {
     menuContainer.style.display = "none";
-  }
+  };
   sectionContainer.style.backdropFilter = "blur(5px)";
   sectionContainer.style.webkitBackdropFilter = "blur(5px)";
-}
+};
 
 function closeSection(sectionContainer) {
   mainContainer.style.display = "flex";
   sectionContainer.style.display = "none";
   sectionContainer.style.backdropFilter = null;
   sectionContainer.style.webkitBackdropfFilter = null;
-}
+  if (sectionContainer === contactContainer) {
+    if (successMessage.style.display === "flex") {
+      successMessage.style.display = "none";
+      nameInput.value = "";
+      emailInput.value = "";
+      messageInput.value = "";
+      console.log("zmizlo to");
+    };
+  };
+};
 
 function handleSectionClick(event, sectionContainer, contentClass) {
   const targetElement = event.target;
@@ -37,14 +46,14 @@ function handleSectionClick(event, sectionContainer, contentClass) {
     !targetElement.closest(contentClass)
   ) {
     closeSection(sectionContainer);
-  }
-}
+  };
+};
 
 function handleSectionEscKey(event, closeSection, sectionContainer) {
   if (event.key === "Escape") {
     closeSection(sectionContainer);
-  }
-}
+  };
+};
 
 
 
@@ -85,12 +94,12 @@ backButton.addEventListener("click", function (event) {
   event.preventDefault();
   closeSection(contactContainer);
 });
-
- // Function to control behaviour of closing Contact form clicking outside of it 
+ 
  function handleContactFormClick(event) {
   handleSectionClick(event, contactContainer, ".contact-form");
 };
 
+// Closing based on the width of the browser
 function closingContactForm() {
   if (websiteWidth > 700) {
     document.addEventListener("click", handleContactFormClick);
@@ -472,8 +481,6 @@ function sendEmail(formData) {
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "src/php_stuff/send_email.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-  console.log(successMessage.textContent);
 
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
