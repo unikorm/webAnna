@@ -432,6 +432,7 @@ function loadLanguage(lang) {
 
 
 // Code here is for calling PHP script to send email from contact form
+let messageVisible = false
 
 // Event listener for the submit button
 submitButton.addEventListener("click", function(event) {
@@ -487,15 +488,16 @@ function sendEmail(formData) {
       if (xhr.status === 200) {
         const response = JSON.parse(xhr.responseText);
         if (response.success) {
-          console.log("PHP is working, " + response.message);
+          // console.log("PHP is working, " + response.message);
           successMessage.style.display = "flex";
+          messageVisible = true;
         } else {
           errorMessage.style.display = "flex";
-          console.error("PHP not working, " + response.message);
+          // console.error("PHP not working, " + response.message);
         }
       } else {
-        console.error("Error sending email: " + xhr.status);
-        errorMessage.style.display = "flex";
+        // console.error("Error sending email: " + xhr.status);
+        errorMessage.style.display = "flex"; // tu treba dodat dodatok ked bude tato chyba, aby som ja vedel ze je to tato chyba
       };
     };
   };
@@ -504,6 +506,22 @@ function sendEmail(formData) {
   xhr.send(encodedData);
   console.log(encodedData);
 };
+
+// function to handle change of visibility on message success/error
+function handleTextInputInteraction(i, e) {
+  if (messageVisible && document.activeElement === e) {
+    i.display.style = "none";
+    messageVisible = false;
+    return;
+  } else {
+    return;
+  };
+};
+
+// listeneri to handle showing success/error message
+nameInput.addEventListener("click", handleTextInputInteraction(successMessage, nameInput));
+emailInput
+messageInput
 
 
 

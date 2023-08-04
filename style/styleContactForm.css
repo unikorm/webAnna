@@ -135,6 +135,14 @@
 }
 
 /* responsivness */
+@media (max-width: 767px) {
+    #errorMessage,
+    #successMessage {
+        width: 88%;
+        text-align: center;
+    }
+}
+
 @media (min-width: 767px) {
     .contact-form {
         width: 70%;
