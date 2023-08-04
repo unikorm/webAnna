@@ -488,12 +488,11 @@ function sendEmail(formData) {
       if (xhr.status === 200) {
         const response = JSON.parse(xhr.responseText);
         if (response.success) {
-          // console.log("PHP is working, " + response.message);
           successMessage.style.display = "flex";
           messaggeVisible = true;
         } else {
           errorMessage.style.display = "flex";
-          // console.error("PHP not working, " + response.message);
+          throw ("Error sending email: ${xhr.status}");
         }
       } else {
         errorMessage.style.display = "flex"; // tu treba dodat dodatok ked bude tato chyba, aby som ja vedel ze je to tato chyba
@@ -512,10 +511,8 @@ function handleTextInputInteraction(i, e) {
   if (messaggeVisible && document.activeElement === e) {
     i.style.display = "none";
     messaggeVisible = false;
-    console.log("skry ich");
     return;
   } else {
-    console.log("ajaj");
     return;
   };
 };

@@ -20,15 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Empty fields validation
     if ( empty($name) || empty($email) || empty($message) ) {
-        $response = array("success" => false, "message" => "Prosím, vyplň všetky polia!");
-        echo json_encode($response);
+        // $response = array("success" => false, "message" => "Prosím, vyplň všetky polia!");
+        // echo json_encode($response);
         exit; // Stop further processing
     };
 
     // Email format validation
     if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
-        $response = array("success" => false, "message" => "Prosím, vlož tam skutočnú email adresu!");
-        echo json_encode($response);
+        // $response = array("success" => false, "message" => "Prosím, vlož tam skutočnú email adresu!");
+        // echo json_encode($response);
         exit; // Stop further processing
     };
 
@@ -37,20 +37,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $maxEmailLength = 100;
 
     if (strlen($name) > $maxNameLength) {
-        $response = array("success" => false, "message" => "Skráť prosím svoje meno, je príliš dlhé");
-        echo json_encode($response);
+        // $response = array("success" => false, "message" => "Skráť prosím svoje meno, je príliš dlhé");
+        // echo json_encode($response);
         exit;
     };
     if (strlen($email) > $maxEmailLength) {
-        $response = array("success" => false, "message" => "Použi kratší email, tento je až príliš dlhý");
-        echo json_encode($response);
+        // $response = array("success" => false, "message" => "Použi kratší email, tento je až príliš dlhý");
+        // echo json_encode($response);
         exit;
     };
 
     // Email injection prevention
     if ( preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $email) ) {
-        $response = array("success" => false, "message" => "Máš tam niečo podozrivé, daj to preč!");
-        echo json_encode($response);
+        // $response = array("success" => false, "message" => "Máš tam niečo podozrivé, daj to preč!");
+        // echo json_encode($response);
         exit;
     };
 
