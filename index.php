@@ -17,8 +17,10 @@
   <link rel="stylesheet" href="/style/styleContactForm.css">
   <link rel="stylesheet" href="/style/stylePortfolio.css">
 
-  <script src="src/JS/script.js" type="module" defer></script>
   <script src="src/JS/variables.js" type="module" defer></script>
+  <script src="src/JS/script.js" type="module" defer></script>
+  <script src="src/JS/languageChange.js" defer></script>
+  <script src="src/JS/sendingContactForm.js" type="module" defer></script>
 </head>
 
 

@@ -1,17 +1,18 @@
-// use strict
+"use strict";
 
-// Code here is for change of languages
-
-
-document.getElementById("sk").addEventListener("click", function(event) {
+// Code here is for change of language
+document.getElementById("sk").addEventListener("click", function(e) {
+    e.preventDefault();
     loadLanguage("sk");
   });
 
-  document.getElementById("en").addEventListener("click", function(event) {
+  document.getElementById("en").addEventListener("click", function(e) {
+    e.preventDefault();
     loadLanguage("en");
   });
 
-  document.getElementById("ua").addEventListener("click", function(event) {
+  document.getElementById("ua").addEventListener("click", function(e) {
+    e.preventDefault();
     loadLanguage("ua");
   });
 
@@ -47,4 +48,3 @@ function loadLanguage(lang) {
   })
   .catch(error => console.error(error));
 };
-
