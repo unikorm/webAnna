@@ -52,4 +52,3 @@ function loadLanguage(lang) {
   })
   .catch(error => console.error(error));
 };
-

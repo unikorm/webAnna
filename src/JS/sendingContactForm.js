@@ -1,6 +1,8 @@
 "use strict";
 
 // imported variables
+import { submitButton, contactForm, nameInput, emailInput, messageInput, nameError, emailError, messageError, errorMessage, successMessage} from "/src/JS/variables.js";
+
 
 // Code here is for calling PHP script to send email from contact form
 let messaggeVisible = false;
@@ -92,5 +94,3 @@ function handleTextInputInteraction(i, e) {
 nameInput.addEventListener("click", handleTextInputInteraction.bind(null, successMessage, nameInput));
 emailInput.addEventListener("click", handleTextInputInteraction.bind(null, successMessage, emailInput));
 messageInput.addEventListener("click", handleTextInputInteraction.bind(null, successMessage, messageInput));
-
-
