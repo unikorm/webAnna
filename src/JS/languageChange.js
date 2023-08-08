@@ -48,6 +48,11 @@ function loadLanguage(lang) {
     document.getElementById("nameError").textContent = data.nameError;
     document.getElementById("emailError").textContent = data.emailError;
     document.getElementById("messageError").textContent = data.messageError;
+    document.getElementById("pricingInfo1").textContent = data.pricingInfo1;
+    document.getElementById("pricingInfo2").textContent = data.pricingInfo2;
+    document.getElementById("pricingInfo3").textContent = data.pricingInfo3;
+    document.getElementById("pricingInfo4").textContent = data.pricingInfo4;
+    document.getElementById("pricingInfo5").textContent = data.pricingInfo5;
   })
   .catch(error => console.error(error));
 };
