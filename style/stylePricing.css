@@ -84,3 +84,9 @@
         margin: 0;
     }
 }
+
+@media (min-width: 1800px) {
+    .pricingContent {
+        max-width: 60em;
+    }
+}
