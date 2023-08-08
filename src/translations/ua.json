@@ -22,5 +22,10 @@
     "successMessage": "",
     "nameError": "",
     "emailError": "",
-    "messageError": ""
+    "messageError": "",
+    "pricingInfo1": "",
+    "pricingInfo2": "",
+    "pricingInfo3": "",
+    "pricingInfo4": "",
+    "pricingInfo5": ""
 }

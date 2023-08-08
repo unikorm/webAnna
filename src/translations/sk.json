@@ -22,5 +22,10 @@
    "successMessage": "Tvoju správu som dostala, ozvem sa ti čo najskôr.",
    "nameError": "Meno je povinné pole. Hneď ho tam napíš.",
    "emailError": "Prosím, napíš tam skutočnú emailovú adresu.",
-   "messageError": "Napíš tu aspoň niečo, hocičo..."
+   "messageError": "Napíš tu aspoň niečo, hocičo...",
+   "pricingInfo1": "",
+   "pricingInfo2": "",
+   "pricingInfo3": "",
+   "pricingInfo4": "",
+   "pricingInfo5": ""
 }

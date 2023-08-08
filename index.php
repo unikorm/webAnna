@@ -187,11 +187,11 @@
   <section class="pricingContainer">
 
     <div class="pricingContent">
-      <p>The price for a photo session is 65 euros (up to 4 people per photo). The duration of the photo session is up to 1.5 hours. Everything can be discussed individually and agreed upon.</p>
-      <p>As a result of the photo session, you will receive:</p>
-      <p id="whatUserGet">150-300 unedited photos (original) by the next day through online storage (storage for 7 days).</p>
-      <p id="whatUserGet">30 color-corrected photos within 7 days (including 10 with detailed retouching if needed) via the internet.</p>
-      <p>If the photo session is not in Žilina district, it is necessary to arrange transportation for the photographer to the location of the photo session or to additionally pay for a train/bus ticket.</p>
+      <p id="pricingInfo1">The price for a photo session is 65 euros (up to 4 people per photo). The duration of the photo session is up to 1.5 hours. Everything can be discussed individually and agreed upon.</p>
+      <p id="pricingInfo2">As a result of the photo session, you will receive:</p>
+      <p class="whatUserGet" id="pricingInfo3">150-300 unedited photos (original) by the next day through online storage (storage for 7 days).</p>
+      <p class="whatUserGet" id="pricingInfo4">30 color-corrected photos within 7 days (including 10 with detailed retouching if needed) via the internet.</p>
+      <p id="pricingInfo5">If the photo session is not in Žilina district, it is necessary to arrange transportation for the photographer to the location of the photo session or to additionally pay for a train/bus ticket.</p>
     </div>
 
   </section>
