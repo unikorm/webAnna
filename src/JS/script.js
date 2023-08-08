@@ -1,7 +1,7 @@
 "use strict";
 
 // imported variables
-import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, bodyElement, menuLink, menuContainer, submitButton, contactForm, portfolioContainer, portfolioLink, pricingContainer, pricingLink, nameInput, emailInput, messageInput, nameError, emailError, messageError, errorMessage, successMessage} from "/src/JS/variables.js";
+import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, menuLink, menuContainer, portfolioContainer, portfolioLink, pricingContainer, pricingLink, nameInput, emailInput, messageInput, errorMessage, successMessage} from "/src/JS/variables.js";
 
 // general reuseble functions
 function openSection(sectionContainer) {

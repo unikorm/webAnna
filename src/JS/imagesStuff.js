@@ -2,6 +2,8 @@
 
 // imported functions
 import {handleSectionClick} from "/src/JS/script.js";
+// imported variables
+import {contactContainer} from "/src/JS/variables.js";
 
 // Function to load portfolio images after DOMContent is fully loaded
 window.addEventListener('load', function() {
