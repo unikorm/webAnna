@@ -3,7 +3,6 @@
 // imported variables
 import { submitButton, contactForm, nameInput, emailInput, messageInput, nameError, emailError, messageError, errorMessage, successMessage} from "/src/JS/variables.js";
 
-
 // Code here is for calling PHP script to send email from contact form
 let messaggeVisible = false;
 

@@ -20,7 +20,6 @@ UA.addEventListener("click", function(e) {
     loadLanguage("ua");
   });
 
-
 function loadLanguage(lang) {
   fetch("src/translations/" + lang + ".json")
   .then(response => response.json())

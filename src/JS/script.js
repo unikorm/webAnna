@@ -47,9 +47,6 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
   };
 };
 
-
-
-
 // event handlers
 
 // Open Menu section when Menu Icon svg is pressed
@@ -57,7 +54,6 @@ menuLink.addEventListener("click", function (event) {
   event.preventDefault();
   openSection(menuContainer);
 });
-
 
 // Closing it
 document.addEventListener("click", function (event) {
@@ -67,7 +63,6 @@ document.addEventListener("click", function (event) {
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, menuContainer);
 });
-
 
 
 
@@ -87,21 +82,6 @@ backButton.addEventListener("click", function (event) {
   closeSection(contactContainer);
 });
  
-//  function handleContactFormClick(event) {
-//   handleSectionClick(event, contactContainer, ".contact-form");
-//  };
-
-// // Closing based on the width of the browser
-// function closingContactForm() {
-//   if (websiteWidth > 700) {
-//     document.addEventListener("click", handleContactFormClick);
-//   } else if (websiteWidth < 701) {
-//     document.removeEventListener("click", handleContactFormClick);
-//   };
-// };
-
-
-
 
 
 // Open About section, when "About" link is clicked
@@ -153,9 +133,3 @@ document.addEventListener("click", function (event) {
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, pricingContainer);
 });
-
-
-
-
-
-// another dimension
