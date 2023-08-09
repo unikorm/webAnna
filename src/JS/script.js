@@ -53,6 +53,7 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
 menuLink.addEventListener("click", function (event) {
   event.preventDefault();
   openSection(menuContainer);
+  updateURL(menuContainer);
 });
 
 // Closing it
@@ -133,3 +134,12 @@ document.addEventListener("click", function (event) {
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, pricingContainer);
 });
+
+// logic to updateing URL address
+function updateURL(sectionId) {
+  let url = new URL(window.location.href);
+  console.log(url);
+  url.searchParams.set("section", sectionId);
+  console.log(url.href);
+  history.pushState(null, null, url);
+};
