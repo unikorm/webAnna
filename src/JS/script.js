@@ -53,7 +53,7 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
 menuLink.addEventListener("click", function (event) {
   event.preventDefault();
   openSection(menuContainer);
-  updateURL(menuContainer);
+  updateURL("menuContainer");
 });
 
 // Closing it
@@ -71,6 +71,7 @@ document.addEventListener("keydown", function (event) {
 contactLink.addEventListener("click", function (event) {
   event.preventDefault();
   openSection(contactContainer);
+  updateURL("contactContainer");
 });
 
 //Closing it  
@@ -89,6 +90,7 @@ backButton.addEventListener("click", function (event) {
 aboutLink.addEventListener("click", function (event) {
   event.preventDefault();
   openSection(aboutContainer);
+  updateURL("aboutContainer");
 });
 
 // Closing it 
@@ -107,6 +109,7 @@ document.addEventListener("keydown", function (event) {
 portfolioLink.addEventListener("click", function (event) {
   event.preventDefault();
   openSection(portfolioContainer);
+  updateURL("portfolioContainer");
 });
 
 // Closing it 
@@ -124,6 +127,7 @@ document.addEventListener("keydown", function (event) {
 pricingLink.addEventListener("click", function (event) {
   event.preventDefault();
   openSection(pricingContainer);
+  updateURL("pricingContainer");
 });
 
 // Closing it 
@@ -135,11 +139,17 @@ document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, pricingContainer);
 });
 
+
+
+
+
 // logic to updateing URL address
 function updateURL(sectionId) {
   let url = new URL(window.location.href);
-  console.log(url);
-  url.searchParams.set("section", sectionId);
-  console.log(url.href);
+  if (sectionId === "mainContainer") {
+    url.searchParams.delete("section");
+  } else {
+    url.searchParams.set("section", sectionId);
+  }
   history.pushState(null, null, url);
 };
