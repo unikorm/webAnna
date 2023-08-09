@@ -30,7 +30,7 @@
 <body>
   <?php include 'src/php_stuff/send_email.php'; ?>
   <!-- this html code here is for main page -->
-  <section class="mainContainer">
+  <section id="mainContainer" class="mainContainer">
 
     <header>
       <div class="navbar">
@@ -58,7 +58,7 @@
 
 
     <!-- this html code here is for Menu with language options -->
-    <section class="menuContainer">
+    <section id="menuContainer" class="menuContainer">
 
       <ul class="menuSelect">
         <li id="portfolio">Portfólio</li>
@@ -76,7 +76,7 @@
 
 
    <!-- this html code here is for contact form -->
-  <section class="contactContainer">
+  <section id="contactContainer" class="contactContainer">
 
     <div class="contact-form">
       <h2 id="contactMeForm">Kontaktujte Ma</h2>
@@ -113,7 +113,7 @@
 
 
    <!-- this html code here is for About Me  -->
-  <section class="aboutContainer">
+  <section id="aboutContainer" class="aboutContainer">
 
     <div class="aboutContent">
       <img class="lazy" data-src="/photo/IMG_princessMain.jpg" alt="Author" class="author-photo">
@@ -127,7 +127,7 @@
 
 
    <!-- this html code here is for Portfolio  -->
-  <section class="portfolioContainer">
+  <section id="portfolioContainer" class="portfolioContainer">
 
     <div class="portfolioContent">
 
@@ -184,14 +184,14 @@
 
 
    <!-- this html code here is for Pricing  -->
-  <section class="pricingContainer">
+  <section id="pricingContainer" class="pricingContainer">
 
     <div class="pricingContent">
-      <p id="pricingInfo1">The price for a photo session is 65 euros (up to 4 people per photo). The duration of the photo session is up to 1.5 hours. Everything can be discussed individually and agreed upon.</p>
-      <p id="pricingInfo2">As a result of the photo session, you will receive:</p>
-      <p class="whatUserGet" id="pricingInfo3">150-300 unedited photos (original) by the next day through online storage (storage for 7 days).</p>
-      <p class="whatUserGet" id="pricingInfo4">30 color-corrected photos within 7 days (including 10 with detailed retouching if needed) via the internet.</p>
-      <p id="pricingInfo5">If the photo session is not in Žilina district, it is necessary to arrange transportation for the photographer to the location of the photo session or to additionally pay for a train/bus ticket.</p>
+      <p id="pricingInfo1">Cena za fotenie je 65 eur (max 4 osoby na fotení). Trvanie fotenia je do 1,5 hodiny. Všetko je možné individuálne prerokonzultovať a dohodnúť sa.</p>
+      <p id="pricingInfo2">Ako výsledok fotenia obdržíte:</p>
+      <p class="whatUserGet" id="pricingInfo3">150-300 neupravených fotografií (originály) do ďalšieho dňa cez online úložisko (uchovávanie po dobu 7 dní).</p>
+      <p class="whatUserGet" id="pricingInfo4">30 upravených fotografií do 7 dní (z toho 10 s podrobnou retušou, ak je potrebné) cez internet.</p>
+      <p id="pricingInfo5">Ak fotenie nebude v okrese Žilina, je nutné zabezpečiť dopravu na miesto fotenia alebo dodatočne zaplatiť za cestu.</p>
     </div>
 
   </section>

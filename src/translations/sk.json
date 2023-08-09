@@ -23,9 +23,9 @@
    "nameError": "Meno je povinné pole. Hneď ho tam napíš.",
    "emailError": "Prosím, napíš tam skutočnú emailovú adresu.",
    "messageError": "Napíš tu aspoň niečo, hocičo...",
-   "pricingInfo1": "",
-   "pricingInfo2": "",
-   "pricingInfo3": "",
-   "pricingInfo4": "",
-   "pricingInfo5": ""
+   "pricingInfo1": "Cena za fotenie je 65 eur (max 4 osoby na fotení). Trvanie fotenia je do 1,5 hodiny. Všetko je možné individuálne prerokonzultovať a dohodnúť sa.",
+   "pricingInfo2": "Ako výsledok fotenia obdržíte:",
+   "pricingInfo3": "150-300 neupravených fotografií (originály) do ďalšieho dňa cez online úložisko (uchovávanie po dobu 7 dní).",
+   "pricingInfo4": "30 upravených fotografií do 7 dní (z toho 10 s podrobnou retušou, ak je potrebné) cez internet.",
+   "pricingInfo5": "Ak fotenie nebude v okrese Žilina, je nutné zabezpečiť dopravu na miesto fotenia alebo dodatočne zaplatiť za cestu."
 }
