@@ -7,9 +7,11 @@ import { contactContainer, mainContainer, contactLink, backButton, aboutLink, ab
 function openSection(sectionContainer) {
   sectionContainer.style.display = "flex";
   mainContainer.style.display = "none";
+
   if (sectionContainer !== menuContainer) {
     menuContainer.style.display = "none";
-  };
+  }
+
   sectionContainer.style.backdropFilter = "blur(5px)";
   sectionContainer.style.webkitBackdropFilter = "blur(5px)";
 };
@@ -19,6 +21,9 @@ function closeSection(sectionContainer) {
   sectionContainer.style.display = "none";
   sectionContainer.style.backdropFilter = null;
   sectionContainer.style.webkitBackdropfFilter = null;
+
+  updateURL("mainContainer");
+
   if (sectionContainer === contactContainer) {
     if (successMessage.style.display === "flex") {
       successMessage.style.display = "none";
@@ -55,9 +60,8 @@ function navigateToSection(sectionContainer, sectionId, shouldCloseCurrent = tru
   if (shouldCloseCurrent) {
     closeSection(mainContainer);
   };
-  
-  openSection(sectionContainer); // Show the specified section
-  updateURL(sectionId); // Update the URL query
+  openSection(sectionContainer);
+  updateURL(sectionId);
 };
 
 
@@ -70,8 +74,7 @@ function navigateToSection(sectionContainer, sectionId, shouldCloseCurrent = tru
 // Open Menu section when Menu Icon svg is pressed
 menuLink.addEventListener("click", function (event) {
   event.preventDefault();
-  openSection(menuContainer);
-  updateURL("menuContainer");
+  navigateToSection(menuContainer, "menuContainer", false)
 });
 
 // Closing it
@@ -88,8 +91,7 @@ document.addEventListener("keydown", function (event) {
 // Open the contact form when "Contact" link is clicked
 contactLink.addEventListener("click", function (event) {
   event.preventDefault();
-  openSection(contactContainer);
-  updateURL("contactContainer");
+  navigateToSection(contactContainer, "contactContainer", false)
 });
 
 //Closing it  
@@ -107,8 +109,7 @@ backButton.addEventListener("click", function (event) {
 // Open About section, when "About" link is clicked
 aboutLink.addEventListener("click", function (event) {
   event.preventDefault();
-  openSection(aboutContainer);
-  updateURL("aboutContainer");
+  navigateToSection(aboutContainer, "aboutContainer", false)
 });
 
 // Closing it 
@@ -126,8 +127,7 @@ document.addEventListener("keydown", function (event) {
 // Open Portfolio section when "Portfolio" link is clicked
 portfolioLink.addEventListener("click", function (event) {
   event.preventDefault();
-  openSection(portfolioContainer);
-  updateURL("portfolioContainer");
+  navigateToSection(portfolioContainer, "portfolioContainer", false)
 });
 
 // Closing it 
@@ -144,8 +144,7 @@ document.addEventListener("keydown", function (event) {
 // Open Pricing section when "Pricing" link is clicked
 pricingLink.addEventListener("click", function (event) {
   event.preventDefault();
-  openSection(pricingContainer);
-  updateURL("pricingContainer");
+  navigateToSection(pricingContainer, "pricingContainer", false)
 });
 
 // Closing it 
@@ -179,10 +178,6 @@ function navigationToSectionFromURL() {
   console.log(urlSearch);
   let selectedID = urlSearch.get("section");
   console.log(selectedID);
-
-  
-  }
-
 };
 
-window.addEventListener("popstate", navigationToSectionFromURL);
+// window.addEventListener("popstate", navigationToSectionFromURL);
