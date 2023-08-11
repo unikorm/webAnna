@@ -3,6 +3,13 @@
 // imported variables
 import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, menuLink, menuContainer, portfolioContainer, portfolioLink, pricingContainer, pricingLink, nameInput, emailInput, messageInput, errorMessage, successMessage} from "/src/JS/variables.js";
 
+// function to after reload of page clean queries history and start from clean state
+// if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+//   let url = new URL(window.location.href);
+//   url.searchParams.delete("section");
+//   window.history.replaceState(null, null, url);
+// };
+
 // general reuseble functions
 function openSection(sectionContainer) {
   sectionContainer.style.display = "flex";
@@ -180,4 +187,37 @@ function navigationToSectionFromURL() {
   console.log(selectedID);
 };
 
-// window.addEventListener("popstate", navigationToSectionFromURL);
+function getSectionContainerById(sectionId) {
+  switch (sectionId) {
+    case "menuContainer":
+      return menuContainer;
+    case "contactContainer":
+      return contactContainer;
+    case "aboutContainer":
+      return aboutContainer;
+    case "portfolioContainer":
+      return portfolioContainer;
+    case "pricingContainer":
+      return pricingContainer;
+    default:
+      return null;
+  };
+};
+
+function navigateToSectionFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const sectionId = urlParams.get("section");
+
+  if (!sectionId || sectionId === "mainContainer") {
+    openSection(mainContainer);
+  } else {
+    let sectionContainer = getSectionContainerById(sectionId);
+    if (sectionContainer) {
+      openSection(sectionContainer);
+    };
+  };
+};
+
+window.addEventListener("popstate", () => {
+  navigateToSectionFromURL();
+});
