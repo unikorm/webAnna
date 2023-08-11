@@ -2,6 +2,7 @@
 
 // imported variables
 import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, menuLink, menuContainer, portfolioContainer, portfolioLink, pricingContainer, pricingLink, nameInput, emailInput, messageInput, errorMessage, successMessage} from "/src/JS/variables.js";
+let currentOpenSection = getSectionContainerById(getURLSectionId());  // navigation logic variable
 
 // function to after reload of page clean queries history and start from clean state
 document.addEventListener("DOMContentLoaded", function () {
@@ -62,10 +63,7 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
   };
 };
 
-
-
-
-
+// navigate to section plus updating URL address
 function navigateToSection(sectionContainer, sectionId) {
   openSection(sectionContainer);
   updateURL(sectionId);
@@ -167,9 +165,13 @@ document.addEventListener("keydown", function (event) {
 
 
 
-// logic to updateing URL address
-let currentOpenSection = null;
 
+
+
+
+
+
+// logic to updateing URL address
 function updateURL(sectionId) {
   let url = new URL(window.location.href);
 
@@ -221,6 +223,7 @@ function navigateToSectionFromURL() {
 function getURLSectionId() {
   let urlParams = new URLSearchParams(window.location.search);
   let sectionId = urlParams.get("section");
+  return sectionId;
 };
 
 window.addEventListener("popstate", () => {
