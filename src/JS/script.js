@@ -4,11 +4,14 @@
 import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, menuLink, menuContainer, portfolioContainer, portfolioLink, pricingContainer, pricingLink, nameInput, emailInput, messageInput, errorMessage, successMessage} from "/src/JS/variables.js";
 
 // function to after reload of page clean queries history and start from clean state
-// if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
-//   let url = new URL(window.location.href);
-//   url.searchParams.delete("section");
-//   window.history.replaceState(null, null, url);
-// };
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+    let url = new URL(window.location.href);
+    url.searchParams.delete("section");
+    window.history.replaceState(null, null, url);
+  }
+});
+
 
 // general reuseble functions
 function openSection(sectionContainer) {
@@ -205,15 +208,16 @@ function getSectionContainerById(sectionId) {
 };
 
 function navigateToSectionFromURL() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const sectionId = urlParams.get("section");
+  let urlParams = new URLSearchParams(window.location.search);
+  let sectionId = urlParams.get("section");
+  let actualSectionContainer = getSectionContainerById(sectionId);
 
   if (!sectionId || sectionId === "mainContainer") {
+    closeSection(actualSectionContainer);
     openSection(mainContainer);
   } else {
-    let sectionContainer = getSectionContainerById(sectionId);
-    if (sectionContainer) {
-      openSection(sectionContainer);
+    if (actualSectionContainer) {
+      openSection(actualSectionContainer);
     };
   };
 };
