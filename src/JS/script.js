@@ -66,10 +66,7 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
 
 
 
-function navigateToSection(sectionContainer, sectionId, shouldCloseCurrent = true) {
-  if (shouldCloseCurrent) {
-    closeSection(mainContainer);
-  };
+function navigateToSection(sectionContainer, sectionId) {
   openSection(sectionContainer);
   updateURL(sectionId);
 };
@@ -84,7 +81,7 @@ function navigateToSection(sectionContainer, sectionId, shouldCloseCurrent = tru
 // Open Menu section when Menu Icon svg is pressed
 menuLink.addEventListener("click", function (event) {
   event.preventDefault();
-  navigateToSection(menuContainer, "menuContainer", false)
+  navigateToSection(menuContainer, "menuContainer")
 });
 
 // Closing it
@@ -101,7 +98,7 @@ document.addEventListener("keydown", function (event) {
 // Open the contact form when "Contact" link is clicked
 contactLink.addEventListener("click", function (event) {
   event.preventDefault();
-  navigateToSection(contactContainer, "contactContainer", false)
+  navigateToSection(contactContainer, "contactContainer")
 });
 
 //Closing it  
@@ -119,7 +116,7 @@ backButton.addEventListener("click", function (event) {
 // Open About section, when "About" link is clicked
 aboutLink.addEventListener("click", function (event) {
   event.preventDefault();
-  navigateToSection(aboutContainer, "aboutContainer", false)
+  navigateToSection(aboutContainer, "aboutContainer")
 });
 
 // Closing it 
@@ -137,7 +134,7 @@ document.addEventListener("keydown", function (event) {
 // Open Portfolio section when "Portfolio" link is clicked
 portfolioLink.addEventListener("click", function (event) {
   event.preventDefault();
-  navigateToSection(portfolioContainer, "portfolioContainer", false)
+  navigateToSection(portfolioContainer, "portfolioContainer")
 });
 
 // Closing it 
@@ -154,7 +151,7 @@ document.addEventListener("keydown", function (event) {
 // Open Pricing section when "Pricing" link is clicked
 pricingLink.addEventListener("click", function (event) {
   event.preventDefault();
-  navigateToSection(pricingContainer, "pricingContainer", false)
+  navigateToSection(pricingContainer, "pricingContainer")
 });
 
 // Closing it 
@@ -171,6 +168,8 @@ document.addEventListener("keydown", function (event) {
 
 
 // logic to updateing URL address
+let currentOpenSection = null;
+
 function updateURL(sectionId) {
   let url = new URL(window.location.href);
 
@@ -180,14 +179,6 @@ function updateURL(sectionId) {
     url.searchParams.set("section", sectionId);
   }
   history.pushState(null, null, url);
-};
-
-// navigation to section from URL
-function navigationToSectionFromURL() {
-  let urlSearch = new URLSearchParams(window.location.search);
-  console.log(urlSearch);
-  let selectedID = urlSearch.get("section");
-  console.log(selectedID);
 };
 
 function getSectionContainerById(sectionId) {
@@ -213,15 +204,26 @@ function navigateToSectionFromURL() {
   let actualSectionContainer = getSectionContainerById(sectionId);
 
   if (!sectionId || sectionId === "mainContainer") {
-    closeSection(actualSectionContainer);
+    if (currentOpenSection) {
+    closeSection(currentOpenSection);
+    }
     openSection(mainContainer);
   } else {
+    if (currentOpenSection) {
+      closeSection(currentOpenSection);
+    };
     if (actualSectionContainer) {
       openSection(actualSectionContainer);
     };
   };
 };
 
+function getURLSectionId() {
+  let urlParams = new URLSearchParams(window.location.search);
+  let sectionId = urlParams.get("section");
+};
+
 window.addEventListener("popstate", () => {
   navigateToSectionFromURL();
+  currentOpenSection = getSectionContainerById(getURLSectionId());
 });
