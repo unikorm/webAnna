@@ -47,6 +47,24 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
   };
 };
 
+
+
+
+
+function navigateToSection(sectionContainer, sectionId, shouldCloseCurrent = true) {
+  if (shouldCloseCurrent) {
+    closeSection(mainContainer);
+  };
+  
+  openSection(sectionContainer); // Show the specified section
+  updateURL(sectionId); // Update the URL query
+};
+
+
+
+
+
+
 // event handlers
 
 // Open Menu section when Menu Icon svg is pressed
@@ -146,6 +164,7 @@ document.addEventListener("keydown", function (event) {
 // logic to updateing URL address
 function updateURL(sectionId) {
   let url = new URL(window.location.href);
+
   if (sectionId === "mainContainer") {
     url.searchParams.delete("section");
   } else {
@@ -153,3 +172,17 @@ function updateURL(sectionId) {
   }
   history.pushState(null, null, url);
 };
+
+// navigation to section from URL
+function navigationToSectionFromURL() {
+  let urlSearch = new URLSearchParams(window.location.search);
+  console.log(urlSearch);
+  let selectedID = urlSearch.get("section");
+  console.log(selectedID);
+
+  
+  }
+
+};
+
+window.addEventListener("popstate", navigationToSectionFromURL);
