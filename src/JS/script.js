@@ -68,14 +68,20 @@ let openSec = (link, container, stringContainer) => {
   });
 };
 
+// reusable function to close on click outside of content element...
+let closeSecClick = (container, content) => {
+  document.addEventListener("click", (e) => {
+    e.preventDefault();
+    handleSectionClick(e, container, content);
+  });
+};
+
 
 
 // event handlers !!!!
 openSec(menuLink, menuContainer, "menuContainer");
+closeSecClick(menuContainer, "menuSelect")
 
-document.addEventListener("click", function (event) {
-  handleSectionClick(event, menuContainer, ".menuSelect");
-});
 
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, menuContainer);
@@ -93,30 +99,21 @@ backButton.addEventListener("click", function (event) {
 });
  
 openSec(aboutLink, aboutContainer, "aboutContainer");
-
-document.addEventListener("click", function (event) {
-  handleSectionClick(event, aboutContainer, ".authorInfo");
-});
+closeSecClick(aboutContainer, "authorInfo");
 
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, aboutContainer);
 });
 
 openSec(portfolioLink, portfolioContainer, "portfolioContainer");
-
-document.addEventListener("click", function (event) {
-  handleSectionClick(event, portfolioContainer, ".portfolioItem");
-});
+closeSecClick(portfolioContainer, "portfolioItem");
 
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, portfolioContainer);
 });
 
 openSec(pricingLink, pricingContainer, "pricingContainer");
-
-document.addEventListener("click", function (event) {
-  handleSectionClick(event, pricingContainer, ".pricingContent");
-});
+closeSecClick(pricingContainer, "pricingContent");
 
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, pricingContainer);
