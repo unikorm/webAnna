@@ -1,11 +1,11 @@
 "use strict";
 
-// imported variables
+// imported variables   !!!!!
 import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, menuLink, menuContainer, portfolioContainer, portfolioLink, pricingContainer, pricingLink, nameInput, emailInput, messageInput, errorMessage, successMessage} from "/src/JS/variables.js";
 let currentOpenSection = getSectionContainerById(getURLSectionId());  // navigation logic variable
 
 
-// general reuseble functions
+// general reuseble functions  !!!!!
 function openSection(sectionContainer) {
   sectionContainer.style.display = "flex";
   mainContainer.style.display = "none";
@@ -54,26 +54,24 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
   };
 };
 
-// navigate to section plus updating URL address
 function navigateToSection(sectionContainer, sectionId) {
   openSection(sectionContainer);
   updateURL(sectionId);
 };
 
+// reusable function to open sections...
+let openSec = (link, container, stringContainer) => {
+  link.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigateToSection(container, stringContainer);
+  });
+};
 
 
 
+// event handlers !!!!
+openSec(menuLink, menuContainer, "menuContainer");
 
-
-// event handlers
-
-// Open Menu section when Menu Icon svg is pressed
-menuLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  navigateToSection(menuContainer, "menuContainer")
-});
-
-// Closing it
 document.addEventListener("click", function (event) {
   handleSectionClick(event, menuContainer, ".menuSelect");
 });
@@ -82,15 +80,8 @@ document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, menuContainer);
 });
 
+openSec(contactLink, contactContainer, "contactContainer");
 
-
-// Open the contact form when "Contact" link is clicked
-contactLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  navigateToSection(contactContainer, "contactContainer")
-});
-
-//Closing it  
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, contactContainer);
 });
@@ -100,15 +91,8 @@ backButton.addEventListener("click", function (event) {
   closeSection(contactContainer);
 });
  
+openSec(aboutLink, aboutContainer, "aboutContainer");
 
-
-// Open About section, when "About" link is clicked
-aboutLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  navigateToSection(aboutContainer, "aboutContainer")
-});
-
-// Closing it 
 document.addEventListener("click", function (event) {
   handleSectionClick(event, aboutContainer, ".authorInfo");
 });
@@ -118,15 +102,8 @@ document.addEventListener("keydown", function (event) {
   errorMessage.style.display = "none";
 });
 
+openSec(portfolioLink, portfolioContainer, "portfolioContainer");
 
-
-// Open Portfolio section when "Portfolio" link is clicked
-portfolioLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  navigateToSection(portfolioContainer, "portfolioContainer")
-});
-
-// Closing it 
 document.addEventListener("click", function (event) {
   handleSectionClick(event, portfolioContainer, ".portfolioItem");
 });
@@ -135,15 +112,8 @@ document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, portfolioContainer);
 });
 
+openSec(pricingLink, pricingContainer, "pricingContainer");
 
-
-// Open Pricing section when "Pricing" link is clicked
-pricingLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  navigateToSection(pricingContainer, "pricingContainer")
-});
-
-// Closing it 
 document.addEventListener("click", function (event) {
   handleSectionClick(event, pricingContainer, ".pricingContent");
 });
