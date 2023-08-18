@@ -132,14 +132,14 @@
     font-size: 1.3em;
     font-weight: 600;
     align-items: center;
+    text-align: center;
 }
 
 /* responsivness */
-@media (max-width: 767px) {
+@media (max-width: 550px) {
     #errorMessage,
     #successMessage {
         width: 88%;
-        text-align: center;
     }
 }
 

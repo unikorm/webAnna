@@ -1,9 +1,10 @@
 "use strict";
 
+// shorter way to console...
+let check = console.log;
+
 // imported variables   !!!!!
 import { contactContainer, mainContainer, contactLink, backButton, aboutLink, aboutContainer, menuLink, menuContainer, portfolioContainer, portfolioLink, pricingContainer, pricingLink, nameInput, emailInput, messageInput, errorMessage, successMessage} from "/src/JS/variables.js";
-let currentOpenSection = getSectionContainerById(getURLSectionId());  // navigation logic variable
-
 
 // general reuseble functions  !!!!!
 function openSection(sectionContainer) {
@@ -99,7 +100,6 @@ document.addEventListener("click", function (event) {
 
 document.addEventListener("keydown", function (event) {
   handleSectionEscKey(event, closeSection, aboutContainer);
-  errorMessage.style.display = "none";
 });
 
 openSec(portfolioLink, portfolioContainer, "portfolioContainer");
@@ -133,6 +133,8 @@ document.addEventListener("keydown", function (event) {
 
 
 // logic to updateing URL address
+
+let currentOpenSection = getSectionContainerById(getURLSectionId());  // navigation logic variable
 
 //this works
 // this function put new query in URL after opening new section, put it into history too

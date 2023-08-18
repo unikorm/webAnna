@@ -1,34 +1,35 @@
-// Open Menu section when Menu Icon svg is pressed
-menuLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    navigateToSection(menuContainer, "menuContainer")
+document.addEventListener("click", function (event) {
+    handleSectionClick(event, menuContainer, ".menuSelect");
   });
-  // Open the contact form when "Contact" link is clicked
-contactLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    navigateToSection(contactContainer, "contactContainer")
-  });
-  // Open About section, when "About" link is clicked
-aboutLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    navigateToSection(aboutContainer, "aboutContainer")
-  });
-  // Open Portfolio section when "Portfolio" link is clicked
-portfolioLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    navigateToSection(portfolioContainer, "portfolioContainer")
-  });
-  // Open Pricing section when "Pricing" link is clicked
-pricingLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    navigateToSection(pricingContainer, "pricingContainer")
+  document.addEventListener("keydown", function (event) {
+    handleSectionEscKey(event, closeSection, menuContainer);
   });
 
-let openSec = (link, container, stringContainer) => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        navigateToSection(container, stringContainer);
-    });
-};
+  backButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    closeSection(contactContainer);
+  });
+  document.addEventListener("keydown", function (event) {
+    handleSectionEscKey(event, closeSection, contactContainer);
+  });
 
-openSec(menuLink, menuContainer, "menuContainer");
+  document.addEventListener("click", function (event) {
+    handleSectionClick(event, aboutContainer, ".authorInfo");
+  });
+  document.addEventListener("keydown", function (event) {
+    handleSectionEscKey(event, closeSection, aboutContainer);
+  });
+
+  document.addEventListener("click", function (event) {
+    handleSectionClick(event, portfolioContainer, ".portfolioItem");
+  });
+  document.addEventListener("keydown", function (event) {
+    handleSectionEscKey(event, closeSection, portfolioContainer);
+  });
+
+  document.addEventListener("click", function (event) {
+    handleSectionClick(event, pricingContainer, ".pricingContent");
+  });
+  document.addEventListener("keydown", function (event) {
+    handleSectionEscKey(event, closeSection, pricingContainer);
+  });
