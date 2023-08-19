@@ -68,11 +68,19 @@ let openSec = (link, container, stringContainer) => {
   });
 };
 
-// reusable function to close on click outside of content element...
+// reusable function to close section on click outside of content element...
 let closeSecClick = (container, content) => {
   document.addEventListener("click", (e) => {
     e.preventDefault();
     handleSectionClick(e, container, content);
+  });
+};
+
+// reusable function to close section on Esc key press...
+let closeSecEsc = (container) => {
+  document.addEventListener("keydown", (event) => {
+    event.preventDefault();
+    handleSectionEscKey(event, closeSection, container);
   });
 };
 
@@ -81,18 +89,10 @@ let closeSecClick = (container, content) => {
 // event handlers !!!!
 openSec(menuLink, menuContainer, "menuContainer");
 closeSecClick(menuContainer, "menuSelect")
-
-
-document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection, menuContainer);
-});
+closeSecEsc(menuContainer);
 
 openSec(contactLink, contactContainer, "contactContainer");
-
-document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection, contactContainer);
-});
-
+closeSecEsc(contactContainer);
 backButton.addEventListener("click", function (event) {
   event.preventDefault();
   closeSection(contactContainer);
@@ -100,24 +100,16 @@ backButton.addEventListener("click", function (event) {
  
 openSec(aboutLink, aboutContainer, "aboutContainer");
 closeSecClick(aboutContainer, "authorInfo");
-
-document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection, aboutContainer);
-});
+closeSecEsc(aboutContainer);
 
 openSec(portfolioLink, portfolioContainer, "portfolioContainer");
 closeSecClick(portfolioContainer, "portfolioItem");
-
-document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection, portfolioContainer);
-});
+closeSecEsc(portfolioContainer);
 
 openSec(pricingLink, pricingContainer, "pricingContainer");
 closeSecClick(pricingContainer, "pricingContent");
+closeSecEsc(pricingContainer);
 
-document.addEventListener("keydown", function (event) {
-  handleSectionEscKey(event, closeSection, pricingContainer);
-});
 
 
 
