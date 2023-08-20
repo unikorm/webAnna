@@ -96,7 +96,7 @@ closeSecEsc(contactContainer);
 backButton.addEventListener("click", function (event) {
   event.preventDefault();
   closeSection(contactContainer);
-});
+});  // in imagestuff.js is it on 49 line
  
 openSec(aboutLink, aboutContainer, "aboutContainer");
 closeSecClick(aboutContainer, "authorInfo");
