@@ -123,7 +123,8 @@ closeSecEsc(pricingContainer);
 
 // logic to updateing URL address
 
-let currentOpenSection = getSectionContainerById(getURLSectionId());  // navigation logic variable
+let currentOpenSection;  // navigation logic variable
+check(currentOpenSection);
 
 //this works
 // this function put new query in URL after opening new section, put it into history too
@@ -160,6 +161,7 @@ function getSectionContainerById(sectionId) {
 function getURLSectionId() {
   let urlParams = new URLSearchParams(window.location.search);
   let sectionId = urlParams.get("section");
+  check(sectionId);   // here will be some problem, it return null when i went back two steps...
   return sectionId;
 };
 
@@ -200,4 +202,5 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("popstate", () => {
   navigateToSectionFromURL();
   currentOpenSection = getSectionContainerById(getURLSectionId());
+  check(currentOpenSection);
 });
