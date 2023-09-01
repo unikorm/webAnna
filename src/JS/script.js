@@ -25,7 +25,7 @@ function closeSection(sectionContainer) {
   sectionContainer.style.backdropFilter = null;
   sectionContainer.style.webkitBackdropfFilter = null;
 
-  updateURL("mainContainer");
+  // updateURL("mainContainer");
 
   if (sectionContainer === contactContainer) {
     if (successMessage.style.display === "flex") {
@@ -57,7 +57,12 @@ function handleSectionEscKey(event, closeSection, sectionContainer) {
 
 function navigateToSection(sectionContainer, sectionId) {
   openSection(sectionContainer);
-  updateURL(sectionId);
+  // updateURL(sectionId);
+
+  const newState = sectionId;
+  history.pushState(newState, null, sectionId);
+  // check(newState);
+  check(location.pathname);
 };
 
 // reusable function to open sections...
@@ -121,86 +126,114 @@ closeSecEsc(pricingContainer);
 
 
 
+
+
 // logic to updateing URL address
 
-let currentOpenSection;  // navigation logic variable
-check(currentOpenSection);
+window.addEventListener("load", () => {
+  const initialState = "mainContainer";
+  history.pushState(initialState, null, location.pathname);
+  check(location.pathname);
+  // check(initialState);
+});
+
+window.addEventListener("popstate", (e) => {
+  check(e.state);
+  if (e.state) {
+    const sectionId = e.state;
+    
+  };
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// let currentOpenSection;  // navigation logic variable
+// check(currentOpenSection);
 
 //this works
 // this function put new query in URL after opening new section, put it into history too
-function updateURL(sectionId) {
-  let url = new URL(window.location.href);
+// function updateURL(sectionId) {
+//   let url = new URL(window.location.href);
 
-  if (sectionId === "mainContainer") {
-    url.searchParams.delete("section");
-  } else {
-    url.searchParams.set("section", sectionId);
-  }
-  history.pushState(null, null, url);
-};
+//   if (sectionId === "mainContainer") {
+//     url.searchParams.delete("section");
+//   } else {
+//     url.searchParams.set("section", sectionId);
+//   }
+  // history.pushState(null, null, url);
+// };
 
 // this function get name of id and give in result them name of variable
-function getSectionContainerById(sectionId) {
-  switch (sectionId) {
-    case "menuContainer":
-      return menuContainer;
-    case "contactContainer":
-      return contactContainer;
-    case "aboutContainer":
-      return aboutContainer;
-    case "portfolioContainer":
-      return portfolioContainer;
-    case "pricingContainer":
-      return pricingContainer;
-    default:
-      return null;
-  };
-};
+// function getSectionContainerById(sectionId) {
+//   switch (sectionId) {
+//     case "menuContainer":
+//       return menuContainer;
+//     case "contactContainer":
+//       return contactContainer;
+//     case "aboutContainer":
+//       return aboutContainer;
+//     case "portfolioContainer":
+//       return portfolioContainer;
+//     case "pricingContainer":
+//       return pricingContainer;
+//     default:
+//       return null;
+//   };
+// };
 
 // this function return a string, value of URL query parameter named "section" 
-function getURLSectionId() {
-  let urlParams = new URLSearchParams(window.location.search);
-  let sectionId = urlParams.get("section");
-  check(sectionId);   // here will be some problem, it return null when i went back two steps...
-  return sectionId;
-};
+// function getURLSectionId() {
+//   let urlParams = new URLSearchParams(window.location.search);
+//   let sectionId = urlParams.get("section");
+//   check(sectionId);   // here will be some problem, it return null when i went back two steps...
+//   return sectionId;
+// };
 
 
 
 // this i think doesn't work properly
 // this function do something like open/close sections, but it cross with other logic doin it i think, and that is problem... maybe
-function navigateToSectionFromURL() {
-  let urlParams = new URLSearchParams(window.location.search);
-  let sectionId = urlParams.get("section");
-  let actualSectionContainer = getSectionContainerById(sectionId);
+// function navigateToSectionFromURL() {
+//   let urlParams = new URLSearchParams(window.location.search);
+//   let sectionId = urlParams.get("section");
+//   let actualSectionContainer = getSectionContainerById(sectionId);
 
-  if (!sectionId || sectionId === "mainContainer") {
-    if (currentOpenSection) {
-    closeSection(currentOpenSection);
-    }
-    openSection(mainContainer);
-  } else {
-    if (currentOpenSection) {
-      closeSection(currentOpenSection);
-    };
-    if (actualSectionContainer) {
-      openSection(actualSectionContainer);
-    };
-  };
-};
+//   if (!sectionId || sectionId === "mainContainer") {
+//     if (currentOpenSection) {
+//     closeSection(currentOpenSection);
+//     }
+//     openSection(mainContainer);
+//   } else {
+//     if (currentOpenSection) {
+//       closeSection(currentOpenSection);
+//     };
+//     if (actualSectionContainer) {
+//       openSection(actualSectionContainer);
+//     };
+//   };
+// };
 
 // function to after reload of page clean queries history and start from clean state (it seems like it doesn't work well now)
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
-    let url = new URL(window.location.href);
-    url.searchParams.delete("section");
-    window.history.replaceState(null, null, url);
-  }
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+//     let url = new URL(window.location.href);
+//     url.searchParams.delete("section");
+//     window.history.replaceState(null, null, url);
+//   }
+// });
 
 // this function listen on click on back/forward and calling function "n" and redeclare let "c" (idk what exactly do it)
-window.addEventListener("popstate", () => {
-  navigateToSectionFromURL();
-  currentOpenSection = getSectionContainerById(getURLSectionId());
-  check(currentOpenSection);
-});
+// window.addEventListener("popstate", () => {
+//   navigateToSectionFromURL();
+//   currentOpenSection = getSectionContainerById(getURLSectionId());
+//   check(currentOpenSection);
+// });
